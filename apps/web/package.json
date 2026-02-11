@@ -1,0 +1,44 @@
+{
+    "name": "@lint-rules/web",
+    "type": "module",
+    "packageManager": "pnpm@10.15.1",
+    "description": "All-in-one lint rules hub: ESLint + plugins, Prettier, Stylelint, Biome, and other linters — searchable & categorized.",
+    "license": "MIT",
+    "homepage": "https://github.com/lonewolfyx/lint-rules",
+    "bugs": {
+        "url": "https://github.com/lonewolfyx/lint-rules/issues"
+    },
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "typecheck": "nuxt typecheck"
+    },
+    "dependencies": {
+        "@private/shadcn-vue": "workspace:*",
+        "@tailwindcss/vite": "catalog:",
+        "class-variance-authority": "catalog:",
+        "clsx": "catalog:",
+        "lucide-vue-next": "catalog:",
+        "reka-ui": "catalog:",
+        "tailwind-merge": "catalog:",
+        "tailwindcss": "catalog:",
+        "vue": "catalog:",
+        "vue-router": "catalog:"
+    },
+    "devDependencies": {
+        "@nuxt/content": "catalog:",
+        "@nuxt/eslint": "catalog:",
+        "@nuxt/icon": "catalog:",
+        "@vueuse/nuxt": "catalog:",
+        "eslint": "catalog:",
+        "lint-staged": "catalog:",
+        "nuxt": "catalog:",
+        "picocolors": "catalog:",
+        "simple-git-hooks": "catalog:",
+        "tw-animate-css": "catalog:",
+        "typescript": "catalog:"
+    }
+}

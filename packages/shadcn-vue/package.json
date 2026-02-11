@@ -1,0 +1,23 @@
+{
+    "name": "@private/shadcn-vue",
+    "version": "0.0.0",
+    "private": true,
+    "packageManager": "pnpm@10.15.1",
+    "description": "A set of beautifully-designed, accessible components and a code distribution platform.",
+    "license": "MIT",
+    "homepage": "https://github.com/lonewolfyx/lint-rules#readme",
+    "repository": {
+        "directory": "packages/shadcn-vue",
+        "type": "git",
+        "url": "git+https://github.com/lonewolfyx/lint-rules.git"
+    },
+    "bugs": "https://github.com/lonewolfyx/lint-rules/issues",
+    "dependencies": {
+        "class-variance-authority": "catalog:",
+        "clsx": "catalog:",
+        "lucide-vue-next": "catalog:",
+        "reka-ui": "catalog:",
+        "tailwind-merge": "catalog:",
+        "tw-animate-css": "catalog:"
+    }
+}

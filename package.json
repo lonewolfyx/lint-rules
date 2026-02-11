@@ -1,0 +1,45 @@
+{
+    "name": "lint-rules",
+    "type": "module",
+    "version": "0.0.0",
+    "private": true,
+    "packageManager": "pnpm@10.15.1",
+    "description": "All-in-one lint rules hub: ESLint + plugins, Stylelint, Biome, Oxlint, Oxfmt and other linters — searchable & categorized.",
+    "author": "lonewolfyx <https://github.com/lonewolfyx>",
+    "license": "MIT",
+    "homepage": "https://github.com/lonewolfyx/lint-rules",
+    "bugs": {
+        "url": "https://github.com/lonewolfyx/lint-rules/issues"
+    },
+    "keywords": [
+        "lint",
+        "rules",
+        "lint-hub",
+        "all-in-one"
+    ],
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "turbo run dev",
+        "lint": "eslint",
+        "lint:fix": "eslint --fix",
+        "prepare": "simple-git-hooks"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "catalog:",
+        "@tailwindcss/vite": "catalog:",
+        "@types/node": "catalog:",
+        "eslint": "catalog:",
+        "lint-staged": "catalog:",
+        "picocolors": "catalog:",
+        "simple-git-hooks": "catalog:",
+        "turbo": "catalog:",
+        "typescript": "catalog:"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged",
+        "commit-msg": "node scripts/verify-commit.js"
+    },
+    "lint-staged": {
+        "*": "eslint --fix"
+    }
+}
