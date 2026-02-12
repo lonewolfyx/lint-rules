@@ -23,7 +23,8 @@
         "lint": "eslint",
         "lint:fix": "eslint --fix",
         "prepare": "simple-git-hooks",
-        "generate:eslint:rules": "oxnode ./scripts/generate-eslint-rules.ts"
+        "generate:eslint:rules": "oxnode ./scripts/generate-eslint-rules.ts",
+        "generate:oxlint:rules": "oxnode ./scripts/generate-oxlint-rules.ts"
     },
     "devDependencies": {
         "@antfu/eslint-config": "catalog:",
@@ -31,9 +32,11 @@
         "@types/node": "catalog:",
         "eslint": "catalog:",
         "lint-staged": "catalog:",
+        "oxlint": "catalog:",
         "oxnode": "catalog:",
         "picocolors": "catalog:",
         "simple-git-hooks": "catalog:",
+        "tinyexec": "catalog:",
         "turbo": "catalog:",
         "typescript": "catalog:"
     },
