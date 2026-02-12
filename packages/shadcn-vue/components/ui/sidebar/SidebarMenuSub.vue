@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import { cn } from '@private/shadcn-vue/lib/utils'
-
-const props = defineProps<{
-    class?: HTMLAttributes['class']
-}>()
-</script>
-
 <template>
     <ul
         data-slot="sidebar-menu-sub"
@@ -20,3 +11,12 @@ const props = defineProps<{
         <slot />
     </ul>
 </template>
+
+<script setup lang="ts">
+import type { HTMLAttributes } from 'vue'
+import { cn } from '@private/shadcn-vue/lib/utils'
+
+const props = defineProps<{
+    class?: HTMLAttributes['class']
+}>()
+</script>

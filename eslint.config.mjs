@@ -14,5 +14,8 @@ export default antfu({
     },
     rules: {
         'antfu/top-level-function': 'off',
+        'vue/block-order': ['error', {
+            order: ['template', 'script', 'style'],
+        }],
     },
 }).append(nuxt)

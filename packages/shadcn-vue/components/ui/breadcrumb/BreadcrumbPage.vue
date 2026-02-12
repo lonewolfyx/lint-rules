@@ -1,12 +1,3 @@
-<script lang="ts" setup>
-import type { HTMLAttributes } from 'vue'
-import { cn } from '@private/shadcn-vue/lib/utils'
-
-const props = defineProps<{
-    class?: HTMLAttributes['class']
-}>()
-</script>
-
 <template>
     <span
         data-slot="breadcrumb-page"
@@ -18,3 +9,12 @@ const props = defineProps<{
         <slot />
     </span>
 </template>
+
+<script lang="ts" setup>
+import type { HTMLAttributes } from 'vue'
+import { cn } from '@private/shadcn-vue/lib/utils'
+
+const props = defineProps<{
+    class?: HTMLAttributes['class']
+}>()
+</script>

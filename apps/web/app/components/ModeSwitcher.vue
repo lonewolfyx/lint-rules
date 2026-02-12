@@ -1,9 +1,3 @@
-<script lang="ts" setup>
-import { Button } from '@private/shadcn-vue/components/ui/button'
-
-const colorMode = useColorMode()
-</script>
-
 <template>
     <Button
         class="group/toggle extend-touch-target size-8"
@@ -38,3 +32,9 @@ const colorMode = useColorMode()
         <span class="sr-only">Toggle theme</span>
     </Button>
 </template>
+
+<script lang="ts" setup>
+import { Button } from '@private/shadcn-vue/components/ui/button'
+
+const colorMode = useColorMode()
+</script>

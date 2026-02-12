@@ -1,17 +1,3 @@
-<script setup lang="ts">
-import type { ScrollAreaScrollbarProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
-import { cn } from '@private/shadcn-vue/lib/utils'
-import { reactiveOmit } from '@vueuse/core'
-import { ScrollAreaScrollbar, ScrollAreaThumb } from 'reka-ui'
-
-const props = withDefaults(defineProps<ScrollAreaScrollbarProps & { class?: HTMLAttributes['class'] }>(), {
-    orientation: 'vertical',
-})
-
-const delegatedProps = reactiveOmit(props, 'class')
-</script>
-
 <template>
     <ScrollAreaScrollbar
         data-slot="scroll-area-scrollbar"
@@ -30,3 +16,17 @@ const delegatedProps = reactiveOmit(props, 'class')
         />
     </ScrollAreaScrollbar>
 </template>
+
+<script setup lang="ts">
+import type { ScrollAreaScrollbarProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
+import { cn } from '@private/shadcn-vue/lib/utils'
+import { reactiveOmit } from '@vueuse/core'
+import { ScrollAreaScrollbar, ScrollAreaThumb } from 'reka-ui'
+
+const props = withDefaults(defineProps<ScrollAreaScrollbarProps & { class?: HTMLAttributes['class'] }>(), {
+    orientation: 'vertical',
+})
+
+const delegatedProps = reactiveOmit(props, 'class')
+</script>

@@ -1,12 +1,3 @@
-<script lang="ts" setup>
-import { SidebarInset } from '@private/shadcn-vue/components/ui/sidebar'
-import { cn } from '@private/shadcn-vue/lib/utils'
-
-defineOptions({
-    name: 'SiteAppContent',
-})
-</script>
-
 <template>
     <SidebarInset class="py-3 me-3">
         <div class="h-screen overflow-hidden">
@@ -35,3 +26,12 @@ defineOptions({
         </div>
     </SidebarInset>
 </template>
+
+<script lang="ts" setup>
+import { SidebarInset } from '@private/shadcn-vue/components/ui/sidebar'
+import { cn } from '@private/shadcn-vue/lib/utils'
+
+defineOptions({
+    name: 'SiteAppContent',
+})
+</script>

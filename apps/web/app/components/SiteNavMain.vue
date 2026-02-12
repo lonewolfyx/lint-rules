@@ -1,17 +1,3 @@
-<script lang="ts" setup>
-import {
-    SidebarGroup,
-    SidebarGroupLabel,
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
-} from '@private/shadcn-vue/components/ui/sidebar'
-
-defineOptions({
-    name: 'SiteNavMain',
-})
-</script>
-
 <template>
     <SidebarGroup>
         <SidebarGroupLabel>Lint</SidebarGroupLabel>
@@ -53,3 +39,17 @@ defineOptions({
         </SidebarMenu>
     </SidebarGroup>
 </template>
+
+<script lang="ts" setup>
+import {
+    SidebarGroup,
+    SidebarGroupLabel,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+} from '@private/shadcn-vue/components/ui/sidebar'
+
+defineOptions({
+    name: 'SiteNavMain',
+})
+</script>

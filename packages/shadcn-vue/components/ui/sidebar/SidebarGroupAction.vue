@@ -1,14 +1,3 @@
-<script setup lang="ts">
-import type { PrimitiveProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
-import { cn } from '@private/shadcn-vue/lib/utils'
-import { Primitive } from 'reka-ui'
-
-const props = defineProps<PrimitiveProps & {
-    class?: HTMLAttributes['class']
-}>()
-</script>
-
 <template>
     <Primitive
         data-slot="sidebar-group-action"
@@ -25,3 +14,14 @@ const props = defineProps<PrimitiveProps & {
         <slot />
     </Primitive>
 </template>
+
+<script setup lang="ts">
+import type { PrimitiveProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
+import { cn } from '@private/shadcn-vue/lib/utils'
+import { Primitive } from 'reka-ui'
+
+const props = defineProps<PrimitiveProps & {
+    class?: HTMLAttributes['class']
+}>()
+</script>

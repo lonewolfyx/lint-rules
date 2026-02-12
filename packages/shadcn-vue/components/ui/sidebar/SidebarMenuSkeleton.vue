@@ -1,19 +1,3 @@
-<script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import { Skeleton } from '@private/shadcn-vue/components/ui/skeleton'
-import { cn } from '@private/shadcn-vue/lib/utils'
-import { computed } from 'vue'
-
-const props = defineProps<{
-    showIcon?: boolean
-    class?: HTMLAttributes['class']
-}>()
-
-const width = computed(() => {
-    return `${Math.floor(Math.random() * 40) + 50}%`
-})
-</script>
-
 <template>
     <div
         data-slot="sidebar-menu-skeleton"
@@ -33,3 +17,19 @@ const width = computed(() => {
         />
     </div>
 </template>
+
+<script setup lang="ts">
+import type { HTMLAttributes } from 'vue'
+import { Skeleton } from '@private/shadcn-vue/components/ui/skeleton'
+import { cn } from '@private/shadcn-vue/lib/utils'
+import { computed } from 'vue'
+
+const props = defineProps<{
+    showIcon?: boolean
+    class?: HTMLAttributes['class']
+}>()
+
+const width = computed(() => {
+    return `${Math.floor(Math.random() * 40) + 50}%`
+})
+</script>

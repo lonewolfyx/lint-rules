@@ -1,17 +1,3 @@
-<script lang="ts" setup>
-import type { SidebarProps } from '@private/shadcn-vue/components/ui/sidebar'
-import { Sidebar } from '@private/shadcn-vue/components/ui/sidebar'
-import { cn } from '@private/shadcn-vue/lib/utils'
-
-defineOptions({
-    name: 'SiteNavSidebar',
-})
-
-const props = withDefaults(defineProps<SidebarProps>(), {
-    collapsible: 'icon',
-})
-</script>
-
 <template>
     <Sidebar v-bind="props">
         <div
@@ -56,3 +42,17 @@ const props = withDefaults(defineProps<SidebarProps>(), {
         </div>
     </Sidebar>
 </template>
+
+<script lang="ts" setup>
+import type { SidebarProps } from '@private/shadcn-vue/components/ui/sidebar'
+import { Sidebar } from '@private/shadcn-vue/components/ui/sidebar'
+import { cn } from '@private/shadcn-vue/lib/utils'
+
+defineOptions({
+    name: 'SiteNavSidebar',
+})
+
+const props = withDefaults(defineProps<SidebarProps>(), {
+    collapsible: 'icon',
+})
+</script>

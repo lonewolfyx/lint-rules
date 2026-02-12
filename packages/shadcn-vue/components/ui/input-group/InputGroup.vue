@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import { cn } from '@private/shadcn-vue/lib/utils'
-
-const props = defineProps<{
-    class?: HTMLAttributes['class']
-}>()
-</script>
-
 <template>
     <div
         data-slot="input-group"
@@ -33,3 +24,12 @@ const props = defineProps<{
         <slot />
     </div>
 </template>
+
+<script setup lang="ts">
+import type { HTMLAttributes } from 'vue'
+import { cn } from '@private/shadcn-vue/lib/utils'
+
+const props = defineProps<{
+    class?: HTMLAttributes['class']
+}>()
+</script>

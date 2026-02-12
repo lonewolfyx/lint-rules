@@ -1,10 +1,3 @@
-<script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import { cn } from '@private/shadcn-vue/lib/utils'
-
-const props = defineProps<{ class?: HTMLAttributes['class'] }>()
-</script>
-
 <template>
     <div
         data-slot="sheet-header"
@@ -13,3 +6,10 @@ const props = defineProps<{ class?: HTMLAttributes['class'] }>()
         <slot />
     </div>
 </template>
+
+<script setup lang="ts">
+import type { HTMLAttributes } from 'vue'
+import { cn } from '@private/shadcn-vue/lib/utils'
+
+const props = defineProps<{ class?: HTMLAttributes['class'] }>()
+</script>

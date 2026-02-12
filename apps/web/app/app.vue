@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-import { SidebarProvider } from '@private/shadcn-vue/components/ui/sidebar'
-</script>
-
 <template>
     <SiteBody>
         <SidebarProvider>
@@ -10,3 +6,7 @@ import { SidebarProvider } from '@private/shadcn-vue/components/ui/sidebar'
         </SidebarProvider>
     </SiteBody>
 </template>
+
+<script lang="ts" setup>
+import { SidebarProvider } from '@private/shadcn-vue/components/ui/sidebar'
+</script>

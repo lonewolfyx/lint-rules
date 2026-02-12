@@ -1,25 +1,3 @@
-<script setup lang="ts">
-import type { SidebarProps } from '.'
-import { Sheet, SheetContent } from '@private/shadcn-vue/components/ui/sheet'
-import SheetDescription from '@private/shadcn-vue/components/ui/sheet/SheetDescription.vue'
-import SheetHeader from '@private/shadcn-vue/components/ui/sheet/SheetHeader.vue'
-import SheetTitle from '@private/shadcn-vue/components/ui/sheet/SheetTitle.vue'
-import { cn } from '@private/shadcn-vue/lib/utils'
-import { SIDEBAR_WIDTH_MOBILE, useSidebar } from './utils'
-
-defineOptions({
-    inheritAttrs: false,
-})
-
-const props = withDefaults(defineProps<SidebarProps>(), {
-    side: 'left',
-    variant: 'sidebar',
-    collapsible: 'offcanvas',
-})
-
-const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
-</script>
-
 <template>
     <div
         v-if="collapsible === 'none'"
@@ -94,3 +72,25 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import type { SidebarProps } from '.'
+import { Sheet, SheetContent } from '@private/shadcn-vue/components/ui/sheet'
+import SheetDescription from '@private/shadcn-vue/components/ui/sheet/SheetDescription.vue'
+import SheetHeader from '@private/shadcn-vue/components/ui/sheet/SheetHeader.vue'
+import SheetTitle from '@private/shadcn-vue/components/ui/sheet/SheetTitle.vue'
+import { cn } from '@private/shadcn-vue/lib/utils'
+import { SIDEBAR_WIDTH_MOBILE, useSidebar } from './utils'
+
+defineOptions({
+    inheritAttrs: false,
+})
+
+const props = withDefaults(defineProps<SidebarProps>(), {
+    side: 'left',
+    variant: 'sidebar',
+    collapsible: 'offcanvas',
+})
+
+const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
+</script>

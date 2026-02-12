@@ -1,19 +1,3 @@
-<script setup lang="ts">
-import type { PrimitiveProps } from 'reka-ui'
-import type { HTMLAttributes } from 'vue'
-import { cn } from '@private/shadcn-vue/lib/utils'
-import { Primitive } from 'reka-ui'
-
-const props = withDefaults(defineProps<PrimitiveProps & {
-    size?: 'sm' | 'md'
-    isActive?: boolean
-    class?: HTMLAttributes['class']
-}>(), {
-    as: 'a',
-    size: 'md',
-})
-</script>
-
 <template>
     <Primitive
         data-slot="sidebar-menu-sub-button"
@@ -34,3 +18,19 @@ const props = withDefaults(defineProps<PrimitiveProps & {
         <slot />
     </Primitive>
 </template>
+
+<script setup lang="ts">
+import type { PrimitiveProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
+import { cn } from '@private/shadcn-vue/lib/utils'
+import { Primitive } from 'reka-ui'
+
+const props = withDefaults(defineProps<PrimitiveProps & {
+    size?: 'sm' | 'md'
+    isActive?: boolean
+    class?: HTMLAttributes['class']
+}>(), {
+    as: 'a',
+    size: 'md',
+})
+</script>

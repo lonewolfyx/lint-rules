@@ -1,15 +1,3 @@
-<script lang="ts" setup>
-import {
-    SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
-} from '@private/shadcn-vue/components/ui/sidebar'
-
-defineOptions({
-    name: 'SiteNavHeader',
-})
-</script>
-
 <template>
     <SidebarMenu>
         <SidebarMenuItem>
@@ -36,3 +24,15 @@ defineOptions({
         </SidebarMenuItem>
     </SidebarMenu>
 </template>
+
+<script lang="ts" setup>
+import {
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+} from '@private/shadcn-vue/components/ui/sidebar'
+
+defineOptions({
+    name: 'SiteNavHeader',
+})
+</script>

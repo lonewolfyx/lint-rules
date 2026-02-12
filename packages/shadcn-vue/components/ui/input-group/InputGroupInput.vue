@@ -1,13 +1,3 @@
-<script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import { Input } from '@private/shadcn-vue/components/ui/input'
-import { cn } from '@private/shadcn-vue/lib/utils'
-
-const props = defineProps<{
-    class?: HTMLAttributes['class']
-}>()
-</script>
-
 <template>
     <Input
         data-slot="input-group-control"
@@ -17,3 +7,13 @@ const props = defineProps<{
         )"
     />
 </template>
+
+<script setup lang="ts">
+import type { HTMLAttributes } from 'vue'
+import { Input } from '@private/shadcn-vue/components/ui/input'
+import { cn } from '@private/shadcn-vue/lib/utils'
+
+const props = defineProps<{
+    class?: HTMLAttributes['class']
+}>()
+</script>

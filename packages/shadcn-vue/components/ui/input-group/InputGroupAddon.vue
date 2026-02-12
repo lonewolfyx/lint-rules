@@ -1,3 +1,15 @@
+<template>
+    <div
+        role="group"
+        data-slot="input-group-addon"
+        :data-align="props.align"
+        :class="cn(inputGroupAddonVariants({ align: props.align }), props.class)"
+        @click="handleInputGroupAddonClick"
+    >
+        <slot />
+    </div>
+</template>
+
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
 import type { InputGroupVariants } from '.'
@@ -22,15 +34,3 @@ function handleInputGroupAddonClick(e: MouseEvent) {
     }
 }
 </script>
-
-<template>
-    <div
-        role="group"
-        data-slot="input-group-addon"
-        :data-align="props.align"
-        :class="cn(inputGroupAddonVariants({ align: props.align }), props.class)"
-        @click="handleInputGroupAddonClick"
-    >
-        <slot />
-    </div>
-</template>
