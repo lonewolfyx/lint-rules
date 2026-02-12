@@ -13,6 +13,7 @@
     },
     "bugs": "https://github.com/lonewolfyx/lint-rules/issues",
     "dependencies": {
+        "@vueuse/core": "catalog:",
         "class-variance-authority": "catalog:",
         "clsx": "catalog:",
         "lucide-vue-next": "catalog:",
