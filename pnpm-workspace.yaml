@@ -19,6 +19,7 @@ catalog:
   lint-staged: ^16.2.7
   lucide-vue-next: ^0.545.0
   nuxt: ^4.2.2
+  oxnode: ^0.0.34
   picocolors: ^1.1.1
   reka-ui: ^2.7.0
   simple-git-hooks: ^2.13.1
