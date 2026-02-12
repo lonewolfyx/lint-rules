@@ -12,6 +12,7 @@ catalog:
   '@nuxt/icon': ^2.1.1
   '@tailwindcss/vite': ^4.1.18
   '@types/node': ^25.0.10
+  '@vueuse/core': ^14.2.1
   '@vueuse/nuxt': ^14.1.0
   class-variance-authority: ^0.7.1
   clsx: ^2.1.1
@@ -22,7 +23,7 @@ catalog:
   oxlint: ^1.46.0
   oxnode: ^0.0.34
   picocolors: ^1.1.1
-  reka-ui: ^2.7.0
+  reka-ui: 2.8.0
   simple-git-hooks: ^2.13.1
   tailwind-merge: ^3.4.0
   tailwindcss: ^4.1.18

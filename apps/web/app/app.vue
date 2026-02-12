@@ -1,5 +1,12 @@
+<script lang="ts" setup>
+import { SidebarProvider } from '@private/shadcn-vue/components/ui/sidebar'
+</script>
+
 <template>
-    <div>
-        <NuxtWelcome />
-    </div>
+    <SiteBody>
+        <SidebarProvider>
+            <SiteAppSidebar />
+            <SiteAppContent />
+        </SidebarProvider>
+    </SiteBody>
 </template>
