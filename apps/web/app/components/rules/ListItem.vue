@@ -7,6 +7,7 @@
             'relative transition-colors',
             'hover:bg-secondary',
         )"
+        @click="toggleRules('accessor-pairs')"
     >
         <div class="flex-1 space-y-0.5 min-w-0">
             <div class="flex items-center">
@@ -31,8 +32,11 @@
 
 <script lang="ts" setup>
 import { cn } from '@private/shadcn-vue/lib/utils'
+import { useRuleConfig } from '.'
 
 defineOptions({
     name: 'RulesListItem',
 })
+
+const { toggleRules } = useRuleConfig()
 </script>
