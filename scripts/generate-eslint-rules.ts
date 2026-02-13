@@ -12,7 +12,7 @@ const rules = lint.getRules();
 // )
 (async () => {
     await writeFile(
-        './data/eslint-rules.json',
+        './apps/web/data/eslint-rules.json',
         JSON.stringify(Object.fromEntries(rules), null, 2),
         'utf-8',
     )
