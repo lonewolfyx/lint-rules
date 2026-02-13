@@ -1,6 +1,7 @@
 <template>
     <SidebarInset class="py-3 mx-4 lg:me-3">
         <div class="h-screen overflow-hidden">
+            <SiteAppMobileHeader />
             <div class="relative flex h-full gap-0 md:gap-1 min-h-0">
                 <div
                     :class="cn(
@@ -11,7 +12,7 @@
                     )"
                 >
                     <div class="flex items-center justify-between px-2 py-3 gap-1">
-                        <SiteAppSidebarTrigger />
+                        <SiteAppSidebarTrigger class="hidden lg:inline-flex" />
                         <div class="flex items-center flex-1 gap-1">
                             <InputGroup>
                                 <InputGroupInput placeholder="Search..." />
@@ -39,10 +40,10 @@
                 </div>
 
                 <div
-                    class="bg-background border border-input rounded-xl shadow-xs flex-1 overflow-y-auto overscroll-none"
                     :class="cn(
                         'hidden md:block',
                     )"
+                    class="bg-background border border-input rounded-xl shadow-xs flex-1 overflow-y-auto overscroll-none"
                 >
                     <div class="px-4 py-3">
                         <RulesReadme />
