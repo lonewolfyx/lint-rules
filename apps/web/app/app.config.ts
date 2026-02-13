@@ -1,4 +1,25 @@
 export default defineAppConfig({
     title: 'Lint Rules',
     description: 'All-in-one lint rules hub: ESLint + plugins, Stylelint, Biome, Oxlint, Oxfmt and other linters — searchable & categorized.',
+    navigation: {
+        lint: {
+            label: 'lint',
+            items: [
+                {
+                    label: 'ESLint',
+                    target: 'eslint',
+                    website: 'https://eslint.org',
+                    rules: 'https://eslint.org/docs/latest/rules/',
+                    icon: 'vscode-icons:file-type-eslint2',
+                },
+                {
+                    label: 'Oxlint',
+                    target: 'oxlint',
+                    website: 'https://oxc.rs',
+                    rules: 'https://oxc.rs/docs/guide/usage/linter/rules.html',
+                    icon: 'vscode-icons:file-type-oxlint',
+                },
+            ],
+        },
+    },
 })

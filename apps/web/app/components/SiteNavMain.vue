@@ -1,38 +1,27 @@
 <template>
-    <SidebarGroup>
-        <SidebarGroupLabel>Lint</SidebarGroupLabel>
+    <SidebarGroup
+        v-for="nav in app.navigation"
+        :key="nav.label"
+    >
+        <SidebarGroupLabel>{{ nav.label }}</SidebarGroupLabel>
         <SidebarMenu>
-            <SidebarMenuItem>
+            <SidebarMenuItem
+                v-for="navigation in nav.items"
+                :key="navigation.label"
+            >
                 <SidebarMenuButton
+                    :tooltip="navigation.label"
                     as-child
-                    tooltip="eslint"
                 >
                     <NuxtLink
                         target="_blank"
                         to="#"
                     >
                         <Icon
+                            :name="navigation.icon"
                             mode="svg"
-                            name="vscode-icons:file-type-eslint2"
                         />
-                        <span class="text-sidebar-foreground/70">eslint</span>
-                    </NuxtLink>
-                </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-                <SidebarMenuButton
-                    as-child
-                    tooltip="oxlint"
-                >
-                    <NuxtLink
-                        target="_blank"
-                        to="#"
-                    >
-                        <Icon
-                            mode="svg"
-                            name="vscode-icons:file-type-oxlint"
-                        />
-                        <span class="text-sidebar-foreground/70">oxlint</span>
+                        <span class="text-sidebar-foreground/70">{{ navigation.label }}</span>
                     </NuxtLink>
                 </SidebarMenuButton>
             </SidebarMenuItem>
@@ -52,4 +41,6 @@ import {
 defineOptions({
     name: 'SiteNavMain',
 })
+
+const app = useAppConfig()
 </script>
