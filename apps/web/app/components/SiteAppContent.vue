@@ -1,7 +1,7 @@
 <template>
-    <SidebarInset class="py-3 me-3">
+    <SidebarInset class="py-3 mx-4 lg:me-3">
         <div class="h-screen overflow-hidden">
-            <div class="relative flex h-full gap-1 min-h-0">
+            <div class="relative flex h-full gap-0 md:gap-1 min-h-0">
                 <div
                     :class="cn(
                         'bg-background',
@@ -40,6 +40,9 @@
 
                 <div
                     class="bg-background border border-input rounded-xl shadow-xs flex-1 overflow-y-auto overscroll-none"
+                    :class="cn(
+                        'hidden md:block',
+                    )"
                 >
                     <div class="px-4 py-3">
                         <RulesReadme />
