@@ -137,3 +137,7 @@
         cursor: pointer;
     }
 }
+
+::-webkit-scrollbar {
+    @apply w-0 h-0;
+}
