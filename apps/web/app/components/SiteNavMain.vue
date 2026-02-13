@@ -7,10 +7,10 @@
         <SidebarMenu>
             <SidebarMenuItem
                 v-for="navigation in nav.items"
-                :key="navigation.label"
+                :key="navigation.title"
             >
                 <SidebarMenuButton
-                    :tooltip="navigation.label"
+                    :tooltip="navigation.title"
                     as-child
                 >
                     <NuxtLink
@@ -21,7 +21,7 @@
                             :name="navigation.icon"
                             mode="svg"
                         />
-                        <span class="text-sidebar-foreground/70">{{ navigation.label }}</span>
+                        <span class="text-sidebar-foreground/70">{{ navigation.title }}</span>
                     </NuxtLink>
                 </SidebarMenuButton>
             </SidebarMenuItem>
