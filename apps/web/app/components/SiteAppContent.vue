@@ -7,7 +7,7 @@
                         'bg-background',
                         'border border-input rounded-xl shadow-xs',
                         'w-full lg:w-md',
-                        'shrink-0 overflow-y-auto overscroll-none',
+                        'shrink-0',
                     )"
                 >
                     <div class="flex items-center justify-between px-2 py-3 gap-1">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="px-4 py-3">
-                        <p>rules list</p>
+                        <RulesList />
                     </div>
                 </div>
 
