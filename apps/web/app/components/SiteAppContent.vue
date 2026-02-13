@@ -1,5 +1,5 @@
 <template>
-    <SidebarInset class="py-3 mx-4 lg:me-3">
+    <SidebarInset class="py-3 mx-4 lg:mx-0 lg:me-3">
         <div class="h-screen overflow-hidden">
             <SiteAppMobileHeader />
             <div class="relative flex h-full gap-0 md:gap-1 min-h-0">
