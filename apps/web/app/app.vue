@@ -1,8 +1,10 @@
 <template>
     <SiteBody>
         <SidebarProvider>
-            <SiteAppSidebar />
-            <SiteAppContent />
+            <RulesProvider>
+                <SiteAppSidebar />
+                <SiteAppContent />
+            </RulesProvider>
         </SidebarProvider>
     </SiteBody>
 </template>
