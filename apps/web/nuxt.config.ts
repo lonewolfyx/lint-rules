@@ -22,6 +22,8 @@ export default defineNuxtConfig({
                 { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
                 // https://mathiasbynens.be/notes/touch-icons
                 // https://iconifier.net
+                // https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+                // https://gist.github.com/nareshdevineni/bbbc45110a5b4b5a4a784a0a26c64bbf
                 { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
                 { rel: 'apple-touch-icon', href: '/apple-touch-icon-57x57.png', sizes: '57x57' },
                 { rel: 'apple-touch-icon', href: '/apple-touch-icon-72x72.png', sizes: '72x72' },
