@@ -20,6 +20,8 @@ export default defineNuxtConfig({
             link: [
                 { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
                 { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
+                // https://mathiasbynens.be/notes/touch-icons
+                // https://iconifier.net
                 { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
                 { rel: 'apple-touch-icon', href: '/apple-touch-icon-57x57.png', sizes: '57x57' },
                 { rel: 'apple-touch-icon', href: '/apple-touch-icon-72x72.png', sizes: '72x72' },
