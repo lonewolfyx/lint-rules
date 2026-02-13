@@ -1,7 +1,7 @@
 <template>
     <SidebarInset class="py-3 me-3">
         <div class="h-screen overflow-hidden">
-            <div class="relative flex h-full gap-1 min-h-0">
+            <RulesProvider class="relative flex h-full gap-1 min-h-0">
                 <div
                     :class="cn(
                         'bg-background',
@@ -45,7 +45,7 @@
                         <p>rule readme</p>
                     </div>
                 </div>
-            </div>
+            </RulesProvider>
         </div>
     </SidebarInset>
 </template>
