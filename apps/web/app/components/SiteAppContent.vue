@@ -42,7 +42,7 @@
                     class="bg-background border border-input rounded-xl shadow-xs flex-1 overflow-y-auto overscroll-none"
                 >
                     <div class="px-4 py-3">
-                        <p>rule readme</p>
+                        <RulesReadme />
                     </div>
                 </div>
             </RulesProvider>
