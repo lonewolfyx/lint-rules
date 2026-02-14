@@ -1,7 +1,9 @@
 import { readFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { load } from 'cheerio'
+import { downloadTemplate } from 'giget'
 import { marked } from 'marked'
+import { rimraf } from 'rimraf'
 import { x } from 'tinyexec'
 import { TEMP_PATH } from './constant'
 import { RuleDocParser } from './parse/oxlint.rule.doc.parser'
@@ -44,11 +46,12 @@ async function getRuleDescription(rule: OxlintRules) {
 async function generateOxlintRules() {
     const ruleCommand = await x('oxlint', ['--rules', '-f', 'json'])
     const rules = JSON.parse(ruleCommand.stdout.trim()) as OxlintRules[]
+    await writeRules(resolve(TEMP_PATH, '../apps/web/data/oxlint-rules.json'), JSON.stringify(rules, null, 2))
 
-    // await downloadTemplate('github:oxc-project/website', {
-    //     cwd: TEMP_PATH,
-    // })
-    // const TmpFolder = resolve(TEMP_PATH, 'oxc-project-website')
+    await downloadTemplate('github:oxc-project/website', {
+        cwd: TEMP_PATH,
+    })
+    const TmpFolder = resolve(TEMP_PATH, 'oxc-project-website')
     const parser = new RuleDocParser()
 
     const data = await Promise.all(
@@ -66,8 +69,8 @@ async function generateOxlintRules() {
         }),
     )
 
-    // await rimraf(TmpFolder)
-    await writeRules(resolve(TEMP_PATH, '../apps/web/data/oxlint-rules.json'), JSON.stringify(data, null, 2))
+    await rimraf(TmpFolder)
+    await writeRules(resolve(TEMP_PATH, '../apps/web/data/oxlint-schema.json'), JSON.stringify(data, null, 2))
 }
 
 (async () => {
