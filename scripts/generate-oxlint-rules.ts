@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+import { cp, readFile } from 'node:fs/promises'
 import { join, resolve } from 'node:path'
 import { load } from 'cheerio'
 import { downloadTemplate } from 'giget'
@@ -68,6 +68,11 @@ async function generateOxlintRules() {
             }
         }),
     )
+
+    const rulesContentPath = resolve(TEMP_PATH, 'oxc-project-website/src/docs/guide/usage/linter/rules')
+    const targetPath = resolve(TEMP_PATH, '../apps/web/content/oxlint/')
+    await cp(rulesContentPath, targetPath, { recursive: true })
+    console.log(`Rules content copied to ${targetPath}`)
 
     await rimraf(TmpFolder)
     await writeRules(resolve(TEMP_PATH, '../apps/web/data/oxlint-schema.json'), JSON.stringify(data, null, 2))
