@@ -14,9 +14,9 @@
                     as-child
                     :class="cn(
                         'transition-colors cursor-pointer',
-                        'hover:bg-background hover:[&_span]:text-indigo-800',
+                        'hover:bg-background hover:[&_span]:text-indigo-800 dark:[&_span]:text-white',
                         {
-                            'bg-background [&_span]:text-indigo-800': navigation.target === linter,
+                            'bg-background [&_span]:text-indigo-800 dark:[&_span]:text-white': navigation.target === linter,
                         },
                     )"
                     @click="triggerLint(navigation.target as TLinter)"
