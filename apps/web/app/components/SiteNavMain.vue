@@ -1,6 +1,6 @@
 <template>
     <SidebarGroup
-        v-for="nav in app.navigation"
+        v-for="nav in app.navigation as INavigation"
         :key="nav.label"
     >
         <SidebarGroupLabel>{{ nav.label }}</SidebarGroupLabel>
@@ -10,8 +10,6 @@
                 :key="navigation.title"
             >
                 <SidebarMenuButton
-                    :tooltip="navigation.title"
-                    as-child
                     :class="cn(
                         'transition-colors cursor-pointer',
                         'hover:bg-background hover:[&_span]:text-indigo-800 dark:[&_span]:text-white',
@@ -19,7 +17,9 @@
                             'bg-background [&_span]:text-indigo-800 dark:[&_span]:text-white': navigation.target === linter,
                         },
                     )"
-                    @click="triggerLint(navigation.target as TLinter)"
+                    :tooltip="navigation.title"
+                    as-child
+                    @click="triggerLint(navigation.target)"
                 >
                     <div class="flex justify-start items-center">
                         <Icon
@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { TLinter } from '#shared/types/lint'
+import type { INavigation } from '#shared/types/navigation'
 import {
     SidebarGroup,
     SidebarGroupLabel,
