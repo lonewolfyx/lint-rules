@@ -226,19 +226,19 @@
                         "type": "integer"
                     },
                     "variant": {
-                        "type": "object",
-                        "properties": {
-                            "`\"classic\"`": {},
-                            "`\"modified\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "classic",
+                            "modified"
+                        ]
                     }
                 },
                 "additionalProperties": false
             },
             "defaultOptions": [
                 {
-                    "max": 20
+                    "max": 20,
+                    "variant": "classic"
                 }
             ]
         }
@@ -261,14 +261,13 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "object",
-                        "properties": {
-                            "`\"all\"`": {},
-                            "`\"multi\"`": {},
-                            "`\"multi-line\"`": {},
-                            "`\"multi-or-nest\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "all",
+                            "multi",
+                            "multi-line",
+                            "multi-or-nest"
+                        ]
                     },
                     {}
                 ]
@@ -320,21 +319,22 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "object",
-                        "properties": {
-                            "`\"smart\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "always",
+                            "smart"
+                        ]
                     },
                     {
                         "type": "object",
                         "properties": {
                             "null": {
-                                "type": "object",
-                                "properties": {
-                                    "`\"ignore\"`": {}
-                                },
-                                "additionalProperties": false
+                                "type": "string",
+                                "enum": [
+                                    "always",
+                                    "never",
+                                    "ignore"
+                                ]
                             }
                         },
                         "additionalProperties": false
@@ -362,11 +362,12 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "object",
-                        "properties": {
-                            "`\"as-needed\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "always",
+                            "as-needed",
+                            "never"
+                        ]
                     },
                     {
                         "type": "object",
@@ -464,13 +465,12 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "object",
-                        "properties": {
-                            "`\"anyOrder\"`": {},
-                            "`\"getBeforeSet\"`": {},
-                            "`\"setBeforeGet\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "anyOrder",
+                            "getBeforeSet",
+                            "setBeforeGet"
+                        ]
                     },
                     {
                         "type": "object",
@@ -507,8 +507,12 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "exceptionPatterns": {},
-                    "exceptions": {},
+                    "exceptionPatterns": {
+                        "type": "string[]"
+                    },
+                    "exceptions": {
+                        "type": "string[]"
+                    },
                     "max": {
                         "type": "integer"
                     },
@@ -762,14 +766,18 @@
                     "capIsNewExceptionPattern": {
                         "type": "string"
                     },
-                    "capIsNewExceptions": {},
+                    "capIsNewExceptions": {
+                        "type": "string[]"
+                    },
                     "newIsCap": {
                         "type": "boolean"
                     },
                     "newIsCapExceptionPattern": {
                         "type": "string"
                     },
-                    "newIsCapExceptions": {},
+                    "newIsCapExceptions": {
+                        "type": "string[]"
+                    },
                     "properties": {
                         "type": "boolean"
                     }
@@ -843,7 +851,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allow": {},
+                    "allow": {
+                        "type": "string[]"
+                    },
                     "int32Hint": {
                         "type": "boolean"
                     }
@@ -901,9 +911,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"except-parens\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -917,7 +925,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allow": {}
+                    "allow": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -1212,7 +1222,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "exceptions": {}
+                    "exceptions": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -1307,7 +1319,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "exceptions": {}
+                    "exceptions": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -1326,7 +1340,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allow": {},
+                    "allow": {
+                        "type": "string[]"
+                    },
                     "boolean": {
                         "type": "boolean"
                     },
@@ -1387,23 +1403,21 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "object",
-                        "properties": {
-                            "`\"functions\"`": {},
-                            "`\"both\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "functions",
+                            "both"
+                        ]
                     },
                     {
                         "type": "object",
                         "properties": {
                             "blockScopedFunctions": {
-                                "type": "object",
-                                "properties": {
-                                    "`\"allow\"`": {},
-                                    "`\"disallow\"`": {}
-                                },
-                                "additionalProperties": false
+                                "type": "string",
+                                "enum": [
+                                    "allow",
+                                    "disallow"
+                                ]
                             }
                         },
                         "additionalProperties": false
@@ -1421,7 +1435,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allowConstructorFlags": {}
+                    "allowConstructorFlags": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -1718,8 +1734,12 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "ignorePropertyModificationsFor": {},
-                    "ignorePropertyModificationsForRegex": {},
+                    "ignorePropertyModificationsFor": {
+                        "type": "string[]"
+                    },
+                    "ignorePropertyModificationsForRegex": {
+                        "type": "string[]"
+                    },
                     "props": {
                         "type": "boolean"
                     }
@@ -1859,9 +1879,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"except-parens\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -2191,13 +2209,12 @@
                 "type": "object",
                 "properties": {
                     "args": {
-                        "type": "object",
-                        "properties": {
-                            "`\"after-used\"`": {},
-                            "`\"all\"`": {},
-                            "`\"none\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "after-used",
+                            "all",
+                            "none"
+                        ]
                     },
                     "argsIgnorePattern": {
                         "type": "object",
@@ -2207,12 +2224,11 @@
                         "additionalProperties": false
                     },
                     "caughtErrors": {
-                        "type": "object",
-                        "properties": {
-                            "`\"all\"`": {},
-                            "`\"none\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "all",
+                            "none"
+                        ]
                     },
                     "caughtErrorsIgnorePattern": {
                         "type": "object",
@@ -2264,12 +2280,11 @@
                         "additionalProperties": false
                     },
                     "vars": {
-                        "type": "object",
-                        "properties": {
-                            "`\"all\"`": {},
-                            "`\"local\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "all",
+                            "local"
+                        ]
                     },
                     "varsIgnorePattern": {
                         "type": "object",
@@ -2281,7 +2296,12 @@
                 },
                 "additionalProperties": false
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                {
+                    "args": "after-used",
+                    "vars": "all"
+                }
+            ]
         }
     },
     {
@@ -2358,7 +2378,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allowRegexCharacters": {}
+                    "allowRegexCharacters": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -2477,12 +2499,11 @@
                 "type": "object",
                 "properties": {
                     "destructuring": {
-                        "type": "object",
-                        "properties": {
-                            "`\"any\"`": {},
-                            "`\"all\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "any",
+                            "all"
+                        ]
                     },
                     "ignoreReadBeforeAssign": {
                         "type": "boolean"
@@ -2662,9 +2683,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"as-needed\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -2926,10 +2945,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"prefer-top-level\"`": {},
-                    "`\"prefer-inline\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -2982,12 +2998,11 @@
                             "type": "object",
                             "properties": {
                                 "action": {
-                                    "type": "object",
-                                    "properties": {
-                                        "`\"enforce\"`": {},
-                                        "`\"ignore\"`": {}
-                                    },
-                                    "additionalProperties": false
+                                    "type": "string",
+                                    "enum": [
+                                        "enforce",
+                                        "ignore"
+                                    ]
                                 },
                                 "pattern": {
                                     "type": "string"
@@ -3015,10 +3030,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"absolute-first\"`": {},
-                    "`\"disable-absolute-first\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -3354,7 +3366,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "ignore": {}
+                    "ignore": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -3373,7 +3387,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allow": {}
+                    "allow": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -3406,7 +3422,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allow": {}
+                    "allow": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -3501,8 +3519,12 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "additionalTestBlockFunctions": {},
-                    "assertFunctionNames": {}
+                    "additionalTestBlockFunctions": {
+                        "type": "string[]"
+                    },
+                    "assertFunctionNames": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -3685,7 +3707,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allow": {}
+                    "allow": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -3805,7 +3829,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "additionalTestBlockFunctions": {}
+                    "additionalTestBlockFunctions": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -3941,8 +3967,12 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allowedPrefixes": {},
-                    "ignore": {},
+                    "allowedPrefixes": {
+                        "type": "string[]"
+                    },
+                    "ignore": {
+                        "type": "string[]"
+                    },
                     "ignoreTopLevelDescribe": {
                         "type": "boolean"
                     },
@@ -4051,7 +4081,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allowedFunctionCalls": {}
+                    "allowedFunctionCalls": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4112,7 +4144,9 @@
                     "alwaysAwait": {
                         "type": "boolean"
                     },
-                    "asyncMatchers": {},
+                    "asyncMatchers": {
+                        "type": "string[]"
+                    },
                     "maxArgs": {
                         "type": "integer"
                     },
@@ -4170,7 +4204,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "definedTags": {},
+                    "definedTags": {
+                        "type": "string[]"
+                    },
                     "jsxTags": {
                         "type": "boolean"
                     },
@@ -4197,7 +4233,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "tags": {}
+                    "tags": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4267,7 +4305,9 @@
                     "checkTypesPattern": {
                         "type": "string"
                     },
-                    "exemptedBy": {}
+                    "exemptedBy": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4364,7 +4404,9 @@
                     "checkGetters": {
                         "type": "boolean"
                     },
-                    "exemptedBy": {},
+                    "exemptedBy": {
+                        "type": "string[]"
+                    },
                     "forceRequireReturn": {
                         "type": "boolean"
                     },
@@ -4413,7 +4455,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "exemptedBy": {},
+                    "exemptedBy": {
+                        "type": "string[]"
+                    },
                     "forceRequireYields": {
                         "type": "boolean"
                     },
@@ -4442,10 +4486,18 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "area": {},
-                    "img": {},
-                    "input[type=\"image\"]": {},
-                    "object": {}
+                    "area": {
+                        "type": "string[]"
+                    },
+                    "img": {
+                        "type": "string[]"
+                    },
+                    "input[type=\"image\"]": {
+                        "type": "string[]"
+                    },
+                    "object": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4467,7 +4519,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "words": {}
+                    "words": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4501,7 +4555,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "validHrefs": {}
+                    "validHrefs": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4547,7 +4603,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allowedInvalidRoles": {},
+                    "allowedInvalidRoles": {
+                        "type": "string[]"
+                    },
                     "ignoreNonDOM": {
                         "type": "boolean"
                     }
@@ -4579,7 +4637,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "inputComponents": {}
+                    "inputComponents": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4609,7 +4669,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "components": {}
+                    "components": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4646,8 +4708,12 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "components": {},
-                    "words": {}
+                    "components": {
+                        "type": "string[]"
+                    },
+                    "words": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4682,12 +4748,18 @@
                             "either"
                         ]
                     },
-                    "controlComponents": {},
+                    "controlComponents": {
+                        "type": "string[]"
+                    },
                     "depth": {
                         "type": "integer"
                     },
-                    "labelAttributes": {},
-                    "labelComponents": {}
+                    "labelAttributes": {
+                        "type": "string[]"
+                    },
+                    "labelComponents": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4725,9 +4797,15 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "audio": {},
-                    "track": {},
-                    "video": {}
+                    "audio": {
+                        "type": "string[]"
+                    },
+                    "track": {
+                        "type": "string[]"
+                    },
+                    "video": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4754,8 +4832,12 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "hoverInHandlers": {},
-                    "hoverOutHandlers": {}
+                    "hoverInHandlers": {
+                        "type": "string[]"
+                    },
+                    "hoverOutHandlers": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4845,8 +4927,12 @@
                     "allowExpressionValues": {
                         "type": "boolean"
                     },
-                    "roles": {},
-                    "tags": {}
+                    "roles": {
+                        "type": "string[]"
+                    },
+                    "tags": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -4881,7 +4967,9 @@
                     "allowExpressionValues": {
                         "type": "boolean"
                     },
-                    "handlers": {}
+                    "handlers": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -5162,7 +5250,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allowedVariables": {}
+                    "allowedVariables": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -5325,7 +5415,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allowedNames": {}
+                    "allowedNames": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -5484,7 +5576,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "ignoreAssignmentVariable": {},
+                    "ignoreAssignmentVariable": {
+                        "type": "string[]"
+                    },
                     "ignoreLastCallback": {
                         "type": "boolean"
                     }
@@ -5524,7 +5618,9 @@
                     "allowThen": {
                         "type": "boolean"
                     },
-                    "terminationMethod": {}
+                    "terminationMethod": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -5547,8 +5643,12 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "callbacks": {},
-                    "exceptions": {},
+                    "callbacks": {
+                        "type": "string[]"
+                    },
+                    "exceptions": {
+                        "type": "string[]"
+                    },
                     "timeoutsErr": {
                         "type": "boolean"
                     }
@@ -5702,7 +5802,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allowedMethods": {}
+                    "allowedMethods": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -5896,11 +5998,15 @@
                     {
                         "type": "object",
                         "properties": {
-                            "always": {},
+                            "always": {
+                                "type": "string[]"
+                            },
                             "assumeUndefinedIsFalse": {
                                 "type": "boolean"
                             },
-                            "never": {}
+                            "never": {
+                                "type": "string[]"
+                            }
                         },
                         "additionalProperties": false
                     }
@@ -5974,7 +6080,9 @@
                             "as-needed"
                         ]
                     },
-                    "extensions": {},
+                    "extensions": {
+                        "type": "string[]"
+                    },
                     "ignoreFilesWithoutCode": {
                         "type": "boolean"
                     }
@@ -5999,10 +6107,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"syntax\"`": {},
-                    "`\"element\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -6034,7 +6139,9 @@
                     "eventHandlerRegex": {
                         "type": "string"
                     },
-                    "ignoreComponentNames": {}
+                    "ignoreComponentNames": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -6228,7 +6335,9 @@
                     "allowNamespace": {
                         "type": "boolean"
                     },
-                    "ignore": {}
+                    "ignore": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -6266,7 +6375,9 @@
                             "enforce"
                         ]
                     },
-                    "exceptions": {},
+                    "exceptions": {
+                        "type": "string[]"
+                    },
                     "explicitSpread": {
                         "type": "string",
                         "enum": [
@@ -6337,10 +6448,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"allowed\"`": {},
-                    "`\"disallow-in-func\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -6477,7 +6585,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "ignore": {},
+                    "ignore": {
+                        "type": "string[]"
+                    },
                     "requireDataLowercase": {
                         "type": "boolean"
                     }
@@ -6533,11 +6643,15 @@
                     "allowConstantExport": {
                         "type": "boolean"
                     },
-                    "allowExportNames": {},
+                    "allowExportNames": {
+                        "type": "string[]"
+                    },
                     "checkJS": {
                         "type": "boolean"
                     },
-                    "customHOCs": {}
+                    "customHOCs": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -6637,7 +6751,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allow": {}
+                    "allow": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -6807,16 +6923,17 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "object",
-                        "properties": {
-                            "`\"constructor\"`": {},
-                            "`\"type-annotation\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "constructor",
+                            "type-annotation"
+                        ]
                     }
                 ]
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                "constructor"
+            ]
         }
     },
     {
@@ -6826,10 +6943,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"record\"`": {},
-                    "`\"index-signature\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -6857,10 +6971,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"interface\"`": {},
-                    "`\"type\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -6878,27 +6989,27 @@
                         "type": "boolean"
                     },
                     "fixStyle": {
-                        "type": "object",
-                        "properties": {
-                            "`\"separate-type-imports\"`": {},
-                            "`\"inline-type-imports\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "separate-type-imports",
+                            "inline-type-imports"
+                        ]
                     },
                     "prefer": {
-                        "type": "object",
-                        "properties": {
-                            "`\"type-imports\"`": {},
-                            "`\"no-type-imports\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "type-imports",
+                            "no-type-imports"
+                        ]
                     }
                 },
                 "additionalProperties": false
             },
             "defaultOptions": [
                 {
-                    "disallowTypeAnnotations": true
+                    "disallowTypeAnnotations": true,
+                    "fixStyle": "separate-type-imports",
+                    "prefer": "type-imports"
                 }
             ]
         }
@@ -6932,7 +7043,9 @@
                     "allowTypedFunctionExpressions": {
                         "type": "boolean"
                     },
-                    "allowedNames": {}
+                    "allowedNames": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -6973,7 +7086,9 @@
                     "allowTypedFunctionExpressions": {
                         "type": "boolean"
                     },
-                    "allowedNames": {}
+                    "allowedNames": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -7009,7 +7124,9 @@
                     "checkUnknown": {
                         "type": "boolean"
                     },
-                    "ignoredTypeNames": {}
+                    "ignoredTypeNames": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -7570,7 +7687,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allow": {},
+                    "allow": {
+                        "type": "string[]"
+                    },
                     "allowAsImport": {
                         "type": "boolean"
                     }
@@ -7617,7 +7736,9 @@
                     "allowDestructuring": {
                         "type": "boolean"
                     },
-                    "allowedNames": {}
+                    "allowedNames": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -7696,7 +7817,9 @@
                     "checkLiteralConstAssertions": {
                         "type": "boolean"
                     },
-                    "typesToIgnore": {}
+                    "typesToIgnore": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -8126,7 +8249,9 @@
                     "allowAny": {
                         "type": "boolean"
                     },
-                    "allowedPromiseNames": {},
+                    "allowedPromiseNames": {
+                        "type": "string[]"
+                    },
                     "checkArrowFunctions": {
                         "type": "boolean"
                     },
@@ -8302,10 +8427,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"in-try-catch\"`": {},
-                    "`\"error-handling-correctness-only\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -8419,11 +8541,12 @@
                         ]
                     },
                     "types": {
-                        "type": "object",
-                        "properties": {
-                            "`\"prefer-import\"`": {}
-                        },
-                        "additionalProperties": false
+                        "type": "string",
+                        "enum": [
+                            "always",
+                            "never",
+                            "prefer-import"
+                        ]
                     }
                 },
                 "additionalProperties": false
@@ -8431,7 +8554,8 @@
             "defaultOptions": [
                 {
                     "lib": "always",
-                    "path": "never"
+                    "path": "never",
+                    "types": "prefer-import"
                 }
             ]
         }
@@ -8474,7 +8598,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "ignore": {},
+                    "ignore": {
+                        "type": "string[]"
+                    },
                     "name": {
                         "type": "string"
                     }
@@ -8861,8 +8987,12 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "exclude": {},
-                    "include": {},
+                    "exclude": {
+                        "type": "string[]"
+                    },
+                    "include": {
+                        "type": "string[]"
+                    },
                     "strategy": {
                         "type": "string",
                         "enum": [
@@ -9369,7 +9499,9 @@
                     "checkAllIndexAccess": {
                         "type": "boolean"
                     },
-                    "getLastElementFunctions": {}
+                    "getLastElementFunctions": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -9621,7 +9753,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "functions": {}
+                    "functions": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -9769,7 +9903,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "functions": {}
+                    "functions": {
+                        "type": "string[]"
+                    }
                 },
                 "additionalProperties": false
             },
@@ -9866,9 +10002,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"avoid\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -10106,11 +10240,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"type-based\"`": {},
-                    "`\"type-literal\"`": {},
-                    "`\"runtime\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []
@@ -10123,10 +10253,7 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "`\"type-based\"`": {},
-                    "`\"runtime\"`": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
             "defaultOptions": []

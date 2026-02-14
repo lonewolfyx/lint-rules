@@ -59,10 +59,10 @@ export class RuleDocParser {
         for (const token of tokens) {
             if (token.type === 'heading') {
                 const heading = token as Tokens.Heading
-                const name = heading.text.trim()
+                const name = heading.text.replace(/`/g, '').trim()
 
-                // Skip enum value sub-headings like #### "always"
-                if (name.startsWith('"') || name.startsWith('\'') || name.includes('"always"') || name.includes('"never"')) {
+                // Skip enum value sub-headings like #### "always" or `"always"`
+                if (name.startsWith('"') || name.startsWith('\'') || name.includes('"always"') || name.includes('"never"') || name.includes('"prefer-import"')) {
                     continue
                 }
 
@@ -84,10 +84,10 @@ export class RuleDocParser {
             if (token.type === 'paragraph' && stack.length) {
                 const current = stack[stack.length - 1]
                 let text = (token as Tokens.Paragraph).text.trim()
-                text = text.replace(/\*\*/g, '').replace(/`/g, '').replace(/\s+/g, ' ') // remove bold and backticks, compress spaces
+                text = text.replace(/\*\*/g, '').replace(/\s+/g, ' ') // remove bold, compress spaces
 
                 // Split by lines and look for type: and default: independently
-                const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
+                const lines = text.split('\n').map(l => l.replace(/`/g, '').trim()).filter(Boolean)
 
                 for (const line of lines) {
                     if (line.startsWith('type:') || line.startsWith('Type:')) {
@@ -196,12 +196,13 @@ export class RuleDocParser {
         }
 
         const map: Record<string, JSONSchema> = {
-            boolean: { type: 'boolean' },
-            string: { type: 'string' },
-            number: { type: 'number' },
-            integer: { type: 'integer' },
-            object: { type: 'object' },
-            array: { type: 'array' },
+            'boolean': { type: 'boolean' },
+            'string': { type: 'string' },
+            'number': { type: 'number' },
+            'integer': { type: 'integer' },
+            'object': { type: 'object' },
+            'array': { type: 'array' },
+            'string[]': { type: 'string[]' },
         }
         return map[type] || {}
     }
