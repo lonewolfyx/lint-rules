@@ -81,7 +81,11 @@
                     }
                 ]
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                {
+                    "requireReturnForObjectLiteral": false
+                }
+            ]
         }
     },
     {
@@ -215,11 +219,11 @@
                         "type": "integer"
                     },
                     "variant": {
-                        "type": "string",
-                        "enum": [
-                            "classic",
-                            "modified"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"classic\"`": {},
+                            "`\"modified\"`": {}
+                        }
                     }
                 }
             },
@@ -248,13 +252,13 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "string",
-                        "enum": [
-                            "all",
-                            "multi",
-                            "multi-line",
-                            "multi-or-nest"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"all\"`": {},
+                            "`\"multi\"`": {},
+                            "`\"multi-line\"`": {},
+                            "`\"multi-or-nest\"`": {}
+                        }
                     },
                     {}
                 ]
@@ -305,22 +309,22 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "string",
-                        "enum": [
-                            "always",
-                            "smart"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"always\"`": {},
+                            "`\"smart\"`": {}
+                        }
                     },
                     {
                         "type": "object",
                         "properties": {
                             "null": {
-                                "type": "string",
-                                "enum": [
-                                    "always",
-                                    "never",
-                                    "ignore"
-                                ]
+                                "type": "object",
+                                "properties": {
+                                    "`\"always\"`": {},
+                                    "`\"never\"`": {},
+                                    "`\"ignore\"`": {}
+                                }
                             }
                         }
                     }
@@ -347,12 +351,12 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "string",
-                        "enum": [
-                            "always",
-                            "as-needed",
-                            "never"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"always\"`": {},
+                            "`\"as-needed\"`": {},
+                            "`\"never\"`": {}
+                        }
                     },
                     {
                         "type": "object",
@@ -406,7 +410,15 @@
                     }
                 ]
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                {
+                    "allowArrowFunctions": false,
+                    "allowTypeAnnotation": false,
+                    "overrides": {
+                        "namedExports": null
+                    }
+                }
+            ]
         }
     },
     {
@@ -438,12 +450,12 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "string",
-                        "enum": [
-                            "anyOrder",
-                            "getBeforeSet",
-                            "setBeforeGet"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"anyOrder\"`": {},
+                            "`\"getBeforeSet\"`": {},
+                            "`\"setBeforeGet\"`": {}
+                        }
                     },
                     {
                         "type": "object",
@@ -455,7 +467,11 @@
                     }
                 ]
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                {
+                    "enforceForTSTypes": false
+                }
+            ]
         }
     },
     {
@@ -511,11 +527,11 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "string",
-                        "enum": [
-                            "always",
-                            "never"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"always\"`": {},
+                            "`\"never\"`": {}
+                        }
                     },
                     {
                         "type": "object",
@@ -527,7 +543,11 @@
                     }
                 ]
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                {
+                    "ignoreForLoopInit": false
+                }
+            ]
         }
     },
     {
@@ -1328,21 +1348,21 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "string",
-                        "enum": [
-                            "functions",
-                            "both"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"functions\"`": {},
+                            "`\"both\"`": {}
+                        }
                     },
                     {
                         "type": "object",
                         "properties": {
                             "blockScopedFunctions": {
-                                "type": "string",
-                                "enum": [
-                                    "allow",
-                                    "disallow"
-                                ]
+                                "type": "object",
+                                "properties": {
+                                    "`\"allow\"`": {},
+                                    "`\"disallow\"`": {}
+                                }
                             }
                         }
                     }
@@ -2112,12 +2132,12 @@
                 "type": "object",
                 "properties": {
                     "args": {
-                        "type": "string",
-                        "enum": [
-                            "after-used",
-                            "all",
-                            "none"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"after-used\"`": {},
+                            "`\"all\"`": {},
+                            "`\"none\"`": {}
+                        }
                     },
                     "argsIgnorePattern": {
                         "type": "object",
@@ -2126,11 +2146,11 @@
                         }
                     },
                     "caughtErrors": {
-                        "type": "string",
-                        "enum": [
-                            "all",
-                            "none"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"all\"`": {},
+                            "`\"none\"`": {}
+                        }
                     },
                     "caughtErrorsIgnorePattern": {
                         "type": "object",
@@ -2175,11 +2195,11 @@
                         }
                     },
                     "vars": {
-                        "type": "string",
-                        "enum": [
-                            "all",
-                            "local"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"all\"`": {},
+                            "`\"local\"`": {}
+                        }
                     },
                     "varsIgnorePattern": {
                         "type": "object",
@@ -2383,11 +2403,11 @@
                 "type": "object",
                 "properties": {
                     "destructuring": {
-                        "type": "string",
-                        "enum": [
-                            "any",
-                            "all"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"any\"`": {},
+                            "`\"all\"`": {}
+                        }
                     },
                     "ignoreReadBeforeAssign": {
                         "type": "boolean"
@@ -2667,7 +2687,14 @@
                     }
                 ]
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                {
+                    "allowLineSeparatedGroups": false,
+                    "caseSensitive": true,
+                    "minKeys": 2,
+                    "natural": false
+                }
+            ]
         }
     },
     {
@@ -2776,11 +2803,11 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "string",
-                        "enum": [
-                            "never",
-                            "always"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"never\"`": {},
+                            "`\"always\"`": {}
+                        }
                     },
                     {
                         "type": "object",
@@ -2795,7 +2822,12 @@
                     }
                 ]
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                {
+                    "exceptRange": false,
+                    "onlyEquality": false
+                }
+            ]
         }
     },
     {
@@ -2861,11 +2893,11 @@
                                 "type": "object",
                                 "properties": {
                                     "action": {
-                                        "type": "string",
-                                        "enum": [
-                                            "enforce",
-                                            "ignore"
-                                        ]
+                                        "type": "object",
+                                        "properties": {
+                                            "`\"enforce\"`": {},
+                                            "`\"ignore\"`": {}
+                                        }
                                     },
                                     "pattern": {
                                         "type": "string"
@@ -5654,7 +5686,17 @@
                     "forbid": {
                         "type": "object",
                         "properties": {
-                            "forbid[n]": {}
+                            "forbid[n]": {
+                                "type": "object",
+                                "properties": {
+                                    "element": {
+                                        "type": "string"
+                                    },
+                                    "message": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -5689,11 +5731,11 @@
                 "type": "array",
                 "items": [
                     {
-                        "type": "string",
-                        "enum": [
-                            "always",
-                            "never"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"always\"`": {},
+                            "`\"never\"`": {}
+                        }
                     },
                     {
                         "type": "object",
@@ -5707,7 +5749,13 @@
                     }
                 ]
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                {
+                    "always": [],
+                    "assumeUndefinedIsFalse": false,
+                    "never": []
+                }
+            ]
         }
     },
     {
@@ -6510,7 +6558,7 @@
             },
             "defaultOptions": [
                 {
-                    "default": null,
+                    "default": "array",
                     "readonly": null
                 }
             ]
@@ -6585,11 +6633,11 @@
                 "type": "object",
                 "properties": {
                     "option": {
-                        "type": "string",
-                        "enum": [
-                            "constructor",
-                            "type-annotation"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"constructor\"`": {},
+                            "`\"type-annotation\"`": {}
+                        }
                     }
                 }
             },
@@ -6652,18 +6700,18 @@
                         "type": "boolean"
                     },
                     "fixStyle": {
-                        "type": "string",
-                        "enum": [
-                            "separate-type-imports",
-                            "inline-type-imports"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"separate-type-imports\"`": {},
+                            "`\"inline-type-imports\"`": {}
+                        }
                     },
                     "prefer": {
-                        "type": "string",
-                        "enum": [
-                            "type-imports",
-                            "no-type-imports"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"type-imports\"`": {},
+                            "`\"no-type-imports\"`": {}
+                        }
                     }
                 }
             },
@@ -7121,7 +7169,14 @@
                     "allowAsThisParameter": {
                         "type": "boolean"
                     },
-                    "allowInGenericTypeArguments": {}
+                    "allowInGenericTypeArguments": {
+                        "type": "object",
+                        "properties": {
+                            "allowInGenericTypeArguments[n]": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 }
             },
             "defaultOptions": [
@@ -7174,7 +7229,29 @@
                     "checksSpreads": {
                         "type": "boolean"
                     },
-                    "checksVoidReturn": {}
+                    "checksVoidReturn": {
+                        "type": "object",
+                        "properties": {
+                            "arguments": {
+                                "type": "boolean"
+                            },
+                            "attributes": {
+                                "type": "boolean"
+                            },
+                            "inheritedMethods": {
+                                "type": "boolean"
+                            },
+                            "properties": {
+                                "type": "boolean"
+                            },
+                            "returns": {
+                                "type": "boolean"
+                            },
+                            "variables": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
                 }
             },
             "defaultOptions": [
@@ -8103,26 +8180,26 @@
                 "type": "object",
                 "properties": {
                     "lib": {
-                        "type": "string",
-                        "enum": [
-                            "always",
-                            "never"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"always\"`": {},
+                            "`\"never\"`": {}
+                        }
                     },
                     "path": {
-                        "type": "string",
-                        "enum": [
-                            "always",
-                            "never"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"always\"`": {},
+                            "`\"never\"`": {}
+                        }
                     },
                     "types": {
-                        "type": "string",
-                        "enum": [
-                            "always",
-                            "never",
-                            "prefer-import"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"always\"`": {},
+                            "`\"never\"`": {},
+                            "`\"prefer-import\"`": {}
+                        }
                     }
                 }
             },
@@ -9807,11 +9884,11 @@
                 "type": "object",
                 "properties": {
                     "destructure": {
-                        "type": "string",
-                        "enum": [
-                            "always",
-                            "never"
-                        ]
+                        "type": "object",
+                        "properties": {
+                            "`\"always\"`": {},
+                            "`\"never\"`": {}
+                        }
                     }
                 }
             },
