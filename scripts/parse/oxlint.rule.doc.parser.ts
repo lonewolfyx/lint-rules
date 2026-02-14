@@ -1,3 +1,4 @@
+import type { Token, Tokens } from 'marked'
 import { marked } from 'marked'
 
 interface JSONSchema {
@@ -5,6 +6,7 @@ interface JSONSchema {
     enum?: string[]
     items?: JSONSchema | JSONSchema[]
     properties?: Record<string, JSONSchema>
+    additionalProperties?: boolean | JSONSchema
 }
 
 interface ParsedRuleDoc {
@@ -25,10 +27,7 @@ export class RuleDocParser {
         const tokens = marked.lexer(markdown)
         const configTokens = this.extractConfigurationSection(tokens)
         if (configTokens.length === 0) {
-            return {
-                schema: {},
-                defaultOptions: [],
-            }
+            return { schema: {}, defaultOptions: [] }
         }
         const tree = this.buildConfigTree(configTokens)
         if (this.isTupleRule(tree)) {
@@ -37,38 +36,42 @@ export class RuleDocParser {
         return this.buildObjectSchema(tree)
     }
 
-    private extractConfigurationSection(tokens: any[]): any[] {
+    private extractConfigurationSection(tokens: Token[]): Token[] {
         const startIndex = tokens.findIndex(
-            t =>
-                t.type === 'heading'
-                && t.depth === 2
-                && t.text.trim() === 'Configuration',
+            t => t.type === 'heading' && (t as Tokens.Heading).depth === 2 && (t as Tokens.Heading).text.trim() === 'Configuration',
         )
         if (startIndex === -1)
             return []
-        const section: any[] = []
+        const section: Token[] = []
         for (let i = startIndex + 1; i < tokens.length; i++) {
             const t = tokens[i]
-            if (t.type === 'heading' && t.depth === 2)
+            if (t.type === 'heading' && (t as Tokens.Heading).depth === 2)
                 break
             section.push(t)
         }
         return section
     }
 
-    private buildConfigTree(tokens: any[]): ConfigNode[] {
+    private buildConfigTree(tokens: Token[]): ConfigNode[] {
         const stack: ConfigNode[] = []
         const roots: ConfigNode[] = []
+
         for (const token of tokens) {
             if (token.type === 'heading') {
-                const node: ConfigNode = {
-                    name: token.text.trim(),
-                    depth: token.depth,
-                    children: [],
+                const heading = token as Tokens.Heading
+                const name = heading.text.trim()
+
+                // Skip enum value sub-headings like #### "always"
+                if (name.startsWith('"') || name.startsWith('\'') || name.includes('"always"') || name.includes('"never"')) {
+                    continue
                 }
-                while (stack.length && stack[stack.length - 1].depth >= token.depth) {
+
+                const node: ConfigNode = { name, depth: heading.depth, children: [] }
+
+                while (stack.length && stack[stack.length - 1].depth >= heading.depth) {
                     stack.pop()
                 }
+
                 if (stack.length === 0) {
                     roots.push(node)
                 }
@@ -77,19 +80,23 @@ export class RuleDocParser {
                 }
                 stack.push(node)
             }
+
             if (token.type === 'paragraph' && stack.length) {
                 const current = stack[stack.length - 1]
-                let text = token.text.trim()
+                let text = (token as Tokens.Paragraph).text.trim()
+                text = text.replace(/\*\*/g, '').replace(/`/g, '').replace(/\s+/g, ' ') // remove bold and backticks, compress spaces
 
-                // 去除常见的 markdown 加粗，如 **type:** → type:
-                text = text.replace(/\*\*(.+?):\*\*/g, '$1:').replace(/\*\*/g, '')
+                // Split by lines and look for type: and default: independently
+                const lines = text.split('\n').map(l => l.trim()).filter(Boolean)
 
-                if (text.startsWith('type:') || text.startsWith('Type:')) {
-                    current.type = text.replace(/^type:/i, '').trim()
-                }
-                if (text.startsWith('default:') || text.startsWith('Default:')) {
-                    const raw = text.replace(/^default:/i, '').trim()
-                    current.default = this.parseValue(raw, current.type)
+                for (const line of lines) {
+                    if (line.startsWith('type:') || line.startsWith('Type:')) {
+                        current.type = line.replace(/^type:/i, '').trim()
+                    }
+                    else if (line.startsWith('default:') || line.startsWith('Default:')) {
+                        const raw = line.replace(/^default:/i, '').trim()
+                        current.default = this.parseValue(raw, current.type)
+                    }
                 }
             }
         }
@@ -97,24 +104,30 @@ export class RuleDocParser {
     }
 
     private isTupleRule(nodes: ConfigNode[]): boolean {
-        return nodes.some(n => n.name.includes('1st option'))
+        return nodes.some(n => n.name.includes('1st option') || n.name.includes('option'))
     }
 
     private buildObjectSchema(nodes: ConfigNode[]): ParsedRuleDoc {
         const properties: Record<string, JSONSchema> = {}
         const defaults: Record<string, any> = {}
+
         for (const node of nodes) {
             const key = node.name.trim()
+            if (key.startsWith('"') || key === '')
+                continue
+
             properties[key] = this.buildSchemaFromNode(node)
-            const defaultValue = this.buildDefaultFromNode(node)
-            if (defaultValue !== undefined) {
-                defaults[key] = defaultValue
+            const def = this.buildDefaultFromNode(node)
+            if (def !== undefined) {
+                defaults[key] = def
             }
         }
+
         return {
             schema: {
                 type: 'object',
                 properties,
+                additionalProperties: false,
             },
             defaultOptions: Object.keys(defaults).length ? [defaults] : [],
         }
@@ -125,16 +138,12 @@ export class RuleDocParser {
         const defaults: any[] = []
         for (const node of nodes) {
             items.push(this.buildSchemaFromNode(node))
-            const defaultValue = this.buildDefaultFromNode(node)
-            if (defaultValue !== undefined) {
-                defaults.push(defaultValue)
-            }
+            const def = this.buildDefaultFromNode(node)
+            if (def !== undefined)
+                defaults.push(def)
         }
         return {
-            schema: {
-                type: 'array',
-                items,
-            },
+            schema: { type: 'array', items },
             defaultOptions: defaults,
         }
     }
@@ -146,33 +155,28 @@ export class RuleDocParser {
 
         if (node.type?.trim() === 'array') {
             let items: JSONSchema | JSONSchema[] = {}
-            if (node.children.length > 0) {
-                // Handle [n] for homogeneous array
-                const itemChild = node.children.find(c => c.name === `${node.name}[n]` || c.name.endsWith('[n]'))
-                if (itemChild) {
-                    items = this.buildSchemaFromNode(itemChild)
-                }
-                else {
-                    // Tuple-like array
-                    items = node.children.map(child => this.buildSchemaFromNode(child))
-                }
+            const itemChild = node.children.find(c => c.name.endsWith('[n]'))
+            if (itemChild) {
+                items = this.buildSchemaFromNode(itemChild)
             }
-            return {
-                type: 'array',
-                items,
+            else {
+                items = node.children.map(c => this.buildSchemaFromNode(c))
             }
+            return { type: 'array', items }
         }
-        else {
-            // Object
-            const properties: Record<string, JSONSchema> = {}
-            for (const child of node.children) {
-                const key = child.name.split('.').pop()!.trim()
-                properties[key] = this.buildSchemaFromNode(child)
-            }
-            return {
-                type: 'object',
-                properties,
-            }
+
+        const properties: Record<string, JSONSchema> = {}
+        for (const child of node.children) {
+            const key = child.name.split('.').pop()!.trim()
+            if (key.startsWith('"') || key === '')
+                continue
+            properties[key] = this.buildSchemaFromNode(child)
+        }
+
+        return {
+            type: 'object',
+            properties,
+            additionalProperties: false,
         }
     }
 
@@ -182,19 +186,16 @@ export class RuleDocParser {
         type = type.replace(/`/g, '').trim()
 
         if (type.includes('|')) {
-            // 提取 "xxx" | "yyy" 中的字符串
-            const matches = type.match(/"([^"]+)"/g)
-            if (matches) {
-                const enumValues = matches.map(m => m.slice(1, -1))
+            const matches = type.match(/"[^"]+"/g) ?? []
+            if (matches.length > 0) {
                 return {
                     type: 'string',
-                    enum: enumValues,
+                    enum: matches.map(m => m.slice(1, -1)),
                 }
             }
-            // 如果有其他 union 类型，可扩展
         }
 
-        const simpleMap: Record<string, JSONSchema> = {
+        const map: Record<string, JSONSchema> = {
             boolean: { type: 'boolean' },
             string: { type: 'string' },
             number: { type: 'number' },
@@ -202,53 +203,59 @@ export class RuleDocParser {
             object: { type: 'object' },
             array: { type: 'array' },
         }
-
-        return simpleMap[type] || {}
+        return map[type] || {}
     }
 
     private parseValue(raw: string, type?: string): any {
-        if (!type)
-            return raw
         raw = raw.replace(/`/g, '').trim()
-        type = type.replace(/`/g, '').trim()
         if (raw.startsWith('"') && raw.endsWith('"')) {
-            raw = raw.slice(1, -1)
+            return raw.slice(1, -1)
         }
-        if (type === 'boolean') {
-            return raw === 'true'
+        if (raw.startsWith('\'') && raw.endsWith('\'')) {
+            return raw.slice(1, -1)
         }
-        if (type === 'number' || type === 'integer') {
+        const lower = raw.toLowerCase()
+        if (type === 'boolean')
+            return lower === 'true'
+        if (type === 'number' || type === 'integer')
             return Number(raw)
-        }
-        if (type === 'array' || type === 'object' || type.startsWith('Record<') || type === '[]' || type.endsWith('[]')) {
+        if (type && (type.includes('array') || type.includes('object') || type.startsWith('Record<'))) {
             try {
                 return JSON.parse(raw)
             }
             catch {
-                return undefined
             }
         }
-        return raw === 'null' ? null : raw
+        try {
+            return JSON.parse(raw)
+        }
+        catch {
+        }
+        if (lower === 'true')
+            return true
+        if (lower === 'false')
+            return false
+        if (raw === 'null')
+            return null
+        if (/^-?\d+(?:\.\d+)?$/.test(raw))
+            return Number(raw)
+        return raw
     }
 
     private buildDefaultFromNode(node: ConfigNode): any {
         if (node.children.length > 0) {
-            if (node.type?.trim() === 'array') {
-                // For arrays, default is usually [], but if children have defaults, perhaps collect
-                // But in examples, default is set on parent
+            if (node.type?.trim() === 'array')
                 return node.default
+            const obj: any = {}
+            for (const child of node.children) {
+                const key = child.name.split('.').pop()!.trim()
+                if (key.startsWith('"') || key === '')
+                    continue
+                const val = this.buildDefaultFromNode(child)
+                if (val !== undefined)
+                    obj[key] = val
             }
-            else {
-                const obj: any = {}
-                for (const child of node.children) {
-                    const key = child.name.split('.').pop()!.trim()
-                    const value = this.buildDefaultFromNode(child)
-                    if (value !== undefined) {
-                        obj[key] = value
-                    }
-                }
-                return Object.keys(obj).length ? obj : undefined
-            }
+            return Object.keys(obj).length ? obj : undefined
         }
         return node.default
     }
