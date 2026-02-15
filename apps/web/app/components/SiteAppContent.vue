@@ -5,9 +5,10 @@
             <div class="relative flex h-full gap-0 md:gap-1 min-h-0">
                 <div
                     :class="cn(
+                        'hidden md:inline-flex md:flex-col',
                         'bg-background',
                         'border border-input rounded-xl shadow-xs',
-                        'w-full',
+                        'w-full lg:w-xs',
                         'shrink-0',
                     )"
                 >
@@ -34,7 +35,14 @@
                             </Button>
                         </div>
                     </div>
-                    <div class="px-4 py-3">
+                </div>
+                <div
+                    :class="cn(
+                        'hidden md:block',
+                    )"
+                    class="bg-background border border-input rounded-xl shadow-xs flex-1 overflow-y-auto"
+                >
+                    <div class="flex px-4 py-3">
                         <RulesList />
                     </div>
                 </div>

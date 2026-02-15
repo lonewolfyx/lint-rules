@@ -1,5 +1,5 @@
 <template>
-    <ScrollArea class="overflow-hidden w-full min-h-full h-[calc(100vh-7rem)]">
+    <ScrollArea class="overflow-hidden w-full min-h-full h-[calc(100vh-3rem)]">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:me-4">
             <RulesListItem
                 v-for="(rule, index) in rulesData as Rule"
