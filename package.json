@@ -24,10 +24,12 @@
         "lint:fix": "eslint --fix",
         "prepare": "simple-git-hooks",
         "generate:eslint:rules": "oxnode ./scripts/generate-eslint-rules.ts",
-        "generate:oxlint:rules": "oxnode ./scripts/generate-oxlint-rules.ts"
+        "generate:oxlint:rules": "oxnode ./scripts/generate-oxlint-rules.ts",
+        "generate:eslint:plugin": "oxnode ./scripts/generate-eslint-plugins.ts"
     },
     "devDependencies": {
         "@antfu/eslint-config": "catalog:",
+        "@stylistic/eslint-plugin": "catalog:",
         "@tailwindcss/vite": "catalog:",
         "@types/node": "catalog:",
         "cheerio": "catalog:",

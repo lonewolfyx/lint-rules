@@ -1,0 +1,881 @@
+{
+    "eslint.style": {
+        "name": "eslint.style",
+        "description": "sss",
+        "rules": {
+            "array-bracket-newline": {
+                "description": "Enforce linebreaks after opening and before closing array brackets",
+                "docsUrl": "https://eslint.style/rules/array-bracket-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "array-bracket-spacing": {
+                "description": "Enforce consistent spacing inside array brackets",
+                "docsUrl": "https://eslint.style/rules/array-bracket-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "array-element-newline": {
+                "description": "Enforce line breaks after each array element",
+                "docsUrl": "https://eslint.style/rules/array-element-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "arrow-parens": {
+                "description": "Require parentheses around arrow function arguments",
+                "docsUrl": "https://eslint.style/rules/arrow-parens",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "arrow-spacing": {
+                "description": "Enforce consistent spacing before and after the arrow in arrow functions",
+                "docsUrl": "https://eslint.style/rules/arrow-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "block-spacing": {
+                "description": "Disallow or enforce spaces inside of blocks after opening block and before closing block",
+                "docsUrl": "https://eslint.style/rules/block-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "brace-style": {
+                "description": "Enforce consistent brace style for blocks",
+                "docsUrl": "https://eslint.style/rules/brace-style",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "comma-dangle": {
+                "description": "Require or disallow trailing commas",
+                "docsUrl": "https://eslint.style/rules/comma-dangle",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "comma-spacing": {
+                "description": "Enforce consistent spacing before and after commas",
+                "docsUrl": "https://eslint.style/rules/comma-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "comma-style": {
+                "description": "Enforce consistent comma style",
+                "docsUrl": "https://eslint.style/rules/comma-style",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "computed-property-spacing": {
+                "description": "Enforce consistent spacing inside computed property brackets",
+                "docsUrl": "https://eslint.style/rules/computed-property-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "curly-newline": {
+                "description": "Enforce consistent line breaks after opening and before closing braces",
+                "docsUrl": "https://eslint.style/rules/curly-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "dot-location": {
+                "description": "Enforce consistent newlines before and after dots",
+                "docsUrl": "https://eslint.style/rules/dot-location",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "eol-last": {
+                "description": "Require or disallow newline at the end of files",
+                "docsUrl": "https://eslint.style/rules/eol-last",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "function-call-argument-newline": {
+                "description": "Enforce line breaks between arguments of a function call",
+                "docsUrl": "https://eslint.style/rules/function-call-argument-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "function-call-spacing": {
+                "description": "Require or disallow spacing between function identifiers and their invocations",
+                "docsUrl": "https://eslint.style/rules/function-call-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "function-paren-newline": {
+                "description": "Enforce consistent line breaks inside function parentheses",
+                "docsUrl": "https://eslint.style/rules/function-paren-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "generator-star-spacing": {
+                "description": "Enforce consistent spacing around `*` operators in generator functions",
+                "docsUrl": "https://eslint.style/rules/generator-star-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "implicit-arrow-linebreak": {
+                "description": "Enforce the location of arrow function bodies",
+                "docsUrl": "https://eslint.style/rules/implicit-arrow-linebreak",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "indent": {
+                "description": "Enforce consistent indentation",
+                "docsUrl": "https://eslint.style/rules/indent",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "indent-binary-ops": {
+                "description": "Indentation for binary operators",
+                "docsUrl": "https://eslint.style/rules/indent-binary-ops",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-child-element-spacing": {
+                "description": "Enforce or disallow spaces inside of curly braces in JSX attributes and expressions",
+                "docsUrl": "https://eslint.style/rules/jsx-child-element-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-closing-bracket-location": {
+                "description": "Enforce closing bracket location in JSX",
+                "docsUrl": "https://eslint.style/rules/jsx-closing-bracket-location",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-closing-tag-location": {
+                "description": "Enforce closing tag location for multiline JSX",
+                "docsUrl": "https://eslint.style/rules/jsx-closing-tag-location",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-curly-brace-presence": {
+                "description": "Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes",
+                "docsUrl": "https://eslint.style/rules/jsx-curly-brace-presence",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-curly-newline": {
+                "description": "Enforce consistent linebreaks in curly braces in JSX attributes and expressions",
+                "docsUrl": "https://eslint.style/rules/jsx-curly-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-curly-spacing": {
+                "description": "Enforce or disallow spaces inside of curly braces in JSX attributes and expressions",
+                "docsUrl": "https://eslint.style/rules/jsx-curly-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-equals-spacing": {
+                "description": "Enforce or disallow spaces around equal signs in JSX attributes",
+                "docsUrl": "https://eslint.style/rules/jsx-equals-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-first-prop-new-line": {
+                "description": "Enforce proper position of the first property in JSX",
+                "docsUrl": "https://eslint.style/rules/jsx-first-prop-new-line",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-function-call-newline": {
+                "description": "Enforce line breaks before and after JSX elements when they are used as arguments to a function.",
+                "docsUrl": "https://eslint.style/rules/jsx-function-call-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-indent": {
+                "description": "Enforce JSX indentation. Deprecated, use `indent` rule instead.",
+                "docsUrl": "https://eslint.style/rules/jsx-indent",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-indent-props": {
+                "description": "Enforce props indentation in JSX",
+                "docsUrl": "https://eslint.style/rules/jsx-indent-props",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-max-props-per-line": {
+                "description": "Enforce maximum of props on a single line in JSX",
+                "docsUrl": "https://eslint.style/rules/jsx-max-props-per-line",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-newline": {
+                "description": "Require or prevent a new line after jsx elements and expressions.",
+                "docsUrl": "https://eslint.style/rules/jsx-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-one-expression-per-line": {
+                "description": "Require one JSX element per line",
+                "docsUrl": "https://eslint.style/rules/jsx-one-expression-per-line",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-pascal-case": {
+                "description": "Enforce PascalCase for user-defined JSX components",
+                "docsUrl": "https://eslint.style/rules/jsx-pascal-case",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-props-no-multi-spaces": {
+                "description": "Disallow multiple spaces between inline JSX props. Deprecated, use `no-multi-spaces` rule instead.",
+                "docsUrl": "https://eslint.style/rules/jsx-props-no-multi-spaces",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "exp-jsx-props-style": {
+                "description": "Enforce consistent line break styles for JSX props",
+                "docsUrl": "https://eslint.style/rules/jsx-props-style",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-quotes": {
+                "description": "Enforce the consistent use of either double or single quotes in JSX attributes",
+                "docsUrl": "https://eslint.style/rules/jsx-quotes",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-self-closing-comp": {
+                "description": "Disallow extra closing tags for components without children",
+                "docsUrl": "https://eslint.style/rules/jsx-self-closing-comp",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-sort-props": {
+                "description": "Enforce props alphabetical sorting",
+                "docsUrl": "https://eslint.style/rules/jsx-sort-props",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-tag-spacing": {
+                "description": "Enforce whitespace in and around the JSX opening and closing brackets",
+                "docsUrl": "https://eslint.style/rules/jsx-tag-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "jsx-wrap-multilines": {
+                "description": "Disallow missing parentheses around multiline JSX",
+                "docsUrl": "https://eslint.style/rules/jsx-wrap-multilines",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "key-spacing": {
+                "description": "Enforce consistent spacing between property names and type annotations in types and interfaces",
+                "docsUrl": "https://eslint.style/rules/key-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "keyword-spacing": {
+                "description": "Enforce consistent spacing before and after keywords",
+                "docsUrl": "https://eslint.style/rules/keyword-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "line-comment-position": {
+                "description": "Enforce position of line comments",
+                "docsUrl": "https://eslint.style/rules/line-comment-position",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "linebreak-style": {
+                "description": "Enforce consistent linebreak style",
+                "docsUrl": "https://eslint.style/rules/linebreak-style",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "lines-around-comment": {
+                "description": "Require empty lines around comments",
+                "docsUrl": "https://eslint.style/rules/lines-around-comment",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "lines-between-class-members": {
+                "description": "Require or disallow an empty line between class members",
+                "docsUrl": "https://eslint.style/rules/lines-between-class-members",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "exp-list-style": {
+                "description": "Enforce consistent spacing and line break styles inside brackets.",
+                "docsUrl": "https://eslint.style/rules/list-style",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "max-len": {
+                "description": "Enforce a maximum line length",
+                "docsUrl": "https://eslint.style/rules/max-len",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "max-statements-per-line": {
+                "description": "Enforce a maximum number of statements allowed per line",
+                "docsUrl": "https://eslint.style/rules/max-statements-per-line",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "member-delimiter-style": {
+                "description": "Require a specific member delimiter style for interfaces and type literals",
+                "docsUrl": "https://eslint.style/rules/member-delimiter-style",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "multiline-comment-style": {
+                "description": "Enforce a particular style for multiline comments",
+                "docsUrl": "https://eslint.style/rules/multiline-comment-style",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "multiline-ternary": {
+                "description": "Enforce newlines between operands of ternary expressions",
+                "docsUrl": "https://eslint.style/rules/multiline-ternary",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "new-parens": {
+                "description": "Enforce or disallow parentheses when invoking a constructor with no arguments",
+                "docsUrl": "https://eslint.style/rules/new-parens",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "newline-per-chained-call": {
+                "description": "Require a newline after each call in a method chain",
+                "docsUrl": "https://eslint.style/rules/newline-per-chained-call",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "no-confusing-arrow": {
+                "description": "Disallow arrow functions where they could be confused with comparisons",
+                "docsUrl": "https://eslint.style/rules/no-confusing-arrow",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "no-extra-parens": {
+                "description": "Disallow unnecessary parentheses",
+                "docsUrl": "https://eslint.style/rules/no-extra-parens",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "no-extra-semi": {
+                "description": "Disallow unnecessary semicolons",
+                "docsUrl": "https://eslint.style/rules/no-extra-semi",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "no-floating-decimal": {
+                "description": "Disallow leading or trailing decimal points in numeric literals",
+                "docsUrl": "https://eslint.style/rules/no-floating-decimal",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "no-mixed-operators": {
+                "description": "Disallow mixed binary operators",
+                "docsUrl": "https://eslint.style/rules/no-mixed-operators",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "no-mixed-spaces-and-tabs": {
+                "description": "Disallow mixed spaces and tabs for indentation",
+                "docsUrl": "https://eslint.style/rules/no-mixed-spaces-and-tabs",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "no-multi-spaces": {
+                "description": "Disallow multiple spaces",
+                "docsUrl": "https://eslint.style/rules/no-multi-spaces",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "no-multiple-empty-lines": {
+                "description": "Disallow multiple empty lines",
+                "docsUrl": "https://eslint.style/rules/no-multiple-empty-lines",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "no-tabs": {
+                "description": "Disallow all tabs",
+                "docsUrl": "https://eslint.style/rules/no-tabs",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "no-trailing-spaces": {
+                "description": "Disallow trailing whitespace at the end of lines",
+                "docsUrl": "https://eslint.style/rules/no-trailing-spaces",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "no-whitespace-before-property": {
+                "description": "Disallow whitespace before properties",
+                "docsUrl": "https://eslint.style/rules/no-whitespace-before-property",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "nonblock-statement-body-position": {
+                "description": "Enforce the location of single-line statements",
+                "docsUrl": "https://eslint.style/rules/nonblock-statement-body-position",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "object-curly-newline": {
+                "description": "Enforce consistent line breaks after opening and before closing braces",
+                "docsUrl": "https://eslint.style/rules/object-curly-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "object-curly-spacing": {
+                "description": "Enforce consistent spacing inside braces",
+                "docsUrl": "https://eslint.style/rules/object-curly-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "object-property-newline": {
+                "description": "Enforce placing object properties on separate lines",
+                "docsUrl": "https://eslint.style/rules/object-property-newline",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "one-var-declaration-per-line": {
+                "description": "Require or disallow newlines around variable declarations",
+                "docsUrl": "https://eslint.style/rules/one-var-declaration-per-line",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "operator-linebreak": {
+                "description": "Enforce consistent linebreak style for operators",
+                "docsUrl": "https://eslint.style/rules/operator-linebreak",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "padded-blocks": {
+                "description": "Require or disallow padding within blocks",
+                "docsUrl": "https://eslint.style/rules/padded-blocks",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "padding-line-between-statements": {
+                "description": "Require or disallow padding lines between statements",
+                "docsUrl": "https://eslint.style/rules/padding-line-between-statements",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "quote-props": {
+                "description": "Require quotes around object literal, type literal, interfaces and enums property names",
+                "docsUrl": "https://eslint.style/rules/quote-props",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "quotes": {
+                "description": "Enforce the consistent use of either backticks, double, or single quotes",
+                "docsUrl": "https://eslint.style/rules/quotes",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "rest-spread-spacing": {
+                "description": "Enforce spacing between rest and spread operators and their expressions",
+                "docsUrl": "https://eslint.style/rules/rest-spread-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "semi": {
+                "description": "Require or disallow semicolons instead of ASI",
+                "docsUrl": "https://eslint.style/rules/semi",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "semi-spacing": {
+                "description": "Enforce consistent spacing before and after semicolons",
+                "docsUrl": "https://eslint.style/rules/semi-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "semi-style": {
+                "description": "Enforce location of semicolons",
+                "docsUrl": "https://eslint.style/rules/semi-style",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "space-before-blocks": {
+                "description": "Enforce consistent spacing before blocks",
+                "docsUrl": "https://eslint.style/rules/space-before-blocks",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "space-before-function-paren": {
+                "description": "Enforce consistent spacing before function parenthesis",
+                "docsUrl": "https://eslint.style/rules/space-before-function-paren",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "space-in-parens": {
+                "description": "Enforce consistent spacing inside parentheses",
+                "docsUrl": "https://eslint.style/rules/space-in-parens",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "space-infix-ops": {
+                "description": "Require spacing around infix operators",
+                "docsUrl": "https://eslint.style/rules/space-infix-ops",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "space-unary-ops": {
+                "description": "Enforce consistent spacing before or after unary operators",
+                "docsUrl": "https://eslint.style/rules/space-unary-ops",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "spaced-comment": {
+                "description": "Enforce consistent spacing after the `//` or `/*` in a comment",
+                "docsUrl": "https://eslint.style/rules/spaced-comment",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "switch-colon-spacing": {
+                "description": "Enforce spacing around colons of switch statements",
+                "docsUrl": "https://eslint.style/rules/switch-colon-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "template-curly-spacing": {
+                "description": "Require or disallow spacing around embedded expressions of template strings",
+                "docsUrl": "https://eslint.style/rules/template-curly-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "template-tag-spacing": {
+                "description": "Require or disallow spacing between template tags and their literals",
+                "docsUrl": "https://eslint.style/rules/template-tag-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "type-annotation-spacing": {
+                "description": "Require consistent spacing around type annotations",
+                "docsUrl": "https://eslint.style/rules/type-annotation-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "type-generic-spacing": {
+                "description": "Enforces consistent spacing inside TypeScript type generics",
+                "docsUrl": "https://eslint.style/rules/type-generic-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "type-named-tuple-spacing": {
+                "description": "Expect space before the type declaration in the named tuple",
+                "docsUrl": "https://eslint.style/rules/type-named-tuple-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            },
+            "wrap-iife": {
+                "description": "Require parentheses around immediate `function` invocations",
+                "docsUrl": "https://eslint.style/rules/wrap-iife",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "wrap-regex": {
+                "description": "Require parenthesis around regex literals",
+                "docsUrl": "https://eslint.style/rules/wrap-regex",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "yield-star-spacing": {
+                "description": "Require or disallow spacing around the `*` in `yield*` expressions",
+                "docsUrl": "https://eslint.style/rules/yield-star-spacing",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "whitespace",
+                    "hasSuggestions": false
+                }
+            }
+        }
+    }
+}

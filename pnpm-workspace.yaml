@@ -10,6 +10,7 @@ catalog:
   '@nuxt/content': ^3.11.2
   '@nuxt/eslint': ^1.15.1
   '@nuxt/icon': ^2.2.1
+  '@stylistic/eslint-plugin': ^5.8.0
   '@tailwindcss/vite': ^4.1.18
   '@types/node': ^25.2.3
   '@vueuse/core': ^14.2.1
