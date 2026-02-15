@@ -3,7 +3,12 @@ import type { IPlugins } from '../apps/web/shared/types/plugins'
 import { writeFile } from 'node:fs/promises'
 
 const plugins = [
-    { name: 'eslint.style', packageName: '@stylistic/eslint-plugin', description: 'Stylistic Formatting for ESLint' },
+    {
+        name: 'Eslint Style',
+        packageName: '@stylistic/eslint-plugin',
+        description: 'Stylistic Formatting for ESLint',
+        url: 'https://github.com/eslint-stylistic/eslint-stylistic',
+    },
 ]
 
 const generateEslintPlugins = async () => {

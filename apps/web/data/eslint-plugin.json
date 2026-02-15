@@ -1,6 +1,6 @@
 {
-    "eslint.style": {
-        "name": "eslint.style",
+    "Eslint Style": {
+        "name": "Eslint Style",
         "description": "Stylistic Formatting for ESLint",
         "rules": {
             "array-bracket-newline": {
