@@ -7,7 +7,7 @@
             'relative transition-colors',
             'hover:bg-secondary',
         )"
-        @click="toggleRules('accessor-pairs')"
+        @click="toggleRules(name)"
     >
         <div class="flex-1 space-y-0.5 min-w-0">
             <div class="flex items-center">
@@ -16,10 +16,10 @@
                         'font-medium text-sm',
                         'text-indigo-800 dark:text-foreground',
                     )"
-                >accessor-pairs</span>
+                >{{ name }}</span>
             </div>
             <p class="text-xs text-muted-foreground font-normal truncate">
-                Enforce getter and setter pairs in objects and classes
+                {{ description }}
             </p>
         </div>
         <div class="flex items-center gap-2">
@@ -37,6 +37,11 @@ import { useRuleConfig } from '.'
 defineOptions({
     name: 'RulesListItem',
 })
+
+defineProps<{
+    name: string
+    description: string
+}>()
 
 const { toggleRules } = useRuleConfig()
 </script>
