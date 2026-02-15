@@ -1,7 +1,7 @@
 {
     "eslint.style": {
         "name": "eslint.style",
-        "description": "sss",
+        "description": "Stylistic Formatting for ESLint",
         "rules": {
             "array-bracket-newline": {
                 "description": "Enforce linebreaks after opening and before closing array brackets",
