@@ -1,4 +1,5 @@
 import type { RuleDefinition } from '@eslint/core'
+import type { IPlugins } from '../apps/web/shared/types/plugins'
 import { writeFile } from 'node:fs/promises'
 
 const plugins = [
@@ -6,7 +7,7 @@ const plugins = [
 ]
 
 const generateEslintPlugins = async () => {
-    const eslintPlugins = new Map<string, any>()
+    const eslintPlugins = new Map<string, IPlugins>()
     for (const plugin of plugins) {
         const pluginModule = await import(plugin.packageName)
         const pluginExport = pluginModule.default || pluginModule
@@ -15,7 +16,11 @@ const generateEslintPlugins = async () => {
         const rules = { ...pluginExport.rules }
 
         if (!eslintPlugins.has(plugin.name)) {
-            eslintPlugins.set(plugin.name, {})
+            eslintPlugins.set(plugin.name, {
+                description: '',
+                name: '',
+                rules: {},
+            })
         }
 
         eslintPlugins.set(plugin.name, {
