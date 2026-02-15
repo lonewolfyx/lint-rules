@@ -15,3 +15,9 @@ export interface IPlugins {
 }
 
 export type eslintPlugins = Record<string, IPlugins>
+
+export interface IPluginInfo {
+    plugin: string
+    description: string
+    rules: number
+}
