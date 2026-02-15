@@ -7,7 +7,7 @@
                     :class="cn(
                         'bg-background',
                         'border border-input rounded-xl shadow-xs',
-                        'w-full lg:w-md',
+                        'w-full',
                         'shrink-0',
                     )"
                 >
@@ -36,17 +36,6 @@
                     </div>
                     <div class="px-4 py-3">
                         <RulesList />
-                    </div>
-                </div>
-
-                <div
-                    :class="cn(
-                        'hidden md:block',
-                    )"
-                    class="bg-background border border-input rounded-xl shadow-xs flex-1 overflow-y-auto overscroll-none"
-                >
-                    <div class="px-4 py-3">
-                        <RulesReadme />
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <template>
     <ScrollArea class="overflow-hidden w-full min-h-full h-[calc(100vh-7rem)]">
-        <div class="space-y-1">
+        <div class="grid grid-cols-4 gap-4">
             <RulesListItem
                 v-for="[name, rule] in rules"
                 :key="name"
