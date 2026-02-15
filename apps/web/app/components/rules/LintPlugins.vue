@@ -51,5 +51,5 @@ defineOptions({
 })
 
 const { data } = useLazyAsyncData('plugins', () => $fetch<{ data: IPluginInfo[] }>('/api/rule/plugins'))
-const plugins = computed(() => data.value?.data ?? [])
+const plugins = computed(() => (data.value?.data ?? []).sort((a, b) => b.rules - a.rules))
 </script>
