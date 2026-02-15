@@ -5,9 +5,9 @@
             'gap-2.5 p-2',
             'rounded-lg cursor-pointer',
             'relative transition-colors',
-            'hover:bg-secondary',
+            'bg-secondary',
         )"
-        @click="toggleRules(name)"
+        @click="toggleRules(rule.rule)"
     >
         <div class="flex-1 space-y-0.5 min-w-0">
             <div class="flex items-center">
@@ -16,21 +16,31 @@
                         'font-medium text-sm',
                         'text-indigo-800 dark:text-foreground',
                     )"
-                >{{ name }}</span>
+                >{{ rule.rule }}</span>
             </div>
             <p class="text-xs text-muted-foreground font-normal truncate">
-                {{ description }}
+                {{ rule.description }}
             </p>
         </div>
         <div class="flex items-center gap-2">
-            <span class="text-xs text-secondary-foreground mb-5 disabled">✅</span>
-            <span class="text-xs text-secondary-foreground mb-5">🔧</span>
-            <span class="text-xs text-secondary-foreground mb-5">💡</span>
+            <span
+                v-if="rule.meta.recommended"
+                class="text-xs text-secondary-foreground mb-5 disabled"
+            >✅</span>
+            <span
+                v-if="rule.meta.fixable"
+                class="text-xs text-secondary-foreground mb-5"
+            >🔧</span>
+            <span
+                v-if="rule.meta.suggestions"
+                class="text-xs text-secondary-foreground mb-5"
+            >💡</span>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
+import type { IRule } from '#shared/types/rules'
 import { cn } from '@private/shadcn-vue/lib/utils'
 import { useRuleConfig } from '.'
 
@@ -39,8 +49,7 @@ defineOptions({
 })
 
 defineProps<{
-    name: string
-    description: string
+    rule: IRule
 }>()
 
 const { toggleRules } = useRuleConfig()

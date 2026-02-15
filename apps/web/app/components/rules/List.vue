@@ -2,16 +2,16 @@
     <ScrollArea class="overflow-hidden w-full min-h-full h-[calc(100vh-7rem)]">
         <div class="grid grid-cols-4 gap-4">
             <RulesListItem
-                v-for="[name, rule] in rules"
-                :key="name"
-                :name="name"
-                :description="rule.meta.docs.description"
+                v-for="(rule, index) in rulesData as Rule"
+                :key="index"
+                :rule="rule"
             />
         </div>
     </ScrollArea>
 </template>
 
 <script lang="ts" setup>
+import type { Rule } from '#shared/types/rules'
 import { ScrollArea } from '@private/shadcn-vue/components/ui/scroll-area'
 import rulesData from '~~/data/eslint-rules.json'
 import RulesListItem from '~/components/rules/ListItem.vue'
@@ -19,6 +19,4 @@ import RulesListItem from '~/components/rules/ListItem.vue'
 defineOptions({
     name: 'RulesList',
 })
-
-const rules = Object.entries(rulesData)
 </script>
