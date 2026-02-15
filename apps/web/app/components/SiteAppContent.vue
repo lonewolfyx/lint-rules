@@ -35,6 +35,9 @@
                             </Button>
                         </div>
                     </div>
+                    <div class="px-4 pb-3">
+                        <RulesLintPlugins />
+                    </div>
                 </div>
                 <div
                     :class="cn(
