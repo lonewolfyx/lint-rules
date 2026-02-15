@@ -14,7 +14,7 @@
                 <span
                     :class="cn(
                         'font-medium text-sm',
-                        'text-indigo-800 dark:text-foreground',
+                        'text-foreground hover:text-indigo-800 dark:text-foreground',
                     )"
                 >{{ rule.rule }}</span>
             </div>
