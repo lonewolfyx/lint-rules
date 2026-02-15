@@ -1,22 +1,16 @@
-import type { eslintPlugins, IPlugins } from '#shared/types/plugins'
+import type { eslintPlugins, IPluginInfo, IPlugins } from '#shared/types/plugins'
 import { readFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-interface PluginInfo {
-    plugin: string
-    description: string
-    rules: number
-}
-
 async function getPlugins() {
     const pluginPath = resolve(__dirname, '../../', 'data', 'eslint-plugin.json')
     const pluginContent = await readFile(pluginPath, 'utf-8')
     const pluginData = JSON.parse(pluginContent) as eslintPlugins
 
-    const result: PluginInfo[] = Object.keys(pluginData).map((key) => {
+    const result: IPluginInfo[] = Object.keys(pluginData).map((key) => {
         const plugin = pluginData[key]! as IPlugins
         return {
             plugin: plugin.name,
