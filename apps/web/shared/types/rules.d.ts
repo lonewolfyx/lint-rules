@@ -31,3 +31,9 @@ export interface IEslintRules {
 }
 
 export type IEslintRulesConfig = Record<string, IEslintRules>
+
+export interface ILintRulesData {
+    name: string
+    description: string
+    rules: number
+}
