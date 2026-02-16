@@ -25,18 +25,41 @@
             </p>
         </div>
         <div class="flex items-center gap-2">
-            <span
-                v-if="rule.meta.recommended"
-                class="text-xs text-secondary-foreground mb-5 disabled"
-            >✅</span>
-            <span
-                v-if="rule.meta.fixable"
-                class="text-xs text-secondary-foreground mb-5"
-            >🔧</span>
-            <span
-                v-if="rule.meta.hasSuggestions"
-                class="text-xs text-secondary-foreground mb-5"
-            >💡</span>
+            <TooltipProvider>
+                <Tooltip v-if="rule.meta.recommended">
+                    <TooltipTrigger as-child>
+                        <span class="text-xs text-secondary-foreground mb-5 disabled">✅</span>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p class="w-xs">
+                            Using the recommended config from @eslint/js in a configuration file enables this rule
+                        </p>
+                    </TooltipContent>
+                </Tooltip>
+
+                <Tooltip v-if="rule.meta.fixable">
+                    <TooltipTrigger as-child>
+                        <span class="text-xs text-secondary-foreground mb-5">🔧</span>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p class="w-xs">
+                            Some problems reported by this rule are automatically fixable by the --fix command line
+                            option
+                        </p>
+                    </TooltipContent>
+                </Tooltip>
+
+                <Tooltip v-if="rule.meta.hasSuggestions">
+                    <TooltipTrigger as-child>
+                        <span class="text-xs text-secondary-foreground mb-5">💡</span>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                        <p class="w-xs">
+                            Some problems reported by this rule are manually fixable by editor suggestions
+                        </p>
+                    </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
         </div>
     </component>
 </template>
@@ -44,6 +67,7 @@
 <script lang="ts" setup>
 import type { IRulesReference } from '#shared/types/rules'
 import { NuxtLink } from '#components'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@private/shadcn-vue/components/ui/tooltip'
 import { cn } from '@private/shadcn-vue/lib/utils'
 
 defineOptions({
