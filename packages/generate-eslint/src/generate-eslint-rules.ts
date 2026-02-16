@@ -215,7 +215,7 @@ async function generateEslintRules() {
     const rules = Object.fromEntries(lint.getRules()) as Record<string, Rule.RuleModule>
 
     await writeFile(
-        resolve(TEMP_PATH, './apps/web/data/eslint-schema.json'),
+        resolve(TEMP_PATH, './apps/web/public/data/eslint-schema.json'),
         JSON.stringify(rules, null, 2),
         'utf-8',
     )
@@ -225,7 +225,7 @@ async function generateEslintRules() {
     )
 
     await writeFile(
-        resolve(TEMP_PATH, './apps/web/data/eslint-deprecated-rules.json'),
+        resolve(TEMP_PATH, './apps/web/public/data/eslint-deprecated-rules.json'),
         JSON.stringify(deprecatedRules, null, 2),
         'utf-8',
     )
@@ -292,7 +292,7 @@ async function generateEslintRules() {
     }
 
     await writeFile(
-        resolve(TEMP_PATH, './apps/web/data/eslint-rules.json'),
+        resolve(TEMP_PATH, './apps/web/public/data/eslint-rules.json'),
         JSON.stringify(Object.fromEntries(eslintRules), null, 2),
         'utf-8',
     )

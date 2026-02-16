@@ -161,7 +161,7 @@ async function generateOxlintRules() {
     )
 
     await writeRules(
-        resolve(TEMP_PATH, '../apps/web/data/oxlint-schema.json'),
+        resolve(TEMP_PATH, '../apps/web/public/data/oxlint-schema.json'),
         JSON.stringify(oxlintSchema, null, 2),
     )
 
@@ -231,7 +231,7 @@ async function generateOxlintRules() {
     await rimraf(TmpFolder)
 
     await writeFile(
-        resolve(TEMP_PATH, '../apps/web/data/oxlint-rules.json'),
+        resolve(TEMP_PATH, '../apps/web/public/data/oxlint-rules.json'),
         JSON.stringify(Object.fromEntries(oxlintRules), null, 2),
         'utf-8',
     )
