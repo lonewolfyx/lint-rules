@@ -1,0 +1,47 @@
+import type { INavigationItem } from '#shared/types/navigation'
+import { readFile } from 'node:fs/promises'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+async function handler(event: any) {
+    const body = await readBody(event)
+    const linter = getRouterParam(event, 'linter') ?? ''
+    const mode = body?.mode ?? ''
+
+    const app = useAppConfig()
+
+    const linters = app.navigation.lint.items.map((l: INavigationItem) => l.target)
+
+    if (!linter || !linters.includes(linter)) {
+        throw createError({ statusCode: 404, message: 'No Support linter' })
+    }
+
+    if (!mode) {
+        throw createError({ statusCode: 400, message: 'mode is required' })
+    }
+
+    const rulePath = resolve(__dirname, '../../', 'data', `${linter}-rules.json`)
+    const rulesRaw = await readFile(rulePath, 'utf-8')
+    const rulesData = JSON.parse(rulesRaw)
+
+    if (!rulesData[mode]) {
+        throw createError({ statusCode: 404, message: `No rules found for mode: ${mode}` })
+    }
+
+    return {
+        data: rulesData[mode],
+    }
+}
+
+export default import.meta.dev
+    ? defineEventHandler(handler)
+    : defineCachedEventHandler(handler, {
+            maxAge: 3600,
+            swr: true,
+            getKey: (event) => {
+                const linter = getRouterParam(event, 'linter') ?? ''
+                return `rules:lint:${linter}`
+            },
+        })

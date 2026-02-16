@@ -7,7 +7,6 @@
             'relative transition-colors',
             'bg-secondary',
         )"
-        @click="toggleRules(rule.rule)"
     >
         <div class="flex-1 space-y-0.5 min-w-0">
             <div class="flex items-center">
@@ -32,7 +31,7 @@
                 class="text-xs text-secondary-foreground mb-5"
             >🔧</span>
             <span
-                v-if="rule.meta.suggestions"
+                v-if="rule.meta.hasSuggestions"
                 class="text-xs text-secondary-foreground mb-5"
             >💡</span>
         </div>
@@ -40,17 +39,14 @@
 </template>
 
 <script lang="ts" setup>
-import type { IRule } from '#shared/types/rules'
+import type { IRulesReference } from '#shared/types/rules'
 import { cn } from '@private/shadcn-vue/lib/utils'
-import { useRuleConfig } from '.'
 
 defineOptions({
     name: 'RulesListItem',
 })
 
 defineProps<{
-    rule: IRule
+    rule: IRulesReference
 }>()
-
-const { toggleRules } = useRuleConfig()
 </script>
