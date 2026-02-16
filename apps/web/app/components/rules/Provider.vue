@@ -20,9 +20,9 @@ const triggerLint = (lintName: TLinter) => {
     linter.value = lintName
 }
 
-const lintConfig = ref<string>('')
-const triggerLintConfig = (config: string) => {
-    lintConfig.value = config
+const mode = ref<string>('')
+const triggerLintMode = (model: string) => {
+    mode.value = model
 }
 
 provideRulesContext({
@@ -30,7 +30,7 @@ provideRulesContext({
     triggerLint,
     rule,
     toggleRules,
-    lintConfig,
-    triggerLintConfig,
+    mode,
+    triggerLintMode,
 })
 </script>

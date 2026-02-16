@@ -31,7 +31,7 @@ defineOptions({
     name: 'RulesList',
 })
 
-const { linter, lintConfig: mode } = useRuleConfig()
+const { linter, mode } = useRuleConfig()
 
 const { data: rules, pending } = useAsyncData<{ data: ILintRules }>(
     `rules-${linter.value}-${mode.value}`,

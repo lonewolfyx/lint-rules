@@ -5,7 +5,7 @@
                 v-for="lint in lintRules"
                 :key="lint.name"
                 class="flex w-full flex-col gap-2 cursor-pointer"
-                @click="triggerLintConfig(lint.name)"
+                @click="triggerLintMode(lint.name)"
             >
                 <div
                     :class="cn(
@@ -38,7 +38,7 @@ defineOptions({
     name: 'LintMode',
 })
 
-const { triggerLintConfig } = useRuleConfig()
+const { triggerLintMode } = useRuleConfig()
 const { data } = useLazyAsyncData('lintRules', () => $fetch<{ data: ILintRulesData[] }>('/api/rule/list'))
 const lintRules = computed(() => data.value?.data ?? [])
 </script>

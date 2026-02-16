@@ -7,6 +7,6 @@ export const [useRuleConfig, provideRulesContext] = createContext<{
     triggerLint: (lint: TLinter) => void
     rule: Ref<string>
     toggleRules: (rule: string) => void
-    lintConfig: Ref<string>
-    triggerLintConfig: (lint: string) => void
+    mode: Ref<string>
+    triggerLintMode: (lint: string) => void
 }>('rules')
