@@ -4,7 +4,8 @@
             <div
                 v-for="lint in lintRules"
                 :key="lint.name"
-                class="flex w-full flex-col gap-2"
+                class="flex w-full flex-col gap-2 cursor-pointer"
+                @click="triggerLintConfig(lint.name)"
             >
                 <div
                     :class="cn(
@@ -31,11 +32,13 @@
 import type { ILintRulesData } from '#shared/types/rules'
 import { ScrollArea } from '@private/shadcn-vue/components/ui/scroll-area'
 import { cn } from '@private/shadcn-vue/lib/utils'
+import { useRuleConfig } from '~/components/rules/index'
 
 defineOptions({
     name: 'RulesLintPlugins',
 })
 
-const { data } = useLazyAsyncData('plugins', () => $fetch<{ data: ILintRulesData[] }>('/api/rule/list'))
+const { triggerLintConfig } = useRuleConfig()
+const { data } = useLazyAsyncData('lintRules', () => $fetch<{ data: ILintRulesData[] }>('/api/rule/list'))
 const lintRules = computed(() => data.value?.data ?? [])
 </script>
