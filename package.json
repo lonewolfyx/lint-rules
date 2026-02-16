@@ -20,6 +20,7 @@
     "scripts": {
         "build": "turbo run build",
         "dev": "turbo run dev",
+        "generate": "turbo run generate",
         "lint": "eslint",
         "lint:fix": "eslint --fix",
         "prepare": "simple-git-hooks"
