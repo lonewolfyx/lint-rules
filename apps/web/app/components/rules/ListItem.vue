@@ -1,5 +1,6 @@
 <template>
-    <div
+    <component
+        :is="rule.docsUrl ? NuxtLink : 'div'"
         :class="cn(
             'group flex items-center',
             'gap-2.5 p-2',
@@ -7,6 +8,8 @@
             'relative transition-colors',
             'bg-secondary',
         )"
+        :to="rule.docsUrl"
+        target="_blank"
     >
         <div class="flex-1 space-y-0.5 min-w-0">
             <div class="flex items-center">
@@ -35,11 +38,12 @@
                 class="text-xs text-secondary-foreground mb-5"
             >💡</span>
         </div>
-    </div>
+    </component>
 </template>
 
 <script lang="ts" setup>
 import type { IRulesReference } from '#shared/types/rules'
+import { NuxtLink } from '#components'
 import { cn } from '@private/shadcn-vue/lib/utils'
 
 defineOptions({
