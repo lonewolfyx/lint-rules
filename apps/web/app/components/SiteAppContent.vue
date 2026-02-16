@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="px-4 pb-3">
-                        <RulesLintMode />
+                        <LintMode />
                     </div>
                 </div>
                 <div

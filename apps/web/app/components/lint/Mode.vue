@@ -32,10 +32,10 @@
 import type { ILintRulesData } from '#shared/types/rules'
 import { ScrollArea } from '@private/shadcn-vue/components/ui/scroll-area'
 import { cn } from '@private/shadcn-vue/lib/utils'
-import { useRuleConfig } from '~/components/rules/index'
+import { useRuleConfig } from '~/components/rules'
 
 defineOptions({
-    name: 'RulesLintMode',
+    name: 'LintMode',
 })
 
 const { triggerLintConfig } = useRuleConfig()
