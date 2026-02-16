@@ -35,7 +35,7 @@ import { cn } from '@private/shadcn-vue/lib/utils'
 import { useRuleConfig } from '~/components/rules/index'
 
 defineOptions({
-    name: 'RulesLintPlugins',
+    name: 'RulesLintMode',
 })
 
 const { triggerLintConfig } = useRuleConfig()

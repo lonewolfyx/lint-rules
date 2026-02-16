@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="px-4 pb-3">
-                        <RulesLintPlugins />
+                        <RulesLintMode />
                     </div>
                 </div>
                 <div
