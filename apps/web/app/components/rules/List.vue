@@ -6,7 +6,7 @@
                     <span>Loading...</span>
                 </div>
             </template>
-            <template v-else-if="rules?.data.rules">
+            <template v-else-if="rules?.data.rules && Object.keys(rules?.data.rules).length > 0">
                 <RulesListItem
                     v-for="(rule, key) in rules?.data.rules"
                     :key="key"
