@@ -2,7 +2,6 @@ import type { INavigationItem } from '#shared/types/navigation'
 import type { H3Event } from 'h3'
 import { readFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
-import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -24,7 +23,12 @@ async function handler(event: H3Event) {
         throw createError({ statusCode: 400, message: 'mode is required' })
     }
 
-    const rulePath = resolve(process.cwd(), 'public/data', `${linter}-rules.json`)
+    const rulePath = resolve(
+        __dirname,
+        '../../public',
+        'data',
+        `${linter}-rules.json`,
+    )
 
     const rulesRaw = await readFile(rulePath, 'utf-8')
     const rulesData = JSON.parse(rulesRaw)
