@@ -1150,10 +1150,37 @@
     },
     {
         "rule": "no-empty-function",
-        "description": "Disallows the usages of empty functions",
+        "description": "Disallows the usage of empty functions.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-empty-function.html",
         "options": {
-            "schema": {},
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allow": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "functions",
+                                "arrowFunctions",
+                                "generatorFunctions",
+                                "methods",
+                                "generatorMethods",
+                                "getters",
+                                "setters",
+                                "constructors",
+                                "asyncFunctions",
+                                "asyncMethods",
+                                "privateConstructors",
+                                "protectedConstructors",
+                                "decoratedFunctions",
+                                "overrideMethods"
+                            ]
+                        }
+                    }
+                },
+                "additionalProperties": false
+            },
             "defaultOptions": []
         }
     },
@@ -1956,7 +1983,7 @@
     },
     {
         "rule": "no-shadow-restricted-names",
-        "description": "Disallows the redefining of global variables such as undefined, NaN, Infinity,\neval, and arguments.",
+        "description": "Disallows the redefining of global variables such as undefined, NaN, Infinity,\neval, globalThis and arguments.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-shadow-restricted-names.html",
         "options": {
             "schema": {
@@ -1970,7 +1997,7 @@
             },
             "defaultOptions": [
                 {
-                    "reportGlobalThis": false
+                    "reportGlobalThis": true
                 }
             ]
         }
@@ -5929,7 +5956,18 @@
         "description": "This rule prevents passing of props to elements. This rule only applies to DOM Nodes (e.g. ",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/forbid-dom-props.html",
         "options": {
-            "schema": {},
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "forbid": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "additionalProperties": false
+            },
             "defaultOptions": []
         }
     },
@@ -7763,9 +7801,6 @@
                     },
                     "allowComparingNullableBooleansToTrue": {
                         "type": "boolean"
-                    },
-                    "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": {
-                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
@@ -7773,8 +7808,7 @@
             "defaultOptions": [
                 {
                     "allowComparingNullableBooleansToFalse": true,
-                    "allowComparingNullableBooleansToTrue": true,
-                    "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": false
+                    "allowComparingNullableBooleansToTrue": true
                 }
             ]
         }
@@ -8097,9 +8131,6 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": {
-                        "type": "boolean"
-                    },
                     "ignoreBooleanCoercion": {
                         "type": "boolean"
                     },
@@ -8123,7 +8154,6 @@
             },
             "defaultOptions": [
                 {
-                    "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": false,
                     "ignoreBooleanCoercion": false,
                     "ignoreConditionalTests": true,
                     "ignoreIfStatements": false,
@@ -8462,9 +8492,6 @@
                     "allowNumber": {
                         "type": "boolean"
                     },
-                    "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": {
-                        "type": "boolean"
-                    },
                     "allowString": {
                         "type": "boolean"
                     }
@@ -8480,7 +8507,6 @@
                     "allowNullableObject": true,
                     "allowNullableString": false,
                     "allowNumber": true,
-                    "allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing": false,
                     "allowString": true
                 }
             ]
