@@ -9,11 +9,15 @@
             >
                 <div
                     :class="cn(
-                        'text-sm bg-secondary relative text-foreground',
+                        'text-sm relative text-foreground',
                         'rounded-md',
                         'p-2 pl-6',
                         'after:absolute after:inset-y-2 after:left-2 after:w-1',
                         'after:rounded-full after:bg-violet-500',
+                        'hover:bg-secondary transition duration-300',
+                        {
+                            'bg-secondary': lint.name === mode,
+                        },
                     )"
                 >
                     <span class="font-medium">
@@ -38,7 +42,7 @@ defineOptions({
     name: 'LintMode',
 })
 
-const { triggerLintMode } = useRuleConfig()
+const { mode, triggerLintMode } = useRuleConfig()
 const { data } = useLazyAsyncData('lintRules', () => $fetch<{ data: ILintRulesData[] }>('/api/rule/list'))
 const lintRules = computed(() => data.value?.data ?? [])
 
