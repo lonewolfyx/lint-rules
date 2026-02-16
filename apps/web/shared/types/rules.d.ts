@@ -1,17 +1,3 @@
-export interface IRule {
-    rule: string
-    description: string
-    docs_url: string
-    meta: {
-        recommended: boolean
-        fixable: string
-        suggestions: boolean
-        frozen: boolean
-    }
-}
-
-export type Rule = Record<string, IRule>
-
 export interface IRulesReference {
     rule: string
     description: string
@@ -24,13 +10,13 @@ export interface IRulesReference {
     }
 }
 
-export interface IEslintRules {
+export interface ILintRules {
     name: string
     description: string
     rules: Record<string, IRulesReference>
 }
 
-export type IEslintRulesConfig = Record<string, IEslintRules>
+export type ILintRulesConfig = Record<string, ILintRules>
 
 export interface ILintRulesData {
     name: string

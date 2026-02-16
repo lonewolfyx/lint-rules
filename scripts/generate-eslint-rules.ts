@@ -1,5 +1,5 @@
 import type { RuleDefinition } from '@eslint/core'
-import type { IEslintRules } from '@lint-rules/web/shared/types/rules'
+import type { ILintRules } from '@lint-rules/web/shared/types/rules'
 import type { Rule } from 'eslint'
 import { writeFile } from 'node:fs/promises'
 import { Linter } from 'eslint'
@@ -225,7 +225,7 @@ async function generateEslintRules() {
         'utf-8',
     )
 
-    const eslintRules = new Map<string, IEslintRules>()
+    const eslintRules = new Map<string, ILintRules>()
 
     const activeRules = Object.fromEntries(
         Object.entries(rules).filter(([, rule]) => !rule.meta?.deprecated).map(([name, rule]) => {

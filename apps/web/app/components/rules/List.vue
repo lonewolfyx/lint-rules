@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { IEslintRules } from '#shared/types/rules'
+import type { ILintRules } from '#shared/types/rules'
 import { ScrollArea } from '@private/shadcn-vue/components/ui/scroll-area'
 import { useRuleConfig } from '.'
 
@@ -33,7 +33,7 @@ defineOptions({
 
 const { linter, lintConfig: mode } = useRuleConfig()
 
-const { data: rules, pending } = useAsyncData<{ data: IEslintRules }>(
+const { data: rules, pending } = useAsyncData<{ data: ILintRules }>(
     `rules-${linter.value}-${mode.value}`,
     () =>
         $fetch(`/api/rule/list/${linter.value}`, {
