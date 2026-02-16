@@ -26,16 +26,10 @@
         </div>
         <div class="flex items-center gap-2">
             <TooltipProvider>
-                <Tooltip v-if="rule.meta.recommended">
-                    <TooltipTrigger as-child>
-                        <span class="text-xs text-secondary-foreground mb-5 disabled">✅</span>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                        <p class="w-xs">
-                            Using the recommended config from @eslint/js in a configuration file enables this rule
-                        </p>
-                    </TooltipContent>
-                </Tooltip>
+                <span
+                    v-if="rule.meta.recommended"
+                    class="text-xs text-secondary-foreground mb-5 disabled"
+                >✅</span>
 
                 <Tooltip v-if="rule.meta.fixable">
                     <TooltipTrigger as-child>
