@@ -1,7 +1,6 @@
 import type { ILintRules, ILintRulesConfig, ILintRulesData } from '#shared/types/rules'
 import type { H3Event } from 'h3'
-import { readFile } from 'node:fs/promises'
-import { dirname, resolve } from 'node:path'
+import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -9,15 +8,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 async function getLintRuleList(event: H3Event) {
     const linter = getRouterParam(event, 'linter') ?? 'eslint'
 
-    const rulesPath = resolve(
-        __dirname,
-        '../../public',
-        'data',
-        `${linter}-rules.json`,
-    )
+    const storage = useStorage()
 
-    const rulesContent = await readFile(rulesPath, 'utf-8')
-    const rulesData = JSON.parse(rulesContent) as ILintRulesConfig
+    const fileName = `${linter}-rules.json`
+    const rulesData = await storage.getItem<ILintRulesConfig>(`public-fs:data:${linter}-rules.json`)
+
+    if (!rulesData) {
+        throw createError({
+            statusCode: 404,
+            message: `${fileName} Not Found`,
+        })
+    }
 
     const result: ILintRulesData[] = Object.keys(rulesData).map((key) => {
         const plugin = rulesData[key]! as ILintRules

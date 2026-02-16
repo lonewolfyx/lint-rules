@@ -1,7 +1,7 @@
 import type { INavigationItem } from '#shared/types/navigation'
+import type { ILintRulesConfig } from '#shared/types/rules'
 import type { H3Event } from 'h3'
-import { readFile } from 'node:fs/promises'
-import { dirname, resolve } from 'node:path'
+import { dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -23,15 +23,16 @@ async function handler(event: H3Event) {
         throw createError({ statusCode: 400, message: 'mode is required' })
     }
 
-    const rulePath = resolve(
-        __dirname,
-        '../../public',
-        'data',
-        `${linter}-rules.json`,
-    )
+    const storage = useStorage()
+    const fileName = `${linter}-rules.json`
+    const rulesData = await storage.getItem<ILintRulesConfig>(`public-fs:data:${linter}-rules.json`)
 
-    const rulesRaw = await readFile(rulePath, 'utf-8')
-    const rulesData = JSON.parse(rulesRaw)
+    if (!rulesData) {
+        throw createError({
+            statusCode: 404,
+            message: `${fileName} Not Found`,
+        })
+    }
 
     if (!rulesData[mode]) {
         throw createError({ statusCode: 404, message: `No rules found for mode: ${mode}` })

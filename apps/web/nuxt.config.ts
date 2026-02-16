@@ -46,6 +46,15 @@ export default defineNuxtConfig({
     ],
     compatibilityDate: '2026-02-12',
 
+    nitro: {
+        storage: {
+            'public-fs': {
+                driver: 'fs',
+                base: './public', // 相對於 build 時的 rootDir
+            },
+        },
+    },
+
     vite: {
         plugins: [
             tailwindcss() as never,
