@@ -1,0 +1,27 @@
+{
+    "name": "@private/generate-oxlint",
+    "version": "0.0.0",
+    "private": true,
+    "packageManager": "pnpm@10.15.1",
+    "description": "",
+    "license": "MIT",
+    "homepage": "https://github.com/lonewolfyx/lint-rules#readme",
+    "repository": {
+        "directory": "packages/generate-oxlint",
+        "type": "git",
+        "url": "git+https://github.com/lonewolfyx/lint-rules.git"
+    },
+    "bugs": "https://github.com/lonewolfyx/lint-rules/issues",
+    "scripts": {
+        "generate": "oxnode ./src/oxlint-rules.ts"
+    },
+    "devDependencies": {
+        "@next/eslint-plugin-next": "catalog:",
+        "cheerio": "catalog:",
+        "eslint-plugin-jsx-a11y": "catalog:",
+        "eslint-plugin-react-hooks": "catalog:",
+        "eslint-plugin-react-perf": "catalog:",
+        "eslint-plugin-vitest": "catalog:",
+        "marked": "catalog:"
+    }
+}

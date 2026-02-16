@@ -1,15 +1,18 @@
 import type { RuleDefinition } from '@eslint/core'
 import type { ILintRules } from '@lint-rules/web/shared/types/rules'
 import { readFile, writeFile } from 'node:fs/promises'
-import { join, resolve } from 'node:path'
+import { dirname, join, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { load } from 'cheerio'
 import { downloadTemplate } from 'giget'
 import { marked } from 'marked'
 import { rimraf } from 'rimraf'
 import { x } from 'tinyexec'
-import { TEMP_PATH } from './constant'
 import { RuleDocParser } from './parse/oxlint.rule.doc.parser'
 import { cleanText, writeRules } from './utils'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const TEMP_PATH = resolve(__dirname, '../../../temp')
 
 // https://oxc.rs/docs/guide/usage/linter/rules.html
 

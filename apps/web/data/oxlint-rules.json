@@ -1113,6 +1113,16 @@
                     "hasSuggestions": false
                 }
             },
+            "no-shadow": {
+                "rule": "no-shadow",
+                "description": "Disallows variable declarations from shadowing variables declared in the outer scope.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-shadow.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "no-shadow-restricted-names": {
                 "rule": "no-shadow-restricted-names",
                 "description": "Disallows the redefining of global variables such as undefined, NaN, Infinity,\neval, globalThis and arguments.",
@@ -1207,6 +1217,16 @@
                 "rule": "no-unexpected-multiline",
                 "description": "In most cases, semicolons are not required in JavaScript in order for code to be parsed\nand executed as expected. Typically this occurs because semicolons are automatically\ninserted based on a fixed set of rules. This rule exists to detect those cases where a semicolon\nis NOT inserted automatically, and may be parsed differently than expected.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unexpected-multiline.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
+            "no-unmodified-loop-condition": {
+                "rule": "no-unmodified-loop-condition",
+                "description": "Disallow references in loop conditions that are never modified within the loop.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unmodified-loop-condition.html",
                 "meta": {
                     "recommended": false,
                     "fixable": "false",
@@ -3843,6 +3863,16 @@
                     "hasSuggestions": false
                 }
             },
+            "jsx-no-constructed-context-values": {
+                "rule": "jsx-no-constructed-context-values",
+                "description": "Disallows JSX context provider values from taking values that will cause needless rerenders.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-constructed-context-values.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "jsx-no-duplicate-props": {
                 "rule": "jsx-no-duplicate-props",
                 "description": "This rule prevents duplicate props in JSX elements.",
@@ -4693,6 +4723,16 @@
                     "hasSuggestions": false
                 }
             },
+            "no-unnecessary-condition": {
+                "rule": "no-unnecessary-condition",
+                "description": "Disallow conditions that are always truthy, always falsy, or always nullish\nbased on TypeScript's type information.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-condition.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "no-unnecessary-parameter-property-assignment": {
                 "rule": "no-unnecessary-parameter-property-assignment",
                 "description": "Prevents unnecessary assignment of parameter properties.",
@@ -4843,6 +4883,16 @@
                     "hasSuggestions": false
                 }
             },
+            "no-use-before-define": {
+                "rule": "no-use-before-define",
+                "description": "Disallows using variables before they are defined.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-use-before-define.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "no-useless-empty-export": {
                 "rule": "no-useless-empty-export",
                 "description": "Disallow empty exports that don't change anything in a module file.",
@@ -4887,6 +4937,16 @@
                 "rule": "only-throw-error",
                 "description": "This rule disallows throwing non-Error values.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/only-throw-error.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
+            "parameter-properties": {
+                "rule": "parameter-properties",
+                "description": "Requires or disallows parameter properties in class constructors.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/parameter-properties.html",
                 "meta": {
                     "recommended": false,
                     "fixable": "false",
@@ -5109,6 +5169,16 @@
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/unbound-method.html",
                 "meta": {
                     "recommended": true,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
+            "unified-signatures": {
+                "rule": "unified-signatures",
+                "description": "Disallow overload signatures that can be unified into one.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/unified-signatures.html",
+                "meta": {
+                    "recommended": false,
                     "fixable": "false",
                     "hasSuggestions": false
                 }
@@ -13248,7 +13318,7 @@
             "consistent-test-it": {
                 "rule": "consistent-test-it",
                 "description": "Enforce `test` and `it` usage conventions",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/consistent-test-it.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/consistent-test-it.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13258,7 +13328,7 @@
             "expect-expect": {
                 "rule": "expect-expect",
                 "description": "Enforce assertion to be made in a test body",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/expect-expect.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/expect-expect.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13268,7 +13338,7 @@
             "max-expects": {
                 "rule": "max-expects",
                 "description": "Enforces a maximum number assertion calls in a test body",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/max-expects.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/max-expects.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13278,7 +13348,7 @@
             "max-nested-describe": {
                 "rule": "max-nested-describe",
                 "description": "Enforces a maximum depth to nested describe calls",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/max-nested-describe.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/max-nested-describe.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13288,7 +13358,7 @@
             "no-alias-methods": {
                 "rule": "no-alias-methods",
                 "description": "Disallow alias methods",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-alias-methods.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-alias-methods.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13298,7 +13368,7 @@
             "no-commented-out-tests": {
                 "rule": "no-commented-out-tests",
                 "description": "Disallow commented out tests",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-commented-out-tests.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-commented-out-tests.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13308,7 +13378,7 @@
             "no-conditional-expect": {
                 "rule": "no-conditional-expect",
                 "description": "Disallow calling `expect` conditionally",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-conditional-expect.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-conditional-expect.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13318,7 +13388,7 @@
             "no-conditional-in-test": {
                 "rule": "no-conditional-in-test",
                 "description": "Disallow conditional logic in tests",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-conditional-in-test.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-conditional-in-test.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13328,7 +13398,7 @@
             "no-confusing-set-timeout": {
                 "rule": "no-confusing-set-timeout",
                 "description": "Disallow confusing usages of jest.setTimeout",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-confusing-set-timeout.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-confusing-set-timeout.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13338,7 +13408,7 @@
             "no-deprecated-functions": {
                 "rule": "no-deprecated-functions",
                 "description": "Disallow use of deprecated functions",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-deprecated-functions.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-deprecated-functions.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13348,7 +13418,7 @@
             "no-disabled-tests": {
                 "rule": "no-disabled-tests",
                 "description": "Disallow disabled tests",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-disabled-tests.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-disabled-tests.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13358,7 +13428,7 @@
             "no-done-callback": {
                 "rule": "no-done-callback",
                 "description": "Disallow using a callback in asynchronous tests and hooks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-done-callback.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-done-callback.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13368,7 +13438,7 @@
             "no-duplicate-hooks": {
                 "rule": "no-duplicate-hooks",
                 "description": "Disallow duplicate setup and teardown hooks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-duplicate-hooks.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-duplicate-hooks.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13378,7 +13448,7 @@
             "no-error-equal": {
                 "rule": "no-error-equal",
                 "description": "Disallow using equality matchers on error types",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-error-equal.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-error-equal.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13388,7 +13458,7 @@
             "no-export": {
                 "rule": "no-export",
                 "description": "Disallow using `exports` in files containing tests",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-export.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-export.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13398,7 +13468,7 @@
             "no-focused-tests": {
                 "rule": "no-focused-tests",
                 "description": "Disallow focused tests",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-focused-tests.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-focused-tests.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13408,7 +13478,7 @@
             "no-hooks": {
                 "rule": "no-hooks",
                 "description": "Disallow setup and teardown hooks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-hooks.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-hooks.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13418,7 +13488,7 @@
             "no-identical-title": {
                 "rule": "no-identical-title",
                 "description": "Disallow identical titles",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-identical-title.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-identical-title.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13428,7 +13498,7 @@
             "no-interpolation-in-snapshots": {
                 "rule": "no-interpolation-in-snapshots",
                 "description": "Disallow string interpolation inside snapshots",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-interpolation-in-snapshots.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-interpolation-in-snapshots.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13438,7 +13508,7 @@
             "no-jasmine-globals": {
                 "rule": "no-jasmine-globals",
                 "description": "Disallow Jasmine globals",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-jasmine-globals.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-jasmine-globals.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13448,7 +13518,7 @@
             "no-large-snapshots": {
                 "rule": "no-large-snapshots",
                 "description": "Disallow large snapshots",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-large-snapshots.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-large-snapshots.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13458,7 +13528,7 @@
             "no-mocks-import": {
                 "rule": "no-mocks-import",
                 "description": "Disallow manually importing from `__mocks__`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-mocks-import.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-mocks-import.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13468,7 +13538,7 @@
             "no-restricted-jest-methods": {
                 "rule": "no-restricted-jest-methods",
                 "description": "Disallow specific `jest.` methods",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-restricted-jest-methods.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-restricted-jest-methods.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13478,7 +13548,7 @@
             "no-restricted-matchers": {
                 "rule": "no-restricted-matchers",
                 "description": "Disallow specific matchers & modifiers",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-restricted-matchers.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-restricted-matchers.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13488,7 +13558,7 @@
             "no-standalone-expect": {
                 "rule": "no-standalone-expect",
                 "description": "Disallow using `expect` outside of `it` or `test` blocks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-standalone-expect.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-standalone-expect.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13498,7 +13568,7 @@
             "no-test-prefixes": {
                 "rule": "no-test-prefixes",
                 "description": "Require using `.only` and `.skip` over `f` and `x`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-test-prefixes.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-test-prefixes.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13508,7 +13578,7 @@
             "no-test-return-statement": {
                 "rule": "no-test-return-statement",
                 "description": "Disallow explicitly returning from tests",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-test-return-statement.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-test-return-statement.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13518,7 +13588,7 @@
             "no-unnecessary-assertion": {
                 "rule": "no-unnecessary-assertion",
                 "description": "Disallow unnecessary assertions based on types",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-unnecessary-assertion.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-unnecessary-assertion.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13528,7 +13598,7 @@
             "no-unneeded-async-expect-function": {
                 "rule": "no-unneeded-async-expect-function",
                 "description": "Disallow unnecessary async function wrapper for expected promises",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-unneeded-async-expect-function.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-unneeded-async-expect-function.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13538,7 +13608,7 @@
             "no-untyped-mock-factory": {
                 "rule": "no-untyped-mock-factory",
                 "description": "Disallow using `jest.mock()` factories without an explicit type parameter",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/no-untyped-mock-factory.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/no-untyped-mock-factory.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13548,7 +13618,7 @@
             "padding-around-after-all-blocks": {
                 "rule": "padding-around-after-all-blocks",
                 "description": "Enforce padding around `afterAll` blocks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/padding-around-after-all-blocks.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/padding-around-after-all-blocks.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "whitespace",
@@ -13558,7 +13628,7 @@
             "padding-around-after-each-blocks": {
                 "rule": "padding-around-after-each-blocks",
                 "description": "Enforce padding around `afterEach` blocks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/padding-around-after-each-blocks.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/padding-around-after-each-blocks.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "whitespace",
@@ -13568,7 +13638,7 @@
             "padding-around-all": {
                 "rule": "padding-around-all",
                 "description": "Enforce padding around Jest functions",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/padding-around-all.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/padding-around-all.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "whitespace",
@@ -13578,7 +13648,7 @@
             "padding-around-before-all-blocks": {
                 "rule": "padding-around-before-all-blocks",
                 "description": "Enforce padding around `beforeAll` blocks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/padding-around-before-all-blocks.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/padding-around-before-all-blocks.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "whitespace",
@@ -13588,7 +13658,7 @@
             "padding-around-before-each-blocks": {
                 "rule": "padding-around-before-each-blocks",
                 "description": "Enforce padding around `beforeEach` blocks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/padding-around-before-each-blocks.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/padding-around-before-each-blocks.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "whitespace",
@@ -13598,7 +13668,7 @@
             "padding-around-describe-blocks": {
                 "rule": "padding-around-describe-blocks",
                 "description": "Enforce padding around `describe` blocks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/padding-around-describe-blocks.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/padding-around-describe-blocks.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "whitespace",
@@ -13608,7 +13678,7 @@
             "padding-around-expect-groups": {
                 "rule": "padding-around-expect-groups",
                 "description": "Enforce padding around `expect` groups",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/padding-around-expect-groups.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/padding-around-expect-groups.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "whitespace",
@@ -13618,7 +13688,7 @@
             "padding-around-test-blocks": {
                 "rule": "padding-around-test-blocks",
                 "description": "Enforce padding around `test` and `it` blocks",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/padding-around-test-blocks.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/padding-around-test-blocks.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "whitespace",
@@ -13628,7 +13698,7 @@
             "prefer-called-with": {
                 "rule": "prefer-called-with",
                 "description": "Suggest using `toHaveBeenCalledWith()`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-called-with.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-called-with.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13638,7 +13708,7 @@
             "prefer-comparison-matcher": {
                 "rule": "prefer-comparison-matcher",
                 "description": "Suggest using the built-in comparison matchers",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-comparison-matcher.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-comparison-matcher.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13648,7 +13718,7 @@
             "prefer-each": {
                 "rule": "prefer-each",
                 "description": "Prefer using `.each` rather than manual loops",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-each.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-each.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13658,7 +13728,7 @@
             "prefer-ending-with-an-expect": {
                 "rule": "prefer-ending-with-an-expect",
                 "description": "Prefer having the last statement in a test be an assertion",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-ending-with-an-expect.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-ending-with-an-expect.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13668,7 +13738,7 @@
             "prefer-equality-matcher": {
                 "rule": "prefer-equality-matcher",
                 "description": "Suggest using the built-in equality matchers",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-equality-matcher.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-equality-matcher.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13678,7 +13748,7 @@
             "prefer-expect-assertions": {
                 "rule": "prefer-expect-assertions",
                 "description": "Suggest using `expect.assertions()` OR `expect.hasAssertions()`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-expect-assertions.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-expect-assertions.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13688,7 +13758,7 @@
             "prefer-expect-resolves": {
                 "rule": "prefer-expect-resolves",
                 "description": "Prefer `await expect(...).resolves` over `expect(await ...)` syntax",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-expect-resolves.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-expect-resolves.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13698,7 +13768,7 @@
             "prefer-hooks-in-order": {
                 "rule": "prefer-hooks-in-order",
                 "description": "Prefer having hooks in a consistent order",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-hooks-in-order.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-hooks-in-order.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13708,7 +13778,7 @@
             "prefer-hooks-on-top": {
                 "rule": "prefer-hooks-on-top",
                 "description": "Suggest having hooks before any test cases",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-hooks-on-top.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-hooks-on-top.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13718,7 +13788,7 @@
             "prefer-importing-jest-globals": {
                 "rule": "prefer-importing-jest-globals",
                 "description": "Prefer importing Jest globals",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-importing-jest-globals.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-importing-jest-globals.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13728,7 +13798,7 @@
             "prefer-jest-mocked": {
                 "rule": "prefer-jest-mocked",
                 "description": "Prefer `jest.mocked()` over `fn as jest.Mock`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-jest-mocked.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-jest-mocked.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13738,7 +13808,7 @@
             "prefer-lowercase-title": {
                 "rule": "prefer-lowercase-title",
                 "description": "Enforce lowercase test names",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-lowercase-title.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-lowercase-title.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13748,7 +13818,7 @@
             "prefer-mock-promise-shorthand": {
                 "rule": "prefer-mock-promise-shorthand",
                 "description": "Prefer mock resolved/rejected shorthands for promises",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-mock-promise-shorthand.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-mock-promise-shorthand.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13758,7 +13828,7 @@
             "prefer-mock-return-shorthand": {
                 "rule": "prefer-mock-return-shorthand",
                 "description": "Prefer mock return shorthands",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-mock-return-shorthand.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-mock-return-shorthand.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13768,7 +13838,7 @@
             "prefer-snapshot-hint": {
                 "rule": "prefer-snapshot-hint",
                 "description": "Prefer including a hint with external snapshots",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-snapshot-hint.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-snapshot-hint.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13778,7 +13848,7 @@
             "prefer-spy-on": {
                 "rule": "prefer-spy-on",
                 "description": "Suggest using `jest.spyOn()`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-spy-on.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-spy-on.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13788,7 +13858,7 @@
             "prefer-strict-equal": {
                 "rule": "prefer-strict-equal",
                 "description": "Suggest using `toStrictEqual()`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-strict-equal.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-strict-equal.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13798,7 +13868,7 @@
             "prefer-to-be": {
                 "rule": "prefer-to-be",
                 "description": "Suggest using `toBe()` for primitive literals",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-to-be.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-to-be.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13808,7 +13878,7 @@
             "prefer-to-contain": {
                 "rule": "prefer-to-contain",
                 "description": "Suggest using `toContain()`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-to-contain.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-to-contain.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13818,7 +13888,7 @@
             "prefer-to-have-been-called-times": {
                 "rule": "prefer-to-have-been-called-times",
                 "description": "Suggest using `toHaveBeenCalledTimes()`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-to-have-been-called-times.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-to-have-been-called-times.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13828,7 +13898,7 @@
             "prefer-to-have-been-called": {
                 "rule": "prefer-to-have-been-called",
                 "description": "Suggest using `toHaveBeenCalled`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-to-have-been-called.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-to-have-been-called.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13838,7 +13908,7 @@
             "prefer-to-have-length": {
                 "rule": "prefer-to-have-length",
                 "description": "Suggest using `toHaveLength()`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-to-have-length.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-to-have-length.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13848,7 +13918,7 @@
             "prefer-todo": {
                 "rule": "prefer-todo",
                 "description": "Suggest using `test.todo`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/prefer-todo.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/prefer-todo.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13858,7 +13928,7 @@
             "require-hook": {
                 "rule": "require-hook",
                 "description": "Require setup and teardown code to be within a hook",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/require-hook.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/require-hook.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13868,7 +13938,7 @@
             "require-to-throw-message": {
                 "rule": "require-to-throw-message",
                 "description": "Require a message for `toThrow()`",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/require-to-throw-message.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/require-to-throw-message.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13878,7 +13948,7 @@
             "require-top-level-describe": {
                 "rule": "require-top-level-describe",
                 "description": "Require test cases and hooks to be inside a `describe` block",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/require-top-level-describe.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/require-top-level-describe.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13888,7 +13958,7 @@
             "unbound-method": {
                 "rule": "unbound-method",
                 "description": "Enforce unbound methods are called with their expected scope",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/unbound-method.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/unbound-method.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -13898,7 +13968,7 @@
             "valid-describe-callback": {
                 "rule": "valid-describe-callback",
                 "description": "Enforce valid `describe()` callback",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/valid-describe-callback.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/valid-describe-callback.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13908,7 +13978,7 @@
             "valid-expect-in-promise": {
                 "rule": "valid-expect-in-promise",
                 "description": "Require promises that have expectations in their chain to be valid",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/valid-expect-in-promise.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/valid-expect-in-promise.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13918,7 +13988,7 @@
             "valid-expect-with-promise": {
                 "rule": "valid-expect-with-promise",
                 "description": "Require that `resolve` and `reject` modifiers are present (and only) for promise-like types",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/valid-expect-with-promise.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/valid-expect-with-promise.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13928,7 +13998,7 @@
             "valid-expect": {
                 "rule": "valid-expect",
                 "description": "Enforce valid `expect()` usage",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/valid-expect.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/valid-expect.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
@@ -13938,7 +14008,7 @@
             "valid-mock-module-path": {
                 "rule": "valid-mock-module-path",
                 "description": "Disallow mocking of non-existing module paths",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/valid-mock-module-path.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/valid-mock-module-path.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -13948,7 +14018,7 @@
             "valid-title": {
                 "rule": "valid-title",
                 "description": "Enforce valid titles",
-                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.14.0/docs/rules/valid-title.md",
+                "docsUrl": "https://github.com/jest-community/eslint-plugin-jest/blob/v29.15.0/docs/rules/valid-title.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "code",

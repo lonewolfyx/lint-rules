@@ -2,7 +2,12 @@ import type { RuleDefinition } from '@eslint/core'
 import type { ILintRules } from '@lint-rules/web/shared/types/rules'
 import type { Rule } from 'eslint'
 import { writeFile } from 'node:fs/promises'
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { Linter } from 'eslint'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+export const TEMP_PATH = resolve(__dirname, '../../../')
 
 const plugins = [
     {
@@ -210,7 +215,7 @@ async function generateEslintRules() {
     const rules = Object.fromEntries(lint.getRules()) as Record<string, Rule.RuleModule>
 
     await writeFile(
-        './apps/web/data/eslint-schema.json',
+        resolve(TEMP_PATH, './apps/web/data/eslint-schema.json'),
         JSON.stringify(rules, null, 2),
         'utf-8',
     )
@@ -220,7 +225,7 @@ async function generateEslintRules() {
     )
 
     await writeFile(
-        './apps/web/data/eslint-deprecated-rules.json',
+        resolve(TEMP_PATH, './apps/web/data/eslint-deprecated-rules.json'),
         JSON.stringify(deprecatedRules, null, 2),
         'utf-8',
     )
@@ -287,7 +292,7 @@ async function generateEslintRules() {
     }
 
     await writeFile(
-        './apps/web/data/eslint-rules.json',
+        resolve(TEMP_PATH, './apps/web/data/eslint-rules.json'),
         JSON.stringify(Object.fromEntries(eslintRules), null, 2),
         'utf-8',
     )

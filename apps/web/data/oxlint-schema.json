@@ -1982,6 +1982,54 @@
         }
     },
     {
+        "rule": "no-shadow",
+        "description": "Disallows variable declarations from shadowing variables declared in the outer scope.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-shadow.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allow": {
+                        "type": "string[]"
+                    },
+                    "builtinGlobals": {
+                        "type": "boolean"
+                    },
+                    "hoist": {
+                        "type": "string",
+                        "enum": [
+                            "all",
+                            "functions",
+                            "functions-and-types",
+                            "never",
+                            "types"
+                        ]
+                    },
+                    "ignoreFunctionTypeParameterNameValueShadow": {
+                        "type": "boolean"
+                    },
+                    "ignoreOnInitialization": {
+                        "type": "boolean"
+                    },
+                    "ignoreTypeValueShadow": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allow": [],
+                    "builtinGlobals": false,
+                    "hoist": "functions-and-types",
+                    "ignoreFunctionTypeParameterNameValueShadow": true,
+                    "ignoreOnInitialization": false,
+                    "ignoreTypeValueShadow": true
+                }
+            ]
+        }
+    },
+    {
         "rule": "no-shadow-restricted-names",
         "description": "Disallows the redefining of global variables such as undefined, NaN, Infinity,\neval, globalThis and arguments.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-shadow-restricted-names.html",
@@ -2090,6 +2138,15 @@
         "rule": "no-unexpected-multiline",
         "description": "In most cases, semicolons are not required in JavaScript in order for code to be parsed\nand executed as expected. Typically this occurs because semicolons are automatically\ninserted based on a fixed set of rules. This rule exists to detect those cases where a semicolon\nis NOT inserted automatically, and may be parsed differently than expected.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unexpected-multiline.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
+        "rule": "no-unmodified-loop-condition",
+        "description": "Disallow references in loop conditions that are never modified within the loop.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unmodified-loop-condition.html",
         "options": {
             "schema": {},
             "defaultOptions": []
@@ -6254,6 +6311,15 @@
         }
     },
     {
+        "rule": "jsx-no-constructed-context-values",
+        "description": "Disallows JSX context provider values from taking values that will cause needless rerenders.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-constructed-context-values.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
         "rule": "jsx-no-duplicate-props",
         "description": "This rule prevents duplicate props in JSX elements.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-duplicate-props.html",
@@ -7814,6 +7880,35 @@
         }
     },
     {
+        "rule": "no-unnecessary-condition",
+        "description": "Disallow conditions that are always truthy, always falsy, or always nullish\nbased on TypeScript's type information.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-condition.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allowConstantLoopConditions": {
+                        "type": "string",
+                        "enum": [
+                            "never",
+                            "always",
+                            "only-allowed-literals"
+                        ]
+                    },
+                    "checkTypePredicates": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "checkTypePredicates": false
+                }
+            ]
+        }
+    },
+    {
         "rule": "no-unnecessary-parameter-property-assignment",
         "description": "Prevents unnecessary assignment of parameter properties.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-parameter-property-assignment.html",
@@ -7977,6 +8072,51 @@
         }
     },
     {
+        "rule": "no-use-before-define",
+        "description": "Disallows using variables before they are defined.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-use-before-define.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allowNamedExports": {
+                        "type": "boolean"
+                    },
+                    "classes": {
+                        "type": "boolean"
+                    },
+                    "enums": {
+                        "type": "boolean"
+                    },
+                    "functions": {
+                        "type": "boolean"
+                    },
+                    "ignoreTypeReferences": {
+                        "type": "boolean"
+                    },
+                    "typedefs": {
+                        "type": "boolean"
+                    },
+                    "variables": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allowNamedExports": false,
+                    "classes": true,
+                    "enums": true,
+                    "functions": true,
+                    "ignoreTypeReferences": true,
+                    "typedefs": true,
+                    "variables": true
+                }
+            ]
+        }
+    },
+    {
         "rule": "no-useless-empty-export",
         "description": "Disallow empty exports that don't change anything in a module file.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-useless-empty-export.html",
@@ -8044,6 +8184,47 @@
                     "allowRethrowing": true,
                     "allowThrowingAny": true,
                     "allowThrowingUnknown": true
+                }
+            ]
+        }
+    },
+    {
+        "rule": "parameter-properties",
+        "description": "Requires or disallows parameter properties in class constructors.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/parameter-properties.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allow": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "private",
+                                "private readonly",
+                                "protected",
+                                "protected readonly",
+                                "public",
+                                "public readonly",
+                                "readonly"
+                            ]
+                        }
+                    },
+                    "prefer": {
+                        "type": "string",
+                        "enum": [
+                            "class-property",
+                            "parameter-property"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allow": [],
+                    "prefer": "class-property"
                 }
             ]
         }
@@ -8603,6 +8784,31 @@
             "defaultOptions": [
                 {
                     "ignoreStatic": false
+                }
+            ]
+        }
+    },
+    {
+        "rule": "unified-signatures",
+        "description": "Disallow overload signatures that can be unified into one.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/unified-signatures.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "ignoreDifferentlyNamedParameters": {
+                        "type": "boolean"
+                    },
+                    "ignoreOverloadsWithDifferentJSDoc": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "ignoreDifferentlyNamedParameters": false,
+                    "ignoreOverloadsWithDifferentJSDoc": false
                 }
             ]
         }
