@@ -1,6 +1,15 @@
 <template>
     <ScrollArea class="overflow-hidden w-full min-h-full h-[calc(100vh-6rem)]">
-        <div class="space-y-3">
+        <div
+            v-if="pending"
+            class="flex items-center justify-center"
+        >
+            <span>loading</span>
+        </div>
+        <div
+            v-else
+            class="space-y-3"
+        >
             <div
                 v-for="lint in lintRules"
                 :key="lint.name"
@@ -33,7 +42,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { ILintRulesData } from '#shared/types/rules'
 import { ScrollArea } from '@private/shadcn-vue/components/ui/scroll-area'
 import { cn } from '@private/shadcn-vue/lib/utils'
 import { useRuleConfig } from '~/components/rules'
@@ -42,8 +50,17 @@ defineOptions({
     name: 'LintMode',
 })
 
-const { mode, triggerLintMode } = useRuleConfig()
-const { data } = useLazyAsyncData('lintRules', () => $fetch<{ data: ILintRulesData[] }>('/api/rule/list'))
+const { linter, mode, triggerLintMode } = useRuleConfig()
+
+const { data, pending } = useAsyncData(
+    `lintRules-${linter.value}`,
+    () => $fetch(`/api/linter/${linter.value}`),
+    {
+        watch: [linter],
+        immediate: true,
+    },
+)
+
 const lintRules = computed(() => data.value?.data ?? [])
 
 onMounted(() => {
