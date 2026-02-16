@@ -41,4 +41,10 @@ defineOptions({
 const { triggerLintMode } = useRuleConfig()
 const { data } = useLazyAsyncData('lintRules', () => $fetch<{ data: ILintRulesData[] }>('/api/rule/list'))
 const lintRules = computed(() => data.value?.data ?? [])
+
+onMounted(() => {
+    if (lintRules.value.length > 0) {
+        triggerLintMode(lintRules.value.at(0)?.name as string)
+    }
+})
 </script>
