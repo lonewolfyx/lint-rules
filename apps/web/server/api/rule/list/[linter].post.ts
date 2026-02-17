@@ -1,12 +1,7 @@
 import type { INavigationItem } from '#shared/types/navigation'
 import type { ILintRulesConfig } from '#shared/types/rules'
-import type { H3Event } from 'h3'
-import { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-
-async function handler(event: H3Event) {
+export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const linter = getRouterParam(event, 'linter') ?? ''
     const mode = body?.mode ?? ''
@@ -21,6 +16,13 @@ async function handler(event: H3Event) {
 
     if (!mode) {
         throw createError({ statusCode: 400, message: 'mode is required' })
+    }
+
+    const cacheKey = `cache:rules:${linter}:${mode}`
+    const cacheStorage = useStorage('cache')
+    const cachedData = await cacheStorage.getItem(cacheKey)
+    if (cachedData) {
+        return { data: cachedData }
     }
 
     const storage = useStorage('assets:lint-rules')
@@ -38,18 +40,9 @@ async function handler(event: H3Event) {
         throw createError({ statusCode: 404, message: `No rules found for mode: ${mode}` })
     }
 
+    await cacheStorage.setItem(cacheKey, rulesData[mode], { ttl: 3600 })
+
     return {
         data: rulesData[mode],
     }
-}
-
-export default import.meta.dev
-    ? defineEventHandler(handler)
-    : defineCachedEventHandler(handler, {
-            maxAge: 3600,
-            swr: true,
-            getKey: (event) => {
-                const linter = getRouterParam(event, 'linter') ?? ''
-                return `rules:lint:${linter}`
-            },
-        })
+})
