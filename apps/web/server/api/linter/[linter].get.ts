@@ -33,5 +33,8 @@ export default import.meta.dev
     : defineCachedEventHandler(getLintRuleList, {
             maxAge: 3600,
             swr: true,
-            getKey: () => 'rules:plugins',
+            getKey: (event) => {
+                const linter = getRouterParam(event, 'linter')
+                return `linter:${linter}`
+            },
         })
