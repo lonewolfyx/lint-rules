@@ -2,7 +2,7 @@ import type { ILintRules, ILintRulesConfig, ILintRulesData } from '#shared/types
 import type { H3Event } from 'h3'
 import { useStorage } from 'nitropack/runtime'
 
-async function getLintRuleList(event: H3Event) {
+async function getLinterList(event: H3Event) {
     const linter = getRouterParam(event, 'linter') ?? 'eslint'
 
     const storage = useStorage('assets:lint-rules')
@@ -29,8 +29,8 @@ async function getLintRuleList(event: H3Event) {
 }
 
 export default import.meta.dev
-    ? defineEventHandler(getLintRuleList)
-    : defineCachedEventHandler(getLintRuleList, {
+    ? defineEventHandler(getLinterList)
+    : defineCachedEventHandler(getLinterList, {
             maxAge: 3600,
             swr: true,
             getKey: (event) => {
