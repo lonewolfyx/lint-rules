@@ -20,9 +20,17 @@ export default defineEventHandler(async (event) => {
 
     const cacheKey = `cache:rules:${linter}:${mode}`
     const cacheStorage = useStorage('cache')
-    const cachedData = await cacheStorage.getItem(cacheKey)
+
+    const cachedData = await cacheStorage.getItem<unknown>(cacheKey)
+    const now = Date.now()
+    const MAX_AGE_MS = 2 * 60 * 60 * 1000
+
     if (cachedData) {
-        return { data: cachedData }
+        const isExpired = now - cachedData.timestamp > MAX_AGE_MS
+
+        if (!isExpired) {
+            return { data: cachedData }
+        }
     }
 
     const storage = useStorage('assets:lint-rules')
