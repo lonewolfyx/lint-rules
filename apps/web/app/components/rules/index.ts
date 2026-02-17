@@ -9,4 +9,8 @@ export const [useRuleConfig, provideRulesContext] = createContext<{
     toggleRules: (rule: string) => void
     mode: Ref<string>
     triggerLintMode: (lint: string) => void
+    searchKeyword: Ref<string>
+    setSearchKeyword: (keyword: string) => void
+    refreshKey: Ref<number>
+    triggerRefresh: () => void
 }>('rules')

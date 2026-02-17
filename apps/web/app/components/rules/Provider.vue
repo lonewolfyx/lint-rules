@@ -25,6 +25,16 @@ const triggerLintMode = (model: string) => {
     mode.value = model
 }
 
+const searchKeyword = ref<string>('')
+const setSearchKeyword = (keyword: string) => {
+    searchKeyword.value = keyword
+}
+
+const refreshKey = ref<number>(0)
+const triggerRefresh = () => {
+    refreshKey.value++
+}
+
 provideRulesContext({
     linter,
     triggerLint,
@@ -32,5 +42,9 @@ provideRulesContext({
     toggleRules,
     mode,
     triggerLintMode,
+    searchKeyword,
+    setSearchKeyword,
+    refreshKey,
+    triggerRefresh,
 })
 </script>

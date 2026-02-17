@@ -42,6 +42,7 @@
 </template>
 
 <script lang="ts" setup>
+import type { ILintRulesData } from '#shared/types/rules'
 import { ScrollArea } from '@private/shadcn-vue/components/ui/scroll-area'
 import { cn } from '@private/shadcn-vue/lib/utils'
 import { useRuleConfig } from '~/components/rules'
@@ -50,18 +51,29 @@ defineOptions({
     name: 'LintMode',
 })
 
-const { linter, mode, triggerLintMode } = useRuleConfig()
+const { linter, mode, triggerLintMode, searchKeyword, refreshKey } = useRuleConfig()
 
 const { data, pending } = useAsyncData(
     `linter:${linter.value}`,
     () => $fetch(`/api/linter/${linter.value}`),
     {
-        watch: [linter],
+        watch: [linter, refreshKey],
         immediate: true,
     },
 )
 
-const lintRules = computed(() => data.value?.data ?? [])
+const lintRules = computed(() => {
+    const linter = data.value?.data ?? []
+    const keyword = searchKeyword.value.toLowerCase().trim()
+
+    if (!keyword) {
+        return linter
+    }
+
+    return linter.filter((lint: ILintRulesData) =>
+        lint.name.toLowerCase().includes(keyword) || lint.description.toLowerCase().includes(keyword),
+    )
+})
 
 onMounted(() => {
     if (lintRules.value.length > 0) {

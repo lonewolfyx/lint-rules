@@ -16,7 +16,10 @@
                         <SiteAppSidebarTrigger class="hidden lg:inline-flex" />
                         <div class="flex items-center flex-1 gap-1">
                             <InputGroup>
-                                <InputGroupInput placeholder="Search..." />
+                                <InputGroupInput
+                                    v-model="searchKeyword"
+                                    placeholder="Search..."
+                                />
                                 <InputGroupAddon>
                                     <Icon
                                         mode="svg"
@@ -27,6 +30,7 @@
                             <Button
                                 size="icon"
                                 variant="ghost"
+                                @click="handleRefresh"
                             >
                                 <Icon
                                     mode="svg"
@@ -59,8 +63,16 @@ import { Button } from '@private/shadcn-vue/components/ui/button'
 import { InputGroup, InputGroupAddon, InputGroupInput } from '@private/shadcn-vue/components/ui/input-group'
 import { SidebarInset } from '@private/shadcn-vue/components/ui/sidebar'
 import { cn } from '@private/shadcn-vue/lib/utils'
+import { useRuleConfig } from '~/components/rules'
 
 defineOptions({
     name: 'SiteAppContent',
 })
+
+const { searchKeyword, triggerRefresh } = useRuleConfig()
+
+const handleRefresh = () => {
+    searchKeyword.value = ''
+    triggerRefresh()
+}
 </script>
