@@ -23,9 +23,9 @@ async function handler(event: H3Event) {
         throw createError({ statusCode: 400, message: 'mode is required' })
     }
 
-    const storage = useStorage()
+    const storage = useStorage('assets:lint-rules')
     const fileName = `${linter}-rules.json`
-    const rulesData = await storage.getItem<ILintRulesConfig>(`public-fs:data:${linter}-rules.json`)
+    const rulesData = await storage.getItem<ILintRulesConfig>(`${fileName}`)
 
     if (!rulesData) {
         throw createError({

@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 import { defineNuxtConfig } from 'nuxt/config'
 
@@ -47,12 +48,12 @@ export default defineNuxtConfig({
     compatibilityDate: '2026-02-12',
 
     nitro: {
-        storage: {
-            'public-fs': {
-                driver: 'fs',
-                base: './public', // 相對於 build 時的 rootDir
+        serverAssets: [
+            {
+                baseName: 'lint-rules',
+                dir: fileURLToPath(new URL('./public/data', import.meta.url)),
             },
-        },
+        ],
     },
 
     vite: {
