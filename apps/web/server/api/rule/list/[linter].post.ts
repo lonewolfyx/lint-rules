@@ -1,11 +1,6 @@
 import type { INavigationItem } from '#shared/types/navigation'
 import type { ILintRules, ILintRulesConfig } from '#shared/types/rules'
 
-interface CacheWrapper<T> {
-    timestamp: number
-    data: T
-}
-
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     const linter = getRouterParam(event, 'linter') ?? ''
@@ -26,16 +21,10 @@ export default defineEventHandler(async (event) => {
     const cacheKey = `cache:rules:${linter}:${mode}`
     const cacheStorage = useStorage('cache')
 
-    const cachedData = await cacheStorage.getItem<CacheWrapper<ILintRules>>(cacheKey)
-    const now = Date.now()
-    const MAX_AGE_MS = 2 * 60 * 60 * 1000
+    const cachedData = await cacheStorage.getItem<ILintRules>(cacheKey)
 
     if (cachedData) {
-        const isExpired = now - cachedData.timestamp > MAX_AGE_MS
-
-        if (!isExpired) {
-            return { data: cachedData }
-        }
+        return { data: cachedData }
     }
 
     const storage = useStorage('assets:lint-rules')
