@@ -1,0 +1,50 @@
+name: Generate Linter And Rules
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set node
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      - name: Install
+        run: pnpm i
+
+      - name: Generate
+        run: pnpm run generate
+
+      - name: Fix
+        run: pnpm run lint:fix
+
+      - name: Push Linter And Rules
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: lonewolfyx
+          author_email: 877085893@qq.com
+          message: 'chore: update linter and rules data'
+          add: ./apps/web/public/data
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
