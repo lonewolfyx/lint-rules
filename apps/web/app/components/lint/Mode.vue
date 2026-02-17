@@ -53,7 +53,7 @@ defineOptions({
 const { linter, mode, triggerLintMode } = useRuleConfig()
 
 const { data, pending } = useAsyncData(
-    `lintRules-${linter.value}`,
+    `linter:${linter.value}`,
     () => $fetch(`/api/linter/${linter.value}`),
     {
         watch: [linter],
