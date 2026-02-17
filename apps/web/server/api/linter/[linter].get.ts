@@ -1,10 +1,6 @@
 import type { ILintRules, ILintRulesConfig, ILintRulesData } from '#shared/types/rules'
 import type { H3Event } from 'h3'
-import { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { useStorage } from 'nitropack/runtime'
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
 
 async function getLintRuleList(event: H3Event) {
     const linter = getRouterParam(event, 'linter') ?? 'eslint'
@@ -14,7 +10,6 @@ async function getLintRuleList(event: H3Event) {
     const rulesData = await storage.getItem<ILintRulesConfig>(`${fileName}`)
 
     if (!rulesData) {
-        console.log(await storage.getKeys(''))
         throw createError({
             statusCode: 404,
             message: `${fileName} Not Found`,
