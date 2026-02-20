@@ -18645,6 +18645,16 @@
                     "hasSuggestions": false
                 }
             },
+            "no-duplicate-slow": {
+                "rule": "no-duplicate-slow",
+                "description": "Disallow multiple `test.slow()` calls in the same test",
+                "docsUrl": "https://github.com/mskelton/eslint-plugin-playwright/tree/main/docs/rules/no-duplicate-slow.md",
+                "meta": {
+                    "recommended": true,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
             "no-element-handle": {
                 "rule": "no-element-handle",
                 "description": "The use of ElementHandle is discouraged, use Locator instead",
@@ -18769,6 +18779,16 @@
                 "rule": "no-restricted-matchers",
                 "description": "Disallow specific matchers & modifiers",
                 "docsUrl": "https://github.com/mskelton/eslint-plugin-playwright/tree/main/docs/rules/no-restricted-matchers.md",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "no-restricted-roles": {
+                "rule": "no-restricted-roles",
+                "description": "Disallows the usage of specific roles in getByRole()",
+                "docsUrl": "https://github.com/mskelton/eslint-plugin-playwright/tree/main/docs/rules/no-restricted-roles.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -19022,6 +19042,26 @@
                 "meta": {
                     "recommended": false,
                     "fixable": "code",
+                    "hasSuggestions": false
+                }
+            },
+            "require-tags": {
+                "rule": "require-tags",
+                "description": "Require test blocks to have tags",
+                "docsUrl": "https://github.com/mskelton/eslint-plugin-playwright/tree/main/docs/rules/require-tags.md",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
+                    "hasSuggestions": false
+                }
+            },
+            "require-to-pass-timeout": {
+                "rule": "require-to-pass-timeout",
+                "description": "Require a timeout option for `toPass()`",
+                "docsUrl": "https://github.com/mskelton/eslint-plugin-playwright/tree/main/docs/rules/require-to-pass-timeout.md",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "",
                     "hasSuggestions": false
                 }
             },

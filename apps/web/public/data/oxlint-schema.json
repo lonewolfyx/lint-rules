@@ -43,6 +43,9 @@
                     "allowImplicit": {
                         "type": "boolean"
                     },
+                    "allowVoid": {
+                        "type": "boolean"
+                    },
                     "checkForEach": {
                         "type": "boolean"
                     }
@@ -52,6 +55,7 @@
             "defaultOptions": [
                 {
                     "allowImplicit": false,
+                    "allowVoid": false,
                     "checkForEach": false
                 }
             ]
@@ -2389,6 +2393,51 @@
         }
     },
     {
+        "rule": "no-use-before-define",
+        "description": "Disallows using variables before they are defined.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-use-before-define.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allowNamedExports": {
+                        "type": "boolean"
+                    },
+                    "classes": {
+                        "type": "boolean"
+                    },
+                    "enums": {
+                        "type": "boolean"
+                    },
+                    "functions": {
+                        "type": "boolean"
+                    },
+                    "ignoreTypeReferences": {
+                        "type": "boolean"
+                    },
+                    "typedefs": {
+                        "type": "boolean"
+                    },
+                    "variables": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allowNamedExports": false,
+                    "classes": true,
+                    "enums": true,
+                    "functions": true,
+                    "ignoreTypeReferences": true,
+                    "typedefs": true,
+                    "variables": true
+                }
+            ]
+        }
+    },
+    {
         "rule": "no-useless-backreference",
         "description": "Disallows backreferences in regular expressions that will always be ignored\nbecause the capture group they refer to has not matched and cannot match\nat the time the backreference is evaluated.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-useless-backreference.html",
@@ -2765,11 +2814,7 @@
         "description": "Enforce the consistent use of the radix argument when using parseInt().",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/radix.html",
         "options": {
-            "schema": {
-                "type": "object",
-                "properties": {},
-                "additionalProperties": false
-            },
+            "schema": {},
             "defaultOptions": []
         }
     },
@@ -4086,6 +4131,15 @@
         }
     },
     {
+        "rule": "prefer-mock-return-shorthand",
+        "description": "When working with mocks of functions that return simple values, Jest provides some API sugar functions to reduce the amount of boilerplate you have to write.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/jest/prefer-mock-return-shorthand.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
         "rule": "prefer-spy-on",
         "description": "When mocking a function by overwriting a property you have to manually restore\nthe original implementation when cleaning up. When using jest.spyOn() Jest\nkeeps track of changes, and they can be restored with jest.restoreAllMocks(),\nmockFn.mockRestore() or by setting restoreMocks to true in the Jest\nconfig.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/jest/prefer-spy-on.html",
@@ -5321,6 +5375,15 @@
         "rule": "no-new-require",
         "description": "Warn about calling new on require.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/no-new-require.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
+        "rule": "no-path-concat",
+        "description": "Disallows string concatenation with __dirname and __filename.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/no-path-concat.html",
         "options": {
             "schema": {},
             "defaultOptions": []
@@ -7054,6 +7117,27 @@
         }
     },
     {
+        "rule": "consistent-return",
+        "description": "Enforce consistent return behavior in functions.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-return.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "treatUndefinedAsUnspecified": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "treatUndefinedAsUnspecified": false
+                }
+            ]
+        }
+    },
+    {
         "rule": "consistent-type-assertions",
         "description": "Enforce consistent usage of TypeScript type assertions.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-assertions.html",
@@ -7079,6 +7163,27 @@
                 "additionalProperties": false
             },
             "defaultOptions": []
+        }
+    },
+    {
+        "rule": "consistent-type-exports",
+        "description": "Enforce using export type for exports that are only used as types.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-exports.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "fixMixedExportsWithInlineTypeSpecifier": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "fixMixedExportsWithInlineTypeSpecifier": false
+                }
+            ]
         }
     },
     {
@@ -7114,6 +7219,43 @@
                     "disallowTypeAnnotations": true,
                     "fixStyle": "separate-type-imports",
                     "prefer": "type-imports"
+                }
+            ]
+        }
+    },
+    {
+        "rule": "dot-notation",
+        "description": "Enforce dot notation whenever property access can be written safely as obj.prop.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/dot-notation.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allowIndexSignaturePropertyAccess": {
+                        "type": "boolean"
+                    },
+                    "allowKeywords": {
+                        "type": "boolean"
+                    },
+                    "allowPattern": {
+                        "type": "string"
+                    },
+                    "allowPrivateClassPropertyAccess": {
+                        "type": "boolean"
+                    },
+                    "allowProtectedClassPropertyAccess": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allowIndexSignaturePropertyAccess": false,
+                    "allowKeywords": true,
+                    "allowPattern": "",
+                    "allowPrivateClassPropertyAccess": false,
+                    "allowProtectedClassPropertyAccess": false
                 }
             ]
         }
@@ -7918,6 +8060,15 @@
         }
     },
     {
+        "rule": "no-unnecessary-qualifier",
+        "description": "Disallow namespace qualifiers when the referenced name is already in scope.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-qualifier.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
         "rule": "no-unnecessary-template-expression",
         "description": "Disallows unnecessary template expressions (interpolations) that can be simplified.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-template-expression.html",
@@ -7964,6 +8115,15 @@
         "rule": "no-unnecessary-type-constraint",
         "description": "Disallow unnecessary constraints on generic types.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-type-constraint.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
+        "rule": "no-unnecessary-type-parameters",
+        "description": "Disallow type parameters that are declared but not meaningfully used.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-type-parameters.html",
         "options": {
             "schema": {},
             "defaultOptions": []
@@ -8072,48 +8232,12 @@
         }
     },
     {
-        "rule": "no-use-before-define",
-        "description": "Disallows using variables before they are defined.",
-        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-use-before-define.html",
+        "rule": "no-useless-default-assignment",
+        "description": "Disallow default assignments that can never be used.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-useless-default-assignment.html",
         "options": {
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "allowNamedExports": {
-                        "type": "boolean"
-                    },
-                    "classes": {
-                        "type": "boolean"
-                    },
-                    "enums": {
-                        "type": "boolean"
-                    },
-                    "functions": {
-                        "type": "boolean"
-                    },
-                    "ignoreTypeReferences": {
-                        "type": "boolean"
-                    },
-                    "typedefs": {
-                        "type": "boolean"
-                    },
-                    "variables": {
-                        "type": "boolean"
-                    }
-                },
-                "additionalProperties": false
-            },
-            "defaultOptions": [
-                {
-                    "allowNamedExports": false,
-                    "classes": true,
-                    "enums": true,
-                    "functions": true,
-                    "ignoreTypeReferences": true,
-                    "typedefs": true,
-                    "variables": true
-                }
-            ]
+            "schema": {},
+            "defaultOptions": []
         }
     },
     {
@@ -8242,6 +8366,15 @@
         "rule": "prefer-enum-initializers",
         "description": "Require each enum member value to be explicitly initialized.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-enum-initializers.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
+        "rule": "prefer-find",
+        "description": "Prefer .find(...) over .filter(...)[0] for retrieving a single element.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-find.html",
         "options": {
             "schema": {},
             "defaultOptions": []
@@ -8423,9 +8556,75 @@
         }
     },
     {
+        "rule": "prefer-readonly",
+        "description": "Require class members that are never reassigned to be marked readonly.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-readonly.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "onlyInlineLambdas": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "onlyInlineLambdas": false
+                }
+            ]
+        }
+    },
+    {
+        "rule": "prefer-readonly-parameter-types",
+        "description": "Require function and method parameters to use readonly-compatible types.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-readonly-parameter-types.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allow": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "checkParameterProperties": {
+                        "type": "boolean"
+                    },
+                    "ignoreInferredTypes": {
+                        "type": "boolean"
+                    },
+                    "treatMethodsAsReadonly": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allow": [],
+                    "checkParameterProperties": true,
+                    "ignoreInferredTypes": false,
+                    "treatMethodsAsReadonly": false
+                }
+            ]
+        }
+    },
+    {
         "rule": "prefer-reduce-type-parameter",
         "description": "This rule prefers using a type parameter for the accumulator in Array.reduce instead of casting.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-reduce-type-parameter.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
+        "rule": "prefer-regexp-exec",
+        "description": "Prefer RegExp#exec() over String#match() when extracting a regex match.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-regexp-exec.html",
         "options": {
             "schema": {},
             "defaultOptions": []
@@ -8438,6 +8637,31 @@
         "options": {
             "schema": {},
             "defaultOptions": []
+        }
+    },
+    {
+        "rule": "prefer-string-starts-ends-with",
+        "description": "Prefer startsWith and endsWith over manual string boundary checks.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-string-starts-ends-with.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allowSingleElementEquality": {
+                        "type": "string",
+                        "enum": [
+                            "always",
+                            "never"
+                        ]
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allowSingleElementEquality": null
+                }
+            ]
         }
     },
     {
@@ -8689,6 +8913,27 @@
                     "allowNullableString": false,
                     "allowNumber": true,
                     "allowString": true
+                }
+            ]
+        }
+    },
+    {
+        "rule": "strict-void-return",
+        "description": "Disallow returning non-void values where a void return is expected.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/strict-void-return.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allowReturnAny": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allowReturnAny": false
                 }
             ]
         }
@@ -9427,7 +9672,7 @@
     },
     {
         "rule": "no-unnecessary-array-flat-depth",
-        "description": "Disallows passing 1 to Array.prototype.flat",
+        "description": "Disallows passing 1 to Array.prototype.flat.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-array-flat-depth.html",
         "options": {
             "schema": {},
@@ -10385,6 +10630,15 @@
         }
     },
     {
+        "rule": "no-importing-vitest-globals",
+        "description": "The rule disallows import any vitest global function.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/no-importing-vitest-globals.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
         "rule": "prefer-called-once",
         "description": "Substitute toBeCalledTimes(1) and toHaveBeenCalledTimes(1) with\ntoBeCalledOnce() and toHaveBeenCalledOnce() respectively.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-called-once.html",
@@ -10417,6 +10671,23 @@
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-expect-type-of.html",
         "options": {
             "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
+        "rule": "prefer-import-in-mock",
+        "description": "This rule enforces using a dynamic import() in vi.mock(), which improves type information and IntelliSense for the mocked module.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-import-in-mock.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "fixable": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
             "defaultOptions": []
         }
     },

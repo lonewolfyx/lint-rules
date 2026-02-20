@@ -1323,6 +1323,16 @@
                     "hasSuggestions": false
                 }
             },
+            "no-use-before-define": {
+                "rule": "no-use-before-define",
+                "description": "Disallows using variables before they are defined.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-use-before-define.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "no-useless-backreference": {
                 "rule": "no-useless-backreference",
                 "description": "Disallows backreferences in regular expressions that will always be ignored\nbecause the capture group they refer to has not matched and cannot match\nat the time the backreference is evaluated.",
@@ -2403,6 +2413,16 @@
                     "hasSuggestions": true
                 }
             },
+            "prefer-mock-return-shorthand": {
+                "rule": "prefer-mock-return-shorthand",
+                "description": "When working with mocks of functions that return simple values, Jest provides some API sugar functions to reduce the amount of boilerplate you have to write.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jest/prefer-mock-return-shorthand.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "true",
+                    "hasSuggestions": true
+                }
+            },
             "prefer-spy-on": {
                 "rule": "prefer-spy-on",
                 "description": "When mocking a function by overwriting a property you have to manually restore\nthe original implementation when cleaning up. When using jest.spyOn() Jest\nkeeps track of changes, and they can be restored with jest.restoreAllMocks(),\nmockFn.mockRestore() or by setting restoreMocks to true in the Jest\nconfig.",
@@ -3267,6 +3287,16 @@
                 "rule": "no-new-require",
                 "description": "Warn about calling new on require.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/node/no-new-require.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
+            "no-path-concat": {
+                "rule": "no-path-concat",
+                "description": "Disallows string concatenation with __dirname and __filename.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/node/no-path-concat.html",
                 "meta": {
                     "recommended": false,
                     "fixable": "false",
@@ -4353,6 +4383,16 @@
                     "hasSuggestions": true
                 }
             },
+            "consistent-return": {
+                "rule": "consistent-return",
+                "description": "Enforce consistent return behavior in functions.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-return.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "consistent-type-assertions": {
                 "rule": "consistent-type-assertions",
                 "description": "Enforce consistent usage of TypeScript type assertions.",
@@ -4373,6 +4413,16 @@
                     "hasSuggestions": false
                 }
             },
+            "consistent-type-exports": {
+                "rule": "consistent-type-exports",
+                "description": "Enforce using export type for exports that are only used as types.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-exports.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "consistent-type-imports": {
                 "rule": "consistent-type-imports",
                 "description": "Enforce consistent usage of type imports.",
@@ -4381,6 +4431,16 @@
                     "recommended": false,
                     "fixable": "true",
                     "hasSuggestions": true
+                }
+            },
+            "dot-notation": {
+                "rule": "dot-notation",
+                "description": "Enforce dot notation whenever property access can be written safely as obj.prop.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/dot-notation.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
                 }
             },
             "explicit-function-return-type": {
@@ -4743,6 +4803,16 @@
                     "hasSuggestions": false
                 }
             },
+            "no-unnecessary-qualifier": {
+                "rule": "no-unnecessary-qualifier",
+                "description": "Disallow namespace qualifiers when the referenced name is already in scope.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-qualifier.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "no-unnecessary-template-expression": {
                 "rule": "no-unnecessary-template-expression",
                 "description": "Disallows unnecessary template expressions (interpolations) that can be simplified.",
@@ -4777,6 +4847,16 @@
                 "rule": "no-unnecessary-type-constraint",
                 "description": "Disallow unnecessary constraints on generic types.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-type-constraint.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
+            "no-unnecessary-type-parameters": {
+                "rule": "no-unnecessary-type-parameters",
+                "description": "Disallow type parameters that are declared but not meaningfully used.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-type-parameters.html",
                 "meta": {
                     "recommended": false,
                     "fixable": "false",
@@ -4883,10 +4963,10 @@
                     "hasSuggestions": false
                 }
             },
-            "no-use-before-define": {
-                "rule": "no-use-before-define",
-                "description": "Disallows using variables before they are defined.",
-                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-use-before-define.html",
+            "no-useless-default-assignment": {
+                "rule": "no-useless-default-assignment",
+                "description": "Disallow default assignments that can never be used.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-useless-default-assignment.html",
                 "meta": {
                     "recommended": false,
                     "fixable": "false",
@@ -4973,6 +5053,16 @@
                     "hasSuggestions": false
                 }
             },
+            "prefer-find": {
+                "rule": "prefer-find",
+                "description": "Prefer .find(...) over .filter(...)[0] for retrieving a single element.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-find.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "prefer-for-of": {
                 "rule": "prefer-for-of",
                 "description": "Enforces the use of for-of loop instead of a for loop with a simple iteration.",
@@ -5043,6 +5133,26 @@
                     "hasSuggestions": false
                 }
             },
+            "prefer-readonly": {
+                "rule": "prefer-readonly",
+                "description": "Require class members that are never reassigned to be marked readonly.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-readonly.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
+            "prefer-readonly-parameter-types": {
+                "rule": "prefer-readonly-parameter-types",
+                "description": "Require function and method parameters to use readonly-compatible types.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-readonly-parameter-types.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "prefer-reduce-type-parameter": {
                 "rule": "prefer-reduce-type-parameter",
                 "description": "This rule prefers using a type parameter for the accumulator in Array.reduce instead of casting.",
@@ -5053,6 +5163,16 @@
                     "hasSuggestions": true
                 }
             },
+            "prefer-regexp-exec": {
+                "rule": "prefer-regexp-exec",
+                "description": "Prefer RegExp#exec() over String#match() when extracting a regex match.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-regexp-exec.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "prefer-return-this-type": {
                 "rule": "prefer-return-this-type",
                 "description": "This rule enforces using this types for return types when possible.",
@@ -5061,6 +5181,16 @@
                     "recommended": false,
                     "fixable": "true",
                     "hasSuggestions": true
+                }
+            },
+            "prefer-string-starts-ends-with": {
+                "rule": "prefer-string-starts-ends-with",
+                "description": "Prefer String#startsWith() and String#endsWith() over using a regex with /^foo/ or /foo$/.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-string-starts-ends-with.html",
+                "meta": {
+                    "recommended": true,
+                    "fixable": "false",
+                    "hasSuggestions": false
                 }
             },
             "prefer-ts-expect-error": {
@@ -5137,6 +5267,16 @@
                 "rule": "strict-boolean-expressions",
                 "description": "Disallow certain types in boolean expressions.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/strict-boolean-expressions.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
+            "strict-void-return": {
+                "rule": "strict-void-return",
+                "description": "Disallow returning non-void values where a void return is expected.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/strict-void-return.html",
                 "meta": {
                     "recommended": false,
                     "fixable": "false",
@@ -5635,7 +5775,7 @@
             },
             "no-unnecessary-array-flat-depth": {
                 "rule": "no-unnecessary-array-flat-depth",
-                "description": "Disallows passing 1 to Array.prototype.flat",
+                "description": "Disallows passing 1 to Array.prototype.flat.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-array-flat-depth.html",
                 "meta": {
                     "recommended": false,
@@ -6223,16 +6363,6 @@
                     "hasSuggestions": true
                 }
             },
-            "prefer-string-starts-ends-with": {
-                "rule": "prefer-string-starts-ends-with",
-                "description": "Prefer String#startsWith() and String#endsWith() over using a regex with /^foo/ or /foo$/.",
-                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-string-starts-ends-with.html",
-                "meta": {
-                    "recommended": true,
-                    "fixable": "true",
-                    "hasSuggestions": true
-                }
-            },
             "prefer-string-trim-start-end": {
                 "rule": "prefer-string-trim-start-end",
                 "description": "String#trimLeft() and String#trimRight() are aliases of String#trimStart() and String#trimEnd(). This is to ensure consistency and use direction-independent wording.",
@@ -6423,6 +6553,16 @@
                     "hasSuggestions": false
                 }
             },
+            "no-importing-vitest-globals": {
+                "rule": "no-importing-vitest-globals",
+                "description": "The rule disallows import any vitest global function.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/no-importing-vitest-globals.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "true",
+                    "hasSuggestions": true
+                }
+            },
             "prefer-called-once": {
                 "rule": "prefer-called-once",
                 "description": "Substitute toBeCalledTimes(1) and toHaveBeenCalledTimes(1) with\ntoBeCalledOnce() and toHaveBeenCalledOnce() respectively.",
@@ -6457,6 +6597,16 @@
                 "rule": "prefer-expect-type-of",
                 "description": "Enforce using expectTypeOf instead of expect(typeof ...)",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-expect-type-of.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "true",
+                    "hasSuggestions": true
+                }
+            },
+            "prefer-import-in-mock": {
+                "rule": "prefer-import-in-mock",
+                "description": "This rule enforces using a dynamic import() in vi.mock(), which improves type information and IntelliSense for the mocked module.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-import-in-mock.html",
                 "meta": {
                     "recommended": false,
                     "fixable": "true",
