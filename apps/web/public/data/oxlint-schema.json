@@ -2811,7 +2811,7 @@
     },
     {
         "rule": "radix",
-        "description": "Enforce the consistent use of the radix argument when using parseInt().",
+        "description": "Enforce the consistent use of the radix argument when using parseInt(),\nwhich specifies what base to use for parsing the number.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/radix.html",
         "options": {
             "schema": {},
