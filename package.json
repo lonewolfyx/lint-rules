@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.0.0",
     "private": true,
-    "packageManager": "pnpm@10.15.1",
+    "packageManager": "pnpm@10.30.3",
     "description": "All-in-one lint rules hub: ESLint + plugins, Stylelint, Biome, Oxlint, Oxfmt and other linters — searchable & categorized.",
     "author": "lonewolfyx <https://github.com/lonewolfyx>",
     "license": "MIT",

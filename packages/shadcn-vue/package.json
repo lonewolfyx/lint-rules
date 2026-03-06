@@ -2,7 +2,7 @@
     "name": "@private/shadcn-vue",
     "version": "0.0.0",
     "private": true,
-    "packageManager": "pnpm@10.15.1",
+    "packageManager": "pnpm@10.30.3",
     "description": "A set of beautifully-designed, accessible components and a code distribution platform.",
     "license": "MIT",
     "homepage": "https://github.com/lonewolfyx/lint-rules#readme",
