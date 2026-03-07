@@ -3177,7 +3177,7 @@
             "functional-parameters": {
                 "rule": "functional-parameters",
                 "description": "Enforce functional parameters.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/functional-parameters.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/functional-parameters.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3187,7 +3187,7 @@
             "immutable-data": {
                 "rule": "immutable-data",
                 "description": "Enforce treating data as immutable.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/immutable-data.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/immutable-data.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3197,7 +3197,7 @@
             "no-classes": {
                 "rule": "no-classes",
                 "description": "Disallow classes.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-classes.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-classes.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3207,7 +3207,7 @@
             "no-class-inheritance": {
                 "rule": "no-class-inheritance",
                 "description": "Disallow inheritance in classes.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-class-inheritance.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-class-inheritance.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3217,7 +3217,7 @@
             "no-conditional-statements": {
                 "rule": "no-conditional-statements",
                 "description": "Disallow conditional statements.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-conditional-statements.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-conditional-statements.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3227,7 +3227,7 @@
             "no-expression-statements": {
                 "rule": "no-expression-statements",
                 "description": "Disallow expression statements.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-expression-statements.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-expression-statements.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3237,7 +3237,7 @@
             "no-let": {
                 "rule": "no-let",
                 "description": "Disallow mutable variables.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-let.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-let.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3247,7 +3247,7 @@
             "no-loop-statements": {
                 "rule": "no-loop-statements",
                 "description": "Disallow imperative loops.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-loop-statements.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-loop-statements.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3257,7 +3257,7 @@
             "no-mixed-types": {
                 "rule": "no-mixed-types",
                 "description": "Restrict types so that only members of the same kind are allowed in them.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-mixed-types.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-mixed-types.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3267,7 +3267,7 @@
             "no-promise-reject": {
                 "rule": "no-promise-reject",
                 "description": "Disallow rejecting promises.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-promise-reject.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-promise-reject.md",
                 "meta": {
                     "recommended": false,
                     "fixable": "",
@@ -3277,7 +3277,7 @@
             "no-return-void": {
                 "rule": "no-return-void",
                 "description": "Disallow functions that don't return anything.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-return-void.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-return-void.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3287,7 +3287,7 @@
             "no-this-expressions": {
                 "rule": "no-this-expressions",
                 "description": "Disallow this access.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-this-expressions.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-this-expressions.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3297,7 +3297,7 @@
             "no-throw-statements": {
                 "rule": "no-throw-statements",
                 "description": "Disallow throwing exceptions.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-throw-statements.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-throw-statements.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3307,7 +3307,7 @@
             "no-try-statements": {
                 "rule": "no-try-statements",
                 "description": "Disallow try-catch[-finally] and try-finally patterns.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/no-try-statements.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/no-try-statements.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3317,7 +3317,7 @@
             "prefer-immutable-types": {
                 "rule": "prefer-immutable-types",
                 "description": "Require function parameters to be typed as certain immutability",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/prefer-immutable-types.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/prefer-immutable-types.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "code",
@@ -3327,7 +3327,7 @@
             "prefer-property-signatures": {
                 "rule": "prefer-property-signatures",
                 "description": "Prefer property signatures over method signatures.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/prefer-property-signatures.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/prefer-property-signatures.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3337,7 +3337,7 @@
             "prefer-readonly-type": {
                 "rule": "prefer-readonly-type",
                 "description": "Prefer readonly types over mutable types.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/prefer-readonly-type.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/prefer-readonly-type.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "code",
@@ -3347,7 +3347,7 @@
             "prefer-tacit": {
                 "rule": "prefer-tacit",
                 "description": "Replaces `x => f(x)` with just `f`.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/prefer-tacit.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/prefer-tacit.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "",
@@ -3357,7 +3357,7 @@
             "readonly-type": {
                 "rule": "readonly-type",
                 "description": "Require consistently using either `readonly` keywords or `Readonly<T>`",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/readonly-type.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/readonly-type.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "code",
@@ -3367,7 +3367,7 @@
             "type-declaration-immutability": {
                 "rule": "type-declaration-immutability",
                 "description": "Enforce the immutability of types based on patterns.",
-                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.2/docs/rules/type-declaration-immutability.md",
+                "docsUrl": "https://github.com/eslint-functional/eslint-plugin-functional/blob/v9.0.4/docs/rules/type-declaration-immutability.md",
                 "meta": {
                     "recommended": true,
                     "fixable": "code",

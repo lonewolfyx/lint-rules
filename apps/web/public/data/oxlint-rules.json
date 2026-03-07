@@ -1375,7 +1375,7 @@
             },
             "no-useless-concat": {
                 "rule": "no-useless-concat",
-                "description": "Disallow unnecessary concatenation of literals or template literals",
+                "description": "Disallow unnecessary concatenation of literals or template literals.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-useless-concat.html",
                 "meta": {
                     "recommended": false,
@@ -1585,7 +1585,7 @@
             },
             "radix": {
                 "rule": "radix",
-                "description": "Enforce the consistent use of the radix argument when using parseInt().",
+                "description": "Enforce the consistent use of the radix argument when using parseInt(),\nwhich specifies what base to use for parsing the number.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/radix.html",
                 "meta": {
                     "recommended": false,
@@ -6203,6 +6203,16 @@
                     "hasSuggestions": false
                 }
             },
+            "prefer-module": {
+                "rule": "prefer-module",
+                "description": "Prefer JavaScript modules (ESM) over CommonJS.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-module.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
             "prefer-native-coercion-functions": {
                 "rule": "prefer-native-coercion-functions",
                 "description": "Prefers built in functions, over custom ones with the same functionality.",
@@ -6377,6 +6387,16 @@
                 "rule": "prefer-structured-clone",
                 "description": "Prefer using structuredClone to create a deep clone.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-structured-clone.html",
+                "meta": {
+                    "recommended": false,
+                    "fixable": "false",
+                    "hasSuggestions": false
+                }
+            },
+            "prefer-ternary": {
+                "rule": "prefer-ternary",
+                "description": "Prefers ternary expressions over simple if/else statements.",
+                "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-ternary.html",
                 "meta": {
                     "recommended": false,
                     "fixable": "false",

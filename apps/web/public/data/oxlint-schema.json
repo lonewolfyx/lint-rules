@@ -511,6 +511,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
+                    "checkGeneric": {
+                        "type": "boolean"
+                    },
                     "exceptionPatterns": {
                         "type": "string[]"
                     },
@@ -535,6 +538,7 @@
             },
             "defaultOptions": [
                 {
+                    "checkGeneric": true,
                     "exceptions": [],
                     "max": 18446744073709552000,
                     "min": 2,
@@ -2332,6 +2336,28 @@
                         },
                         "additionalProperties": false
                     },
+                    "fix": {
+                        "type": "object",
+                        "properties": {
+                            "imports": {
+                                "type": "string",
+                                "enum": [
+                                    "off",
+                                    "suggestion",
+                                    "fix"
+                                ]
+                            },
+                            "variables": {
+                                "type": "string",
+                                "enum": [
+                                    "off",
+                                    "suggestion",
+                                    "fix"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false
+                    },
                     "ignoreClassWithStaticInitBlock": {
                         "type": "object",
                         "properties": {
@@ -2487,7 +2513,7 @@
     },
     {
         "rule": "no-useless-concat",
-        "description": "Disallow unnecessary concatenation of literals or template literals",
+        "description": "Disallow unnecessary concatenation of literals or template literals.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-useless-concat.html",
         "options": {
             "schema": {},
@@ -2811,7 +2837,7 @@
     },
     {
         "rule": "radix",
-        "description": "Enforce the consistent use of the radix argument when using parseInt().",
+        "description": "Enforce the consistent use of the radix argument when using parseInt(),\nwhich specifies what base to use for parsing the number.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/radix.html",
         "options": {
             "schema": {},
@@ -6795,7 +6821,11 @@
         "description": "Disallows using setState in the componentWillUpdate lifecycle method.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/no-will-update-set-state.html",
         "options": {
-            "schema": {},
+            "schema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            },
             "defaultOptions": []
         }
     },
@@ -7077,7 +7107,11 @@
         "description": "Enforces a consistent style for exposing literal values on classes.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/class-literal-property-style.html",
         "options": {
-            "schema": {},
+            "schema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            },
             "defaultOptions": []
         }
     },
@@ -10171,6 +10205,15 @@
         }
     },
     {
+        "rule": "prefer-module",
+        "description": "Prefer JavaScript modules (ESM) over CommonJS.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-module.html",
+        "options": {
+            "schema": {},
+            "defaultOptions": []
+        }
+    },
+    {
         "rule": "prefer-native-coercion-functions",
         "description": "Prefers built in functions, over custom ones with the same functionality.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-native-coercion-functions.html",
@@ -10394,6 +10437,19 @@
                     ]
                 }
             ]
+        }
+    },
+    {
+        "rule": "prefer-ternary",
+        "description": "Prefers ternary expressions over simple if/else statements.",
+        "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-ternary.html",
+        "options": {
+            "schema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            },
+            "defaultOptions": []
         }
     },
     {
