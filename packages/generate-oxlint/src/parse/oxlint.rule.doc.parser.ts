@@ -68,7 +68,9 @@ export class RuleDocParser {
 
                 const node: ConfigNode = { name, depth: heading.depth, children: [] }
 
-                while (stack.length && stack[stack.length - 1].depth >= heading.depth) {
+                // eslint-disable-next-line ts/ban-ts-comment
+                // @ts-expect-error
+                while (stack.length && stack.at(-1).depth >= heading.depth) {
                     stack.pop()
                 }
 
@@ -76,13 +78,17 @@ export class RuleDocParser {
                     roots.push(node)
                 }
                 else {
-                    stack[stack.length - 1].children.push(node)
+                    // eslint-disable-next-line ts/ban-ts-comment
+                    // @ts-expect-error
+                    stack.at(-1).children.push(node)
                 }
                 stack.push(node)
             }
 
             if (token.type === 'paragraph' && stack.length) {
-                const current = stack[stack.length - 1]
+                // eslint-disable-next-line ts/ban-ts-comment
+                // @ts-expect-error
+                const current = stack.at(-1)
                 let text = (token as Tokens.Paragraph).text.trim()
                 text = text.replace(/\*\*/g, '').replace(/\s+/g, ' ') // remove bold, compress spaces
 
