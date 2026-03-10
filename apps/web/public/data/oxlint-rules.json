@@ -5465,7 +5465,7 @@
             },
             "no-accessor-recursion": {
                 "rule": "no-accessor-recursion",
-                "description": "Disallow recursive access to this within getters and setters",
+                "description": "Disallow recursive access to this within getters and setters.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-accessor-recursion.html",
                 "meta": {
                     "recommended": false,
@@ -5565,7 +5565,7 @@
             },
             "no-document-cookie": {
                 "rule": "no-document-cookie",
-                "description": "Disallow direct use of\ndocument.cookie.",
+                "description": "Disallows direct use of\ndocument.cookie.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-document-cookie.html",
                 "meta": {
                     "recommended": false,
@@ -5585,7 +5585,7 @@
             },
             "no-hex-escape": {
                 "rule": "no-hex-escape",
-                "description": "Enforces a convention of using Unicode escapes instead of hexadecimal escapes for consistency and clarity.",
+                "description": "Enforces a convention of using Unicode escapes\ninstead of hexadecimal escapes for\nconsistency and clarity.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-hex-escape.html",
                 "meta": {
                     "recommended": false,
@@ -5655,7 +5655,7 @@
             },
             "no-magic-array-flat-depth": {
                 "rule": "no-magic-array-flat-depth",
-                "description": "Disallow magic numbers for Array.prototype.flat depth.",
+                "description": "Disallow magic numbers for Array.prototype.flat\ndepth.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-magic-array-flat-depth.html",
                 "meta": {
                     "recommended": false,
@@ -5715,7 +5715,7 @@
             },
             "no-process-exit": {
                 "rule": "no-process-exit",
-                "description": "Disallow process.exit().",
+                "description": "Disallow all usage of process.exit().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-process-exit.html",
                 "meta": {
                     "recommended": false,
@@ -5725,7 +5725,7 @@
             },
             "no-single-promise-in-promise-methods": {
                 "rule": "no-single-promise-in-promise-methods",
-                "description": "Disallow passing single-element arrays to Promise methods",
+                "description": "Disallow passing single-element arrays to Promise methods.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-single-promise-in-promise-methods.html",
                 "meta": {
                     "recommended": true,
@@ -5735,7 +5735,7 @@
             },
             "no-static-only-class": {
                 "rule": "no-static-only-class",
-                "description": "Disallow classes that only have static members.",
+                "description": "Disallow class declarations that exclusively contain static members.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-static-only-class.html",
                 "meta": {
                     "recommended": false,
@@ -5745,7 +5745,7 @@
             },
             "no-thenable": {
                 "rule": "no-thenable",
-                "description": "Disallow then property",
+                "description": "Disallow defining a then property.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-thenable.html",
                 "meta": {
                     "recommended": true,
@@ -5805,7 +5805,7 @@
             },
             "no-unnecessary-slice-end": {
                 "rule": "no-unnecessary-slice-end",
-                "description": "Omitting the end argument defaults it to the object's .length.\nPassing it explicitly or using Infinity is unnecessary",
+                "description": "Disallows unnecessarily passing a second argument to slice(...), for\ncases where it would not change the result.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-slice-end.html",
                 "meta": {
                     "recommended": false,
@@ -5815,7 +5815,7 @@
             },
             "no-unreadable-array-destructuring": {
                 "rule": "no-unreadable-array-destructuring",
-                "description": "Disallow unreadable array destructuring",
+                "description": "Disallows destructuring values from an array in ways that are difficult to read.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unreadable-array-destructuring.html",
                 "meta": {
                     "recommended": false,
@@ -5835,7 +5835,7 @@
             },
             "no-useless-collection-argument": {
                 "rule": "no-useless-collection-argument",
-                "description": "Disallow useless values or fallbacks in Set, Map, WeakSet, or WeakMap",
+                "description": "Disallow useless values or fallbacks in Set, Map, WeakSet, or WeakMap.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-collection-argument.html",
                 "meta": {
                     "recommended": false,
@@ -5875,7 +5875,7 @@
             },
             "no-useless-promise-resolve-reject": {
                 "rule": "no-useless-promise-resolve-reject",
-                "description": "Disallows returning values wrapped in Promise.resolve or Promise.reject in an async function or a Promise#then/catch/finally callback.",
+                "description": "Disallows returning values wrapped in Promise.resolve or Promise.reject\nin an async function or a Promise#then/catch/finally callback.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-promise-resolve-reject.html",
                 "meta": {
                     "recommended": false,
@@ -5905,7 +5905,7 @@
             },
             "no-useless-undefined": {
                 "rule": "no-useless-undefined",
-                "description": "Do not use useless undefined.",
+                "description": "Prevents usage of undefined in cases where it would be useless.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-undefined.html",
                 "meta": {
                     "recommended": false,
@@ -6005,7 +6005,7 @@
             },
             "prefer-at": {
                 "rule": "prefer-at",
-                "description": "Prefer .at() method for index access and String#charAt().",
+                "description": "Prefer the Array#at() and\nString#at()\nmethods for index access.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-at.html",
                 "meta": {
                     "recommended": false,
@@ -6135,7 +6135,7 @@
             },
             "prefer-global-this": {
                 "rule": "prefer-global-this",
-                "description": "Enforces the use of globalThis instead of\nenvironment‑specific global object aliases (window, self, or global).\nUsing the standard globalThis makes your code portable across browsers, Web Workers, Node.js,\nand future JavaScript runtimes.",
+                "description": "Enforces the use of globalThis instead of\nenvironment‑specific global object aliases (window, self, or global).",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-global-this.html",
                 "meta": {
                     "recommended": false,
@@ -6145,7 +6145,7 @@
             },
             "prefer-keyboard-event-key": {
                 "rule": "prefer-keyboard-event-key",
-                "description": "Enforces the use of KeyboardEvent#key over KeyboardEvent#keyCode which is deprecated.\nThe .key property is also more semantic and readable.",
+                "description": "Enforces the use of KeyboardEvent#key\nover KeyboardEvent#keyCode,\nwhich is deprecated.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-keyboard-event-key.html",
                 "meta": {
                     "recommended": false,
@@ -6225,7 +6225,7 @@
             },
             "prefer-negative-index": {
                 "rule": "prefer-negative-index",
-                "description": "Prefer negative index over .length - index when possible",
+                "description": "Prefer using a negative index over .length - index when possible.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-negative-index.html",
                 "meta": {
                     "recommended": false,
@@ -6285,7 +6285,7 @@
             },
             "prefer-query-selector": {
                 "rule": "prefer-query-selector",
-                "description": "Prefer .querySelector() over .getElementById(), .querySelectorAll() over .getElementsByClassName() and .getElementsByTagName().",
+                "description": "Prefer .querySelector() over .getElementById(). And prefer .querySelectorAll()\nover .getElementsByClassName(), .getElementsByTagName(), and .getElementsByName().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-query-selector.html",
                 "meta": {
                     "recommended": false,
@@ -6475,7 +6475,7 @@
             },
             "require-post-message-target-origin": {
                 "rule": "require-post-message-target-origin",
-                "description": "Enforce using the targetOrigin argument with window.postMessage()",
+                "description": "Enforce using the targetOrigin argument with window.postMessage().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/require-post-message-target-origin.html",
                 "meta": {
                     "recommended": false,
@@ -6715,7 +6715,7 @@
             },
             "max-props": {
                 "rule": "max-props",
-                "description": "Enforce maximum number of props in Vue component.",
+                "description": "Enforce a maximum number of props defined for a given Vue component.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vue/max-props.html",
                 "meta": {
                     "recommended": false,

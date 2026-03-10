@@ -6108,7 +6108,19 @@
                     "forbid": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "disallowedFor": {
+                                    "type": "string[]"
+                                },
+                                "message": {
+                                    "type": "string"
+                                },
+                                "propName": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
                         }
                     }
                 },
@@ -7472,7 +7484,23 @@
                     "allow": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "from": {},
+                                "name": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name[n]": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "path": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
                         }
                     }
                 },
@@ -7664,13 +7692,45 @@
                     "allowForKnownSafeCalls": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "from": {},
+                                "name": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name[n]": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "path": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
                         }
                     },
                     "allowForKnownSafePromises": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "from": {},
+                                "name": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name[n]": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "path": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
                         }
                     },
                     "checkThenables": {
@@ -7876,7 +7936,23 @@
                     "allow": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "from": {},
+                                "name": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name[n]": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "path": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
                         }
                     }
                 },
@@ -8321,7 +8397,23 @@
                     "allow": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "from": {},
+                                "name": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name[n]": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "path": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
                         }
                     },
                     "allowRethrowing": {
@@ -8492,7 +8584,22 @@
                         "type": "boolean"
                     },
                     "ignorePrimitives": {
-                        "type": "boolean"
+                        "type": "object",
+                        "properties": {
+                            "bigint": {
+                                "type": "boolean"
+                            },
+                            "boolean": {
+                                "type": "boolean"
+                            },
+                            "number": {
+                                "type": "boolean"
+                            },
+                            "string": {
+                                "type": "boolean"
+                            }
+                        },
+                        "additionalProperties": false
                     },
                     "ignoreTernaryTests": {
                         "type": "boolean"
@@ -8506,6 +8613,12 @@
                     "ignoreConditionalTests": true,
                     "ignoreIfStatements": false,
                     "ignoreMixedLogicalExpressions": false,
+                    "ignorePrimitives": {
+                        "bigint": false,
+                        "boolean": false,
+                        "number": false,
+                        "string": false
+                    },
                     "ignoreTernaryTests": false
                 }
             ]
@@ -8621,7 +8734,23 @@
                     "allow": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "from": {},
+                                "name": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name[n]": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "path": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
                         }
                     },
                     "checkParameterProperties": {
@@ -8839,7 +8968,23 @@
                     "allow": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "from": {},
+                                "name": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name[n]": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "path": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
                         }
                     },
                     "allowAny": {
@@ -9312,7 +9457,7 @@
     },
     {
         "rule": "no-accessor-recursion",
-        "description": "Disallow recursive access to this within getters and setters",
+        "description": "Disallow recursive access to this within getters and setters.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-accessor-recursion.html",
         "options": {
             "schema": {},
@@ -9447,7 +9592,7 @@
     },
     {
         "rule": "no-document-cookie",
-        "description": "Disallow direct use of\ndocument.cookie.",
+        "description": "Disallows direct use of\ndocument.cookie.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-document-cookie.html",
         "options": {
             "schema": {},
@@ -9465,7 +9610,7 @@
     },
     {
         "rule": "no-hex-escape",
-        "description": "Enforces a convention of using Unicode escapes instead of hexadecimal escapes for consistency and clarity.",
+        "description": "Enforces a convention of using Unicode escapes\ninstead of hexadecimal escapes for\nconsistency and clarity.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-hex-escape.html",
         "options": {
             "schema": {},
@@ -9565,7 +9710,7 @@
     },
     {
         "rule": "no-magic-array-flat-depth",
-        "description": "Disallow magic numbers for Array.prototype.flat depth.",
+        "description": "Disallow magic numbers for Array.prototype.flat\ndepth.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-magic-array-flat-depth.html",
         "options": {
             "schema": {},
@@ -9640,7 +9785,7 @@
     },
     {
         "rule": "no-process-exit",
-        "description": "Disallow process.exit().",
+        "description": "Disallow all usage of process.exit().",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-process-exit.html",
         "options": {
             "schema": {},
@@ -9649,7 +9794,7 @@
     },
     {
         "rule": "no-single-promise-in-promise-methods",
-        "description": "Disallow passing single-element arrays to Promise methods",
+        "description": "Disallow passing single-element arrays to Promise methods.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-single-promise-in-promise-methods.html",
         "options": {
             "schema": {},
@@ -9658,7 +9803,7 @@
     },
     {
         "rule": "no-static-only-class",
-        "description": "Disallow classes that only have static members.",
+        "description": "Disallow class declarations that exclusively contain static members.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-static-only-class.html",
         "options": {
             "schema": {},
@@ -9667,7 +9812,7 @@
     },
     {
         "rule": "no-thenable",
-        "description": "Disallow then property",
+        "description": "Disallow defining a then property.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-thenable.html",
         "options": {
             "schema": {},
@@ -9733,7 +9878,7 @@
     },
     {
         "rule": "no-unnecessary-slice-end",
-        "description": "Omitting the end argument defaults it to the object's .length.\nPassing it explicitly or using Infinity is unnecessary",
+        "description": "Disallows unnecessarily passing a second argument to slice(...), for\ncases where it would not change the result.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-slice-end.html",
         "options": {
             "schema": {},
@@ -9742,7 +9887,7 @@
     },
     {
         "rule": "no-unreadable-array-destructuring",
-        "description": "Disallow unreadable array destructuring",
+        "description": "Disallows destructuring values from an array in ways that are difficult to read.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unreadable-array-destructuring.html",
         "options": {
             "schema": {},
@@ -9760,7 +9905,7 @@
     },
     {
         "rule": "no-useless-collection-argument",
-        "description": "Disallow useless values or fallbacks in Set, Map, WeakSet, or WeakMap",
+        "description": "Disallow useless values or fallbacks in Set, Map, WeakSet, or WeakMap.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-collection-argument.html",
         "options": {
             "schema": {},
@@ -9796,7 +9941,7 @@
     },
     {
         "rule": "no-useless-promise-resolve-reject",
-        "description": "Disallows returning values wrapped in Promise.resolve or Promise.reject in an async function or a Promise#then/catch/finally callback.",
+        "description": "Disallows returning values wrapped in Promise.resolve or Promise.reject\nin an async function or a Promise#then/catch/finally callback.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-promise-resolve-reject.html",
         "options": {
             "schema": {
@@ -9835,7 +9980,7 @@
     },
     {
         "rule": "no-useless-undefined",
-        "description": "Do not use useless undefined.",
+        "description": "Prevents usage of undefined in cases where it would be useless.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-undefined.html",
         "options": {
             "schema": {
@@ -10001,7 +10146,7 @@
     },
     {
         "rule": "prefer-at",
-        "description": "Prefer .at() method for index access and String#charAt().",
+        "description": "Prefer the Array#at() and\nString#at()\nmethods for index access.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-at.html",
         "options": {
             "schema": {
@@ -10134,7 +10279,7 @@
     },
     {
         "rule": "prefer-global-this",
-        "description": "Enforces the use of globalThis instead of\nenvironment‑specific global object aliases (window, self, or global).\nUsing the standard globalThis makes your code portable across browsers, Web Workers, Node.js,\nand future JavaScript runtimes.",
+        "description": "Enforces the use of globalThis instead of\nenvironment‑specific global object aliases (window, self, or global).",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-global-this.html",
         "options": {
             "schema": {},
@@ -10152,7 +10297,7 @@
     },
     {
         "rule": "prefer-keyboard-event-key",
-        "description": "Enforces the use of KeyboardEvent#key over KeyboardEvent#keyCode which is deprecated.\nThe .key property is also more semantic and readable.",
+        "description": "Enforces the use of KeyboardEvent#key\nover KeyboardEvent#keyCode,\nwhich is deprecated.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-keyboard-event-key.html",
         "options": {
             "schema": {},
@@ -10224,7 +10369,7 @@
     },
     {
         "rule": "prefer-negative-index",
-        "description": "Prefer negative index over .length - index when possible",
+        "description": "Prefer using a negative index over .length - index when possible.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-negative-index.html",
         "options": {
             "schema": {},
@@ -10309,7 +10454,7 @@
     },
     {
         "rule": "prefer-query-selector",
-        "description": "Prefer .querySelector() over .getElementById(), .querySelectorAll() over .getElementsByClassName() and .getElementsByTagName().",
+        "description": "Prefer .querySelector() over .getElementById(). And prefer .querySelectorAll()\nover .getElementsByClassName(), .getElementsByTagName(), and .getElementsByName().",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-query-selector.html",
         "options": {
             "schema": {},
@@ -10521,7 +10666,7 @@
     },
     {
         "rule": "require-post-message-target-origin",
-        "description": "Enforce using the targetOrigin argument with window.postMessage()",
+        "description": "Enforce using the targetOrigin argument with window.postMessage().",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/require-post-message-target-origin.html",
         "options": {
             "schema": {},
@@ -10845,7 +10990,7 @@
     },
     {
         "rule": "max-props",
-        "description": "Enforce maximum number of props in Vue component.",
+        "description": "Enforce a maximum number of props defined for a given Vue component.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/vue/max-props.html",
         "options": {
             "schema": {
