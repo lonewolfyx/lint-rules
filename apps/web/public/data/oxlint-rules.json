@@ -15,7 +15,7 @@
             },
             "array-callback-return": {
                 "rule": "array-callback-return",
-                "description": "Enforce return statements in callbacks of array methods",
+                "description": "Enforce return statements in callbacks of array methods.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/array-callback-return.html",
                 "meta": {
                     "recommended": false,
@@ -175,7 +175,7 @@
             },
             "grouped-accessor-pairs": {
                 "rule": "grouped-accessor-pairs",
-                "description": "Require grouped accessor pairs in object literals and classes",
+                "description": "Require grouped accessor pairs in object literals and classes.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/grouped-accessor-pairs.html",
                 "meta": {
                     "recommended": false,
@@ -215,7 +215,7 @@
             },
             "max-classes-per-file": {
                 "rule": "max-classes-per-file",
-                "description": "Enforce a maximum number of classes per file",
+                "description": "Enforce a maximum number of classes per file.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-classes-per-file.html",
                 "meta": {
                     "recommended": false,
@@ -295,7 +295,7 @@
             },
             "no-alert": {
                 "rule": "no-alert",
-                "description": "Disallow the use of alert, confirm, and prompt",
+                "description": "Disallow the use of alert, confirm, and prompt.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-alert.html",
                 "meta": {
                     "recommended": false,
@@ -335,7 +335,7 @@
             },
             "no-bitwise": {
                 "rule": "no-bitwise",
-                "description": "Disallow bitwise operators",
+                "description": "Disallow bitwise operators.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-bitwise.html",
                 "meta": {
                     "recommended": false,
@@ -385,7 +385,7 @@
             },
             "no-cond-assign": {
                 "rule": "no-cond-assign",
-                "description": "Disallow assignment operators in conditional expressions",
+                "description": "Disallow assignment operators in conditional expressions.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-cond-assign.html",
                 "meta": {
                     "recommended": true,
@@ -415,7 +415,7 @@
             },
             "no-constant-binary-expression": {
                 "rule": "no-constant-binary-expression",
-                "description": "Disallow expressions where the operation doesn't affect the value",
+                "description": "Disallow expressions where the operation doesn't affect the value.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-constant-binary-expression.html",
                 "meta": {
                     "recommended": true,
@@ -425,7 +425,7 @@
             },
             "no-constant-condition": {
                 "rule": "no-constant-condition",
-                "description": "Disallow constant expressions in conditions",
+                "description": "Disallow constant expressions in conditions.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-constant-condition.html",
                 "meta": {
                     "recommended": true,
@@ -435,7 +435,7 @@
             },
             "no-constructor-return": {
                 "rule": "no-constructor-return",
-                "description": "Disallow returning value from constructor",
+                "description": "Disallow returning value from constructor.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-constructor-return.html",
                 "meta": {
                     "recommended": false,
@@ -445,7 +445,7 @@
             },
             "no-continue": {
                 "rule": "no-continue",
-                "description": "Disallow continue statements",
+                "description": "Disallow continue statements.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-continue.html",
                 "meta": {
                     "recommended": false,
@@ -465,7 +465,7 @@
             },
             "no-debugger": {
                 "rule": "no-debugger",
-                "description": "Checks for usage of the debugger statement",
+                "description": "Checks for usage of the debugger statement.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-debugger.html",
                 "meta": {
                     "recommended": true,
@@ -505,7 +505,7 @@
             },
             "no-dupe-else-if": {
                 "rule": "no-dupe-else-if",
-                "description": "Disallow duplicate conditions in if-else-if chains",
+                "description": "Disallow duplicate conditions in if-else-if chains.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-dupe-else-if.html",
                 "meta": {
                     "recommended": true,
@@ -525,7 +525,7 @@
             },
             "no-duplicate-case": {
                 "rule": "no-duplicate-case",
-                "description": "Disallow duplicate case labels",
+                "description": "Disallow duplicate case labels.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-duplicate-case.html",
                 "meta": {
                     "recommended": true,
@@ -545,7 +545,7 @@
             },
             "no-else-return": {
                 "rule": "no-else-return",
-                "description": "Disallow else blocks after return statements in if statements",
+                "description": "Disallow else blocks after return statements in if statements.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-else-return.html",
                 "meta": {
                     "recommended": false,
@@ -555,7 +555,7 @@
             },
             "no-empty": {
                 "rule": "no-empty",
-                "description": "Disallows empty block statements",
+                "description": "Disallows empty block statements.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-empty.html",
                 "meta": {
                     "recommended": false,
@@ -565,7 +565,7 @@
             },
             "no-empty-character-class": {
                 "rule": "no-empty-character-class",
-                "description": "Disallow empty character classes in regular expressions",
+                "description": "Disallow empty character classes in regular expressions.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-empty-character-class.html",
                 "meta": {
                     "recommended": true,
@@ -595,7 +595,7 @@
             },
             "no-empty-static-block": {
                 "rule": "no-empty-static-block",
-                "description": "Disallows the usages of empty static blocks",
+                "description": "Disallows the usages of empty static blocks.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-empty-static-block.html",
                 "meta": {
                     "recommended": true,
@@ -625,7 +625,7 @@
             },
             "no-ex-assign": {
                 "rule": "no-ex-assign",
-                "description": "Disallow reassigning exceptions in catch clauses",
+                "description": "Disallow reassigning exceptions in catch clauses.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-ex-assign.html",
                 "meta": {
                     "recommended": true,
@@ -645,7 +645,7 @@
             },
             "no-extra-bind": {
                 "rule": "no-extra-bind",
-                "description": "Disallow unnecessary calls to .bind()",
+                "description": "Disallow unnecessary calls to .bind().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-extra-bind.html",
                 "meta": {
                     "recommended": false,
@@ -925,7 +925,7 @@
             },
             "no-new-wrappers": {
                 "rule": "no-new-wrappers",
-                "description": "Disallow new operators with the String, Number, and Boolean objects",
+                "description": "Disallow new operators with the String, Number, and Boolean objects.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-new-wrappers.html",
                 "meta": {
                     "recommended": false,
@@ -935,7 +935,7 @@
             },
             "no-nonoctal-decimal-escape": {
                 "rule": "no-nonoctal-decimal-escape",
-                "description": "This rule disallows \\8 and \\9 escape sequences in string literals",
+                "description": "This rule disallows \\8 and \\9 escape sequences in string literals.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-nonoctal-decimal-escape.html",
                 "meta": {
                     "recommended": true,
@@ -955,7 +955,7 @@
             },
             "no-object-constructor": {
                 "rule": "no-object-constructor",
-                "description": "Disallow calls to the Object constructor without an argument",
+                "description": "Disallow calls to the Object constructor without an argument.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-object-constructor.html",
                 "meta": {
                     "recommended": false,
@@ -1005,7 +1005,7 @@
             },
             "no-prototype-builtins": {
                 "rule": "no-prototype-builtins",
-                "description": "Disallow calling some Object.prototype methods directly on objects",
+                "description": "Disallow calling some Object.prototype methods directly on objects.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-prototype-builtins.html",
                 "meta": {
                     "recommended": false,
@@ -1065,7 +1065,7 @@
             },
             "no-script-url": {
                 "rule": "no-script-url",
-                "description": "Disallow javascript: urls",
+                "description": "Disallow javascript: URLs.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-script-url.html",
                 "meta": {
                     "recommended": false,
@@ -1085,7 +1085,7 @@
             },
             "no-self-compare": {
                 "rule": "no-self-compare",
-                "description": "Disallow comparisons where both sides are exactly the same",
+                "description": "Disallow comparisons where both sides are exactly the same.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-self-compare.html",
                 "meta": {
                     "recommended": false,
@@ -1155,7 +1155,7 @@
             },
             "no-ternary": {
                 "rule": "no-ternary",
-                "description": "Disallow ternary operators",
+                "description": "Disallow ternary operators.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-ternary.html",
                 "meta": {
                     "recommended": false,
@@ -1185,7 +1185,7 @@
             },
             "no-unassigned-vars": {
                 "rule": "no-unassigned-vars",
-                "description": "Disallow let or var variables that are read but never assigned",
+                "description": "Disallow let or var variables that are read but never assigned.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unassigned-vars.html",
                 "meta": {
                     "recommended": true,
@@ -1205,7 +1205,7 @@
             },
             "no-undefined": {
                 "rule": "no-undefined",
-                "description": "Disallow the use of undefined as an identifier",
+                "description": "Disallow the use of undefined as an identifier.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-undefined.html",
                 "meta": {
                     "recommended": false,
@@ -1235,7 +1235,7 @@
             },
             "no-unneeded-ternary": {
                 "rule": "no-unneeded-ternary",
-                "description": "Disallow ternary operators when simpler alternatives exist",
+                "description": "Disallow ternary operators when simpler alternatives exist.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unneeded-ternary.html",
                 "meta": {
                     "recommended": false,
@@ -1275,7 +1275,7 @@
             },
             "no-unsafe-optional-chaining": {
                 "rule": "no-unsafe-optional-chaining",
-                "description": "Disallow use of optional chaining in contexts where the undefined value is not allowed",
+                "description": "Disallow use of optional chaining in contexts where the undefined value is not allowed.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unsafe-optional-chaining.html",
                 "meta": {
                     "recommended": true,
@@ -1305,7 +1305,7 @@
             },
             "no-unused-private-class-members": {
                 "rule": "no-unused-private-class-members",
-                "description": "Disallow unused private class members",
+                "description": "Disallow unused private class members.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unused-private-class-members.html",
                 "meta": {
                     "recommended": true,
@@ -1355,7 +1355,7 @@
             },
             "no-useless-catch": {
                 "rule": "no-useless-catch",
-                "description": "Disallow unnecessary catch clauses",
+                "description": "Disallow unnecessary catch clauses.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-useless-catch.html",
                 "meta": {
                     "recommended": true,
@@ -1365,7 +1365,7 @@
             },
             "no-useless-computed-key": {
                 "rule": "no-useless-computed-key",
-                "description": "Disallow unnecessary computed property keys in objects and classes",
+                "description": "Disallow unnecessary computed property keys in objects and classes.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-useless-computed-key.html",
                 "meta": {
                     "recommended": false,
@@ -1485,7 +1485,7 @@
             },
             "prefer-destructuring": {
                 "rule": "prefer-destructuring",
-                "description": "Require destructuring from arrays and/or objects",
+                "description": "Require destructuring from arrays and/or objects.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-destructuring.html",
                 "meta": {
                     "recommended": false,
@@ -1495,7 +1495,7 @@
             },
             "prefer-exponentiation-operator": {
                 "rule": "prefer-exponentiation-operator",
-                "description": "Disallow the use of Math.pow in favor of the ** operator",
+                "description": "Disallow the use of Math.pow in favor of the ** operator.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-exponentiation-operator.html",
                 "meta": {
                     "recommended": false,
@@ -1525,7 +1525,7 @@
             },
             "prefer-object-spread": {
                 "rule": "prefer-object-spread",
-                "description": "Disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead",
+                "description": "Disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-object-spread.html",
                 "meta": {
                     "recommended": false,
@@ -2105,7 +2105,7 @@
             },
             "no-confusing-set-timeout": {
                 "rule": "no-confusing-set-timeout",
-                "description": "Disallow confusing usages of jest.setTimeout",
+                "description": "Disallow confusing usages of jest.setTimeout.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jest/no-confusing-set-timeout.html",
                 "meta": {
                     "recommended": false,
@@ -2865,7 +2865,7 @@
             },
             "html-has-lang": {
                 "rule": "html-has-lang",
-                "description": "Ensures that every HTML document has a lang attribute",
+                "description": "Ensures that every HTML document has a lang attribute.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jsx_a11y/html-has-lang.html",
                 "meta": {
                     "recommended": false,
@@ -3265,7 +3265,7 @@
             },
             "global-require": {
                 "rule": "global-require",
-                "description": "Require require() calls to be placed at top-level module scope",
+                "description": "Require require() calls to be placed at top-level module scope.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/node/global-require.html",
                 "meta": {
                     "recommended": false,
@@ -3695,7 +3695,7 @@
             },
             "prefer-await-to-then": {
                 "rule": "prefer-await-to-then",
-                "description": "Prefer await to then()/catch()/finally() for reading Promise values",
+                "description": "Prefer await to then()/catch()/finally() for reading Promise values.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-await-to-then.html",
                 "meta": {
                     "recommended": false,
@@ -3805,7 +3805,7 @@
             },
             "iframe-missing-sandbox": {
                 "rule": "iframe-missing-sandbox",
-                "description": "Enforce sandbox attribute on iframe elements",
+                "description": "Enforce sandbox attribute on iframe elements.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/iframe-missing-sandbox.html",
                 "meta": {
                     "recommended": false,
@@ -3865,7 +3865,7 @@
             },
             "jsx-key": {
                 "rule": "jsx-key",
-                "description": "Enforce key prop for elements in array",
+                "description": "Enforce key prop for elements in array.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-key.html",
                 "meta": {
                     "recommended": false,
@@ -3955,7 +3955,7 @@
             },
             "jsx-pascal-case": {
                 "rule": "jsx-pascal-case",
-                "description": "Enforce PascalCase for user-defined JSX components",
+                "description": "Enforce PascalCase for user-defined JSX components.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-pascal-case.html",
                 "meta": {
                     "recommended": false,
@@ -3975,7 +3975,7 @@
             },
             "jsx-props-no-spreading": {
                 "rule": "jsx-props-no-spreading",
-                "description": "Disallow JSX prop spreading",
+                "description": "Disallow JSX prop spreading.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-props-no-spreading.html",
                 "meta": {
                     "recommended": false,
@@ -4335,7 +4335,7 @@
             },
             "ban-tslint-comment": {
                 "rule": "ban-tslint-comment",
-                "description": "This rule disallows tslint:<rule-flag> comments",
+                "description": "This rule disallows tslint:<rule-flag> comments.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/ban-tslint-comment.html",
                 "meta": {
                     "recommended": false,
@@ -4635,7 +4635,7 @@
             },
             "no-inferrable-types": {
                 "rule": "no-inferrable-types",
-                "description": "Disallow explicit type declarations for variables or parameters initialized to a number, string, or boolean",
+                "description": "Disallow explicit type declarations for variables or parameters initialized to a number, string, or boolean.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-inferrable-types.html",
                 "meta": {
                     "recommended": false,
@@ -5155,7 +5155,7 @@
             },
             "prefer-reduce-type-parameter": {
                 "rule": "prefer-reduce-type-parameter",
-                "description": "This rule prefers using a type parameter for the accumulator in Array.reduce instead of casting.",
+                "description": "This rule prefers using a type parameter for the accumulator in Array#reduce() instead of casting.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-reduce-type-parameter.html",
                 "meta": {
                     "recommended": false,
@@ -5225,7 +5225,7 @@
             },
             "require-array-sort-compare": {
                 "rule": "require-array-sort-compare",
-                "description": "This rule requires Array.sort() to be called with a comparison function.",
+                "description": "This rule requires Array#sort() to be called with a comparison function.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/require-array-sort-compare.html",
                 "meta": {
                     "recommended": true,
@@ -5475,7 +5475,7 @@
             },
             "no-array-callback-reference": {
                 "rule": "no-array-callback-reference",
-                "description": "Prevents passing a function reference directly to iterator methods",
+                "description": "Prevents passing a function reference directly to iterator methods.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-array-callback-reference.html",
                 "meta": {
                     "recommended": false,
@@ -5545,7 +5545,7 @@
             },
             "no-await-in-promise-methods": {
                 "rule": "no-await-in-promise-methods",
-                "description": "Disallow using await in Promise method parameters",
+                "description": "Disallow using await in Promise method parameters.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-await-in-promise-methods.html",
                 "meta": {
                     "recommended": true,
@@ -6235,7 +6235,7 @@
             },
             "prefer-node-protocol": {
                 "rule": "prefer-node-protocol",
-                "description": "Prefer using the node:protocol when importing Node.js builtin modules",
+                "description": "Prefer using the node:protocol when importing Node.js builtin modules.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-node-protocol.html",
                 "meta": {
                     "recommended": false,
@@ -6265,7 +6265,7 @@
             },
             "prefer-optional-catch-binding": {
                 "rule": "prefer-optional-catch-binding",
-                "description": "Prefers omitting the catch binding parameter if it is unused",
+                "description": "Prefers omitting the catch binding parameter if it is unused.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-optional-catch-binding.html",
                 "meta": {
                     "recommended": false,
@@ -6345,7 +6345,7 @@
             },
             "prefer-string-raw": {
                 "rule": "prefer-string-raw",
-                "description": "Prefers use of String.raw to avoid escaping .",
+                "description": "Prefers use of String.raw to avoid escaping \\.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-string-raw.html",
                 "meta": {
                     "recommended": false,
@@ -6435,7 +6435,7 @@
             },
             "require-array-join-separator": {
                 "rule": "require-array-join-separator",
-                "description": "Enforce using the separator argument with Array#join()",
+                "description": "Enforce using the separator argument with Array#join().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/require-array-join-separator.html",
                 "meta": {
                     "recommended": false,
@@ -6465,7 +6465,7 @@
             },
             "require-number-to-fixed-digits-argument": {
                 "rule": "require-number-to-fixed-digits-argument",
-                "description": "Enforce using the digits argument with Number.toFixed()",
+                "description": "Enforce using the digits argument with Number#toFixed().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/require-number-to-fixed-digits-argument.html",
                 "meta": {
                     "recommended": false,
