@@ -2344,7 +2344,8 @@
                                 "enum": [
                                     "off",
                                     "suggestion",
-                                    "fix"
+                                    "fix",
+                                    "safe-fix"
                                 ]
                             },
                             "variables": {
@@ -2352,7 +2353,8 @@
                                 "enum": [
                                     "off",
                                     "suggestion",
-                                    "fix"
+                                    "fix",
+                                    "safe-fix"
                                 ]
                             }
                         },
@@ -10877,7 +10879,7 @@
     },
     {
         "rule": "prefer-import-in-mock",
-        "description": "This rule enforces using a dynamic import() in vi.mock(), which improves type information and IntelliSense for the mocked module.",
+        "description": "This rule enforces using a dynamic import() in vi.mock() or vi.doMock(), which improves type information and IntelliSense for the mocked module.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-import-in-mock.html",
         "options": {
             "schema": {
