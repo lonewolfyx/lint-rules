@@ -8683,6 +8683,28 @@
             "schema": {
                 "type": "object",
                 "properties": {
+                    "allow": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "from": {},
+                                "name": {
+                                    "type": "object",
+                                    "properties": {
+                                        "name[n]": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "path": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
                     "allowEmptyReject": {
                         "type": "boolean"
                     },
@@ -8697,6 +8719,7 @@
             },
             "defaultOptions": [
                 {
+                    "allow": [],
                     "allowEmptyReject": false,
                     "allowThrowingAny": false,
                     "allowThrowingUnknown": false
