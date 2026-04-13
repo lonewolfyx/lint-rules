@@ -181,19 +181,7 @@
                         "type": "boolean"
                     },
                     "exceptMethods": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string"
-                                },
-                                "private": {
-                                    "type": "boolean"
-                                }
-                            },
-                            "additionalProperties": false
-                        }
+                        "type": "string[]"
                     },
                     "ignoreClassesWithImplements": {
                         "type": "string",
@@ -376,7 +364,14 @@
                     {
                         "type": "object",
                         "properties": {
-                            "generators": {}
+                            "generators": {
+                                "type": "string",
+                                "enum": [
+                                    "always",
+                                    "as-needed",
+                                    "never"
+                                ]
+                            }
                         },
                         "additionalProperties": false
                     }
@@ -717,7 +712,14 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "countThis": {},
+                    "countThis": {
+                        "type": "string",
+                        "enum": [
+                            "always",
+                            "never",
+                            "except-void"
+                        ]
+                    },
                     "countVoidThis": {
                         "type": "boolean"
                     },
@@ -7193,7 +7195,30 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "assertionStyle": {}
+                    "arrayLiteralTypeAssertions": {
+                        "type": "string",
+                        "enum": [
+                            "allow",
+                            "allow-as-parameter",
+                            "never"
+                        ]
+                    },
+                    "assertionStyle": {
+                        "type": "string",
+                        "enum": [
+                            "as",
+                            "angle-bracket",
+                            "never"
+                        ]
+                    },
+                    "objectLiteralTypeAssertions": {
+                        "type": "string",
+                        "enum": [
+                            "allow",
+                            "allow-as-parameter",
+                            "never"
+                        ]
+                    }
                 },
                 "additionalProperties": false
             },
@@ -8847,7 +8872,7 @@
             },
             "defaultOptions": [
                 {
-                    "allowSingleElementEquality": null
+                    "allowSingleElementEquality": "never"
                 }
             ]
         }
@@ -10914,7 +10939,11 @@
                 },
                 "additionalProperties": false
             },
-            "defaultOptions": []
+            "defaultOptions": [
+                {
+                    "fixable": true
+                }
+            ]
         }
     },
     {
