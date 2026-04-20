@@ -6575,7 +6575,7 @@
             },
             "no-importing-vitest-globals": {
                 "rule": "no-importing-vitest-globals",
-                "description": "The rule disallows import any vitest global function.",
+                "description": "The rule disallows importing any vitest global functions.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/no-importing-vitest-globals.html",
                 "meta": {
                     "recommended": false,

@@ -1199,8 +1199,20 @@
         "description": "Disallow empty destructuring patterns.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-empty-pattern.html",
         "options": {
-            "schema": {},
-            "defaultOptions": []
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allowObjectPatternsAsParameters": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allowObjectPatternsAsParameters": false
+                }
+            ]
         }
     },
     {
@@ -10882,7 +10894,7 @@
     },
     {
         "rule": "no-importing-vitest-globals",
-        "description": "The rule disallows import any vitest global function.",
+        "description": "The rule disallows importing any vitest global functions.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/no-importing-vitest-globals.html",
         "options": {
             "schema": {},
