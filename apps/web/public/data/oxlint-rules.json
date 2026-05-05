@@ -2065,7 +2065,7 @@
             },
             "no-alias-methods": {
                 "rule": "no-alias-methods",
-                "description": "This rule ensures that only the canonical name as used in the Jest documentation is used in the code.",
+                "description": "Enforces Jest's canonical matcher names instead of aliases.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jest/no-alias-methods.html",
                 "meta": {
                     "recommended": false,
@@ -4665,7 +4665,7 @@
             },
             "no-misused-new": {
                 "rule": "no-misused-new",
-                "description": "Enforces valid definition of new and constructor. This rule prevents classes from defining\na method named new and interfaces from defining a method named constructor.",
+                "description": "Enforces valid definition of new and constructor. This rule prevents classes from defining\na method named new, interfaces from defining a method named constructor, and interfaces\nfrom defining a construct signature that returns the interface itself.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-misused-new.html",
                 "meta": {
                     "recommended": true,
