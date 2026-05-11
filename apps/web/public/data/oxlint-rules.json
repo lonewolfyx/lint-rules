@@ -3775,7 +3775,7 @@
             },
             "forbid-dom-props": {
                 "rule": "forbid-dom-props",
-                "description": "This rule prevents passing of props to elements. This rule only applies to DOM Nodes (e.g. ",
+                "description": "This rule prevents passing of props to elements. This rule only applies to DOM Nodes (e.g. <div />) and not Components (e.g. <Component />). The list of forbidden props can be customized with the forbid option.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/forbid-dom-props.html",
                 "meta": {
                     "recommended": false,
@@ -3865,7 +3865,7 @@
             },
             "jsx-key": {
                 "rule": "jsx-key",
-                "description": "Enforce key prop for elements in array.",
+                "description": "Enforce key prop for elements in an array.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-key.html",
                 "meta": {
                     "recommended": false,

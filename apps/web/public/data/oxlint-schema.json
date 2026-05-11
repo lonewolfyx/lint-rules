@@ -5918,8 +5918,20 @@
         "description": "Disallows the use of Promises within error-first callback functions.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/no-promise-in-callback.html",
         "options": {
-            "schema": {},
-            "defaultOptions": []
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "exemptDeclarations": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "exemptDeclarations": false
+                }
+            ]
         }
     },
     {
@@ -6143,7 +6155,7 @@
     },
     {
         "rule": "forbid-dom-props",
-        "description": "This rule prevents passing of props to elements. This rule only applies to DOM Nodes (e.g. ",
+        "description": "This rule prevents passing of props to elements. This rule only applies to DOM Nodes (e.g. <div />) and not Components (e.g. <Component />). The list of forbidden props can be customized with the forbid option.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/forbid-dom-props.html",
         "options": {
             "schema": {
@@ -6398,7 +6410,7 @@
     },
     {
         "rule": "jsx-key",
-        "description": "Enforce key prop for elements in array.",
+        "description": "Enforce key prop for elements in an array.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-key.html",
         "options": {
             "schema": {
@@ -11068,6 +11080,7 @@
                     "destructure": {
                         "type": "string",
                         "enum": [
+                            "only-when-assigned",
                             "always",
                             "never"
                         ]
@@ -11077,7 +11090,7 @@
             },
             "defaultOptions": [
                 {
-                    "destructure": "always"
+                    "destructure": "only-when-assigned"
                 }
             ]
         }
