@@ -6615,7 +6615,7 @@
             },
             "prefer-expect-type-of": {
                 "rule": "prefer-expect-type-of",
-                "description": "Enforce using expectTypeOf instead of expect(typeof ...).",
+                "description": "Enforce using toBeTypeOf instead of expect(typeof ...).toBe(...).",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-expect-type-of.html",
                 "meta": {
                     "recommended": false,
