@@ -122,21 +122,6 @@
                     {
                         "type": "object",
                         "properties": {
-                            "block": {
-                                "type": "object",
-                                "properties": {
-                                    "ignoreConsecutiveComments": {
-                                        "type": "boolean"
-                                    },
-                                    "ignoreInlineComments": {
-                                        "type": "boolean"
-                                    },
-                                    "ignorePattern": {
-                                        "type": "string"
-                                    }
-                                },
-                                "additionalProperties": false
-                            },
                             "ignoreConsecutiveComments": {
                                 "type": "boolean"
                             },
@@ -145,21 +130,6 @@
                             },
                             "ignorePattern": {
                                 "type": "string"
-                            },
-                            "line": {
-                                "type": "object",
-                                "properties": {
-                                    "ignoreConsecutiveComments": {
-                                        "type": "boolean"
-                                    },
-                                    "ignoreInlineComments": {
-                                        "type": "boolean"
-                                    },
-                                    "ignorePattern": {
-                                        "type": "string"
-                                    }
-                                },
-                                "additionalProperties": false
                             }
                         },
                         "additionalProperties": false
@@ -229,8 +199,7 @@
             },
             "defaultOptions": [
                 {
-                    "max": 20,
-                    "variant": "classic"
+                    "max": 20
                 }
             ]
         }
@@ -985,11 +954,7 @@
                 },
                 "additionalProperties": false
             },
-            "defaultOptions": [
-                {
-                    "checkLoops": "allExceptWhileTrue"
-                }
-            ]
+            "defaultOptions": []
         }
     },
     {
@@ -2302,6 +2267,9 @@
                     },
                     "enforceForJSX": {
                         "type": "boolean"
+                    },
+                    "ignoreDirectives": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
@@ -2311,7 +2279,8 @@
                     "allowShortCircuit": false,
                     "allowTaggedTemplates": false,
                     "allowTernary": false,
-                    "enforceForJSX": false
+                    "enforceForJSX": false,
+                    "ignoreDirectives": false
                 }
             ]
         }
@@ -2454,12 +2423,7 @@
                 },
                 "additionalProperties": false
             },
-            "defaultOptions": [
-                {
-                    "args": "after-used",
-                    "vars": "all"
-                }
-            ]
+            "defaultOptions": []
         }
     },
     {
@@ -2667,7 +2631,25 @@
         "description": "Disallows warning comments such as TODO, FIXME, XXX in code.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-warning-comments.html",
         "options": {
-            "schema": {},
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "decoration": {
+                        "type": "string[]"
+                    },
+                    "location": {
+                        "type": "string",
+                        "enum": [
+                            "start",
+                            "anywhere"
+                        ]
+                    },
+                    "terms": {
+                        "type": "string[]"
+                    }
+                },
+                "additionalProperties": false
+            },
             "defaultOptions": []
         }
     },
@@ -2884,7 +2866,11 @@
         "description": "Enforce the consistent use of the radix argument when using parseInt(),\nwhich specifies what base to use for parsing the number.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/radix.html",
         "options": {
-            "schema": {},
+            "schema": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": false
+            },
             "defaultOptions": []
         }
     },
@@ -3989,16 +3975,10 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "restrictedJestMethods": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
-            "defaultOptions": [
-                {
-                    "restrictedJestMethods": {}
-                }
-            ]
+            "defaultOptions": []
         }
     },
     {
@@ -4008,16 +3988,10 @@
         "options": {
             "schema": {
                 "type": "object",
-                "properties": {
-                    "restrictedMatchers": {}
-                },
+                "properties": {},
                 "additionalProperties": false
             },
-            "defaultOptions": [
-                {
-                    "restrictedMatchers": {}
-                }
-            ]
+            "defaultOptions": []
         }
     },
     {
@@ -9863,6 +9837,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
+                    "checkArguments": {
+                        "type": "boolean"
+                    },
                     "checkStrictEquality": {
                         "type": "boolean"
                     }
@@ -9871,6 +9848,7 @@
             },
             "defaultOptions": [
                 {
+                    "checkArguments": true,
                     "checkStrictEquality": false
                 }
             ]
