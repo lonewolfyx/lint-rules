@@ -195,7 +195,7 @@
             },
             "id-length": {
                 "rule": "id-length",
-                "description": "This rule enforces a minimum and/or maximum identifier length convention by counting the\ngraphemes for a given identifier.",
+                "description": "Enforce a minimum and/or maximum identifier length convention by counting the\ngraphemes for a given identifier.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
                 "meta": {
                     "recommended": false,
@@ -435,7 +435,7 @@
             },
             "no-constructor-return": {
                 "rule": "no-constructor-return",
-                "description": "Disallow returning value from constructor.",
+                "description": "Disallow returning a value from a constructor.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-constructor-return.html",
                 "meta": {
                     "recommended": false,
@@ -595,7 +595,7 @@
             },
             "no-empty-static-block": {
                 "rule": "no-empty-static-block",
-                "description": "Disallows the usages of empty static blocks.",
+                "description": "Disallow empty static blocks.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-empty-static-block.html",
                 "meta": {
                     "recommended": true,
@@ -705,7 +705,7 @@
             },
             "no-implicit-coercion": {
                 "rule": "no-implicit-coercion",
-                "description": "Disallows shorthand type conversions using operators like !!, +, \"\"+ , etc.",
+                "description": "Disallow shorthand type conversions using operators like !!, unary +, and \"\" +.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-implicit-coercion.html",
                 "meta": {
                     "recommended": false,
@@ -825,7 +825,7 @@
             },
             "no-loss-of-precision": {
                 "rule": "no-loss-of-precision",
-                "description": "Disallow precision loss of number literal.",
+                "description": "Disallow precision loss in numeric literals.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-loss-of-precision.html",
                 "meta": {
                     "recommended": true,
@@ -885,7 +885,7 @@
             },
             "no-nested-ternary": {
                 "rule": "no-nested-ternary",
-                "description": "This rule disallows deeply nested ternary expressions.\nNested ternary expressions that are only one level deep and wrapped in parentheses are allowed.",
+                "description": "Disallow deeply nested ternary expressions.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-nested-ternary.html",
                 "meta": {
                     "recommended": false,
@@ -905,7 +905,7 @@
             },
             "no-new-func": {
                 "rule": "no-new-func",
-                "description": "The rule disallow new operators with the Function object.",
+                "description": "Disallow new operators with the Function object.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-new-func.html",
                 "meta": {
                     "recommended": false,
@@ -935,7 +935,7 @@
             },
             "no-nonoctal-decimal-escape": {
                 "rule": "no-nonoctal-decimal-escape",
-                "description": "This rule disallows \\8 and \\9 escape sequences in string literals.",
+                "description": "Disallow \\8 and \\9 escape sequences in string literals.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-nonoctal-decimal-escape.html",
                 "meta": {
                     "recommended": true,
@@ -1035,7 +1035,7 @@
             },
             "no-restricted-globals": {
                 "rule": "no-restricted-globals",
-                "description": "This rule allows you to specify global variable names that you don't want to use in your application.",
+                "description": "Specify global variable names that should not be used in your application.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-restricted-globals.html",
                 "meta": {
                     "recommended": false,
@@ -1635,7 +1635,7 @@
             },
             "sort-vars": {
                 "rule": "sort-vars",
-                "description": "When declaring multiple variables within the same block, sorting variable names make it\neasier to find necessary variable easier at a later time.",
+                "description": "Enforce sorting of variable declarations within the same block.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/sort-vars.html",
                 "meta": {
                     "recommended": false,
@@ -1695,7 +1695,7 @@
             },
             "yoda": {
                 "rule": "yoda",
-                "description": "Require or disallow \"Yoda\" conditions.\nThis rule aims to enforce consistent style of conditions which compare a variable to a literal value.",
+                "description": "Require or disallow \"Yoda\" conditions. This rule aims to enforce consistent style of conditions which compare a variable to a literal value.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/yoda.html",
                 "meta": {
                     "recommended": false,
@@ -1705,7 +1705,7 @@
             },
             "consistent-type-specifier-style": {
                 "rule": "consistent-type-specifier-style",
-                "description": "This rule either enforces or bans the use of inline type-only markers for named imports.",
+                "description": "Enforces or bans the use of inline type-only markers for named imports.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/import/consistent-type-specifier-style.html",
                 "meta": {
                     "recommended": false,
@@ -1805,7 +1805,7 @@
             },
             "no-absolute-path": {
                 "rule": "no-absolute-path",
-                "description": "This rule forbids the import of modules using absolute paths.",
+                "description": "Forbid the import of modules using absolute paths.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-absolute-path.html",
                 "meta": {
                     "recommended": false,
@@ -1845,7 +1845,7 @@
             },
             "no-cycle": {
                 "rule": "no-cycle",
-                "description": "Ensures that there is no resolvable path back to this module via its dependencies.",
+                "description": "Disallow cyclic dependencies. The rule ensures that there is no resolvable path back\nto this module via its dependencies.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-cycle.html",
                 "meta": {
                     "recommended": false,
@@ -1855,7 +1855,7 @@
             },
             "no-default-export": {
                 "rule": "no-default-export",
-                "description": "Forbids a module from having default exports. This helps your editor\nprovide better auto-import functionality, as named exports offer more\nexplicit and predictable imports compared to default exports.",
+                "description": "Disallow modules from having default exports.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-default-export.html",
                 "meta": {
                     "recommended": false,
@@ -2005,7 +2005,7 @@
             },
             "prefer-default-export": {
                 "rule": "prefer-default-export",
-                "description": "In exporting files, this rule checks if there is default export or not.",
+                "description": "Checks whether there is a default export.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/import/prefer-default-export.html",
                 "meta": {
                     "recommended": false,
@@ -2205,7 +2205,7 @@
             },
             "no-jasmine-globals": {
                 "rule": "no-jasmine-globals",
-                "description": "This rule reports on any usage of Jasmine globals, which is not ported to\nJest, and suggests alternatives from Jest's own API.",
+                "description": "This rule reports on any usage of Jasmine globals, which are not ported to\nJest, and suggests alternatives from Jest's own API.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jest/no-jasmine-globals.html",
                 "meta": {
                     "recommended": false,
@@ -2725,7 +2725,7 @@
             },
             "require-returns-type": {
                 "rule": "require-returns-type",
-                "description": "Requires that @returns tag has a type value (in curly brackets).",
+                "description": "Requires that the @returns tag has a type value (in curly brackets).",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jsdoc/require-returns-type.html",
                 "meta": {
                     "recommended": false,
@@ -2905,7 +2905,7 @@
             },
             "lang": {
                 "rule": "lang",
-                "description": "The lang prop on the <html> element must be a valid IETF's BCP 47 language tag.",
+                "description": "The lang prop on the <html> element must be a valid IETF BCP 47 language tag.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jsx_a11y/lang.html",
                 "meta": {
                     "recommended": false,
@@ -2935,7 +2935,7 @@
             },
             "no-access-key": {
                 "rule": "no-access-key",
-                "description": "Enforces that the accessKey prop is not used on any element to avoid complications with keyboard commands used by a screenreader.",
+                "description": "Enforces that the accessKey prop is not used on any element to avoid complications with keyboard commands used by a screen reader.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jsx_a11y/no-access-key.html",
                 "meta": {
                     "recommended": false,
@@ -3185,7 +3185,7 @@
             },
             "no-img-element": {
                 "rule": "no-img-element",
-                "description": "Prevent the usage of <img> element due to slower\nLCP and higher bandwidth.",
+                "description": "Prevent the usage of the <img> element due to slower\nLCP and higher bandwidth.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/nextjs/no-img-element.html",
                 "meta": {
                     "recommended": false,
@@ -3225,7 +3225,7 @@
             },
             "no-sync-scripts": {
                 "rule": "no-sync-scripts",
-                "description": "This rule prevents the use of synchronous <script> tags in Next.js applications.\nIt requires that any <script> tag with a src attribute must also have either\nthe async or defer attribute.",
+                "description": "Prevent the use of synchronous <script> tags in Next.js applications.\nRequire any <script> tag with a src attribute to also have either\nthe async or defer attribute.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/nextjs/no-sync-scripts.html",
                 "meta": {
                     "recommended": false,
@@ -3365,7 +3365,7 @@
             },
             "bad-min-max-func": {
                 "rule": "bad-min-max-func",
-                "description": "Checks whether the clamp function Math.min(Math.max(x, y), z) always evaluate to a\nconstant result because the arguments are in the wrong order.",
+                "description": "Checks whether the clamp function Math.min(Math.max(x, y), z) always evaluates to a\nconstant result because the arguments are in the wrong order.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/oxc/bad-min-max-func.html",
                 "meta": {
                     "recommended": true,
@@ -3485,7 +3485,7 @@
             },
             "no-barrel-file": {
                 "rule": "no-barrel-file",
-                "description": "Disallow the use of barrel files where the file contains export * statements,\nand the total number of modules exceed a threshold.",
+                "description": "Disallow the use of barrel files where the file contains export * statements,\nand the total number of modules exceeds a threshold.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-barrel-file.html",
                 "meta": {
                     "recommended": false,
@@ -3545,7 +3545,7 @@
             },
             "number-arg-out-of-range": {
                 "rule": "number-arg-out-of-range",
-                "description": "Checks whether the radix or precision arguments of number-related functions exceeds the limit.",
+                "description": "Checks whether the radix or precision arguments of number-related functions exceed the limit.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/oxc/number-arg-out-of-range.html",
                 "meta": {
                     "recommended": true,
@@ -3615,7 +3615,7 @@
             },
             "no-multiple-resolved": {
                 "rule": "no-multiple-resolved",
-                "description": "This rule warns of paths that resolve multiple times in executor functions that Promise constructors.",
+                "description": "This rule warns of paths that resolve multiple times in executor functions of Promise constructors.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/promise/no-multiple-resolved.html",
                 "meta": {
                     "recommended": false,
@@ -3735,7 +3735,7 @@
             },
             "button-has-type": {
                 "rule": "button-has-type",
-                "description": "Enforces explicit type attribute for all the button HTML elements.",
+                "description": "Enforces an explicit type attribute for all HTML button elements.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/button-has-type.html",
                 "meta": {
                     "recommended": false,
@@ -3805,7 +3805,7 @@
             },
             "iframe-missing-sandbox": {
                 "rule": "iframe-missing-sandbox",
-                "description": "Enforce sandbox attribute on iframe elements.",
+                "description": "Enforce the sandbox attribute on iframe elements.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/iframe-missing-sandbox.html",
                 "meta": {
                     "recommended": false,
@@ -3895,7 +3895,7 @@
             },
             "jsx-no-constructed-context-values": {
                 "rule": "jsx-no-constructed-context-values",
-                "description": "Disallows JSX context provider values from taking values that will cause needless rerenders.",
+                "description": "Disallows JSX context provider values that cause needless re-renders.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-constructed-context-values.html",
                 "meta": {
                     "recommended": false,
@@ -3925,7 +3925,7 @@
             },
             "jsx-no-target-blank": {
                 "rule": "jsx-no-target-blank",
-                "description": "This rule aims to prevent user generated link hrefs and form actions from creating security vulnerabilities by\nrequiring rel='noreferrer' for external link hrefs and form actions, and optionally any dynamically generated\nlink hrefs and form actions.",
+                "description": "This rule aims to prevent user-generated link hrefs and form actions from creating security vulnerabilities by\nrequiring rel='noreferrer' for external link hrefs and form actions, and optionally any dynamically generated\nlink hrefs and form actions.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-target-blank.html",
                 "meta": {
                     "recommended": false,
@@ -4015,7 +4015,7 @@
             },
             "no-danger-with-children": {
                 "rule": "no-danger-with-children",
-                "description": "Disallows when a DOM element is using both children and dangerouslySetInnerHTML properties.",
+                "description": "Disallows DOM elements from using both children and dangerouslySetInnerHTML properties.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/no-danger-with-children.html",
                 "meta": {
                     "recommended": false,
@@ -4195,7 +4195,7 @@
             },
             "require-render-return": {
                 "rule": "require-render-return",
-                "description": "Enforce ES5 or ES2015 class for returning value in the render function.",
+                "description": "Require render methods in ES5 and ES2015 React components to return a value.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react/require-render-return.html",
                 "meta": {
                     "recommended": false,
@@ -4265,7 +4265,7 @@
             },
             "jsx-no-new-array-as-prop": {
                 "rule": "jsx-no-new-array-as-prop",
-                "description": "Prevent Arrays that are local to the current method from being used\nas values of JSX props.",
+                "description": "Prevent arrays that are local to the current method from being used\nas values of JSX props.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react_perf/jsx-no-new-array-as-prop.html",
                 "meta": {
                     "recommended": false,
@@ -4275,7 +4275,7 @@
             },
             "jsx-no-new-function-as-prop": {
                 "rule": "jsx-no-new-function-as-prop",
-                "description": "Prevent Functions that are local to the current method from being used\nas values of JSX props.",
+                "description": "Prevent functions that are local to the current method from being used\nas values of JSX props.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react_perf/jsx-no-new-function-as-prop.html",
                 "meta": {
                     "recommended": false,
@@ -4285,7 +4285,7 @@
             },
             "jsx-no-new-object-as-prop": {
                 "rule": "jsx-no-new-object-as-prop",
-                "description": "Prevent Objects that are local to the current method from being used\nas values of JSX props.",
+                "description": "Prevent objects that are local to the current method from being used\nas values of JSX props.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/react_perf/jsx-no-new-object-as-prop.html",
                 "meta": {
                     "recommended": false,
@@ -4665,7 +4665,7 @@
             },
             "no-misused-new": {
                 "rule": "no-misused-new",
-                "description": "Enforces valid definition of new and constructor. This rule prevents classes from defining\na method named new, interfaces from defining a method named constructor, and interfaces\nfrom defining a construct signature that returns the interface itself.",
+                "description": "Enforces valid definitions of new and constructor. This rule prevents classes from defining\na method named new, interfaces from defining a method named constructor, and interfaces\nfrom defining a construct signature that returns the interface itself.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-misused-new.html",
                 "meta": {
                     "recommended": true,
@@ -5035,7 +5035,7 @@
             },
             "prefer-as-const": {
                 "rule": "prefer-as-const",
-                "description": "Enforce the use of as const over literal type.",
+                "description": "Enforce the use of as const over literal types.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-as-const.html",
                 "meta": {
                     "recommended": true,
@@ -5065,7 +5065,7 @@
             },
             "prefer-for-of": {
                 "rule": "prefer-for-of",
-                "description": "Enforces the use of for-of loop instead of a for loop with a simple iteration.",
+                "description": "Enforces the use of a for...of loop instead of a for loop with simple iteration.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-for-of.html",
                 "meta": {
                     "recommended": false,
@@ -5085,7 +5085,7 @@
             },
             "prefer-includes": {
                 "rule": "prefer-includes",
-                "description": "Prefer includes() over indexOf() when checking for existence or non-existence.\nAll built-ins have .includes() in addition to .indexOf().",
+                "description": "Prefer includes() over indexOf() when checking for existence/non-existence.\nAll built-ins have .includes() in addition to .indexOf().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-includes.html",
                 "meta": {
                     "recommended": false,
@@ -5095,7 +5095,7 @@
             },
             "prefer-literal-enum-member": {
                 "rule": "prefer-literal-enum-member",
-                "description": "Explicit enum value must only be a literal value (string, number, boolean, etc).",
+                "description": "Explicit enum values must only be literal values (string, number, boolean, etc.).",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-literal-enum-member.html",
                 "meta": {
                     "recommended": false,
@@ -5305,7 +5305,7 @@
             },
             "unbound-method": {
                 "rule": "unbound-method",
-                "description": "This rule enforces unbound methods are called with their expected scope.",
+                "description": "This rule enforces that unbound methods are called with their expected scope.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/unbound-method.html",
                 "meta": {
                     "recommended": true,
@@ -6055,7 +6055,7 @@
             },
             "prefer-code-point": {
                 "rule": "prefer-code-point",
-                "description": "Prefers usage of String.prototype.codePointAt over String.prototype.charCodeAt.\nPrefers usage of String.fromCodePoint over String.fromCharCode.",
+                "description": "Prefer usage of String#codePointAt over String#charCodeAt.\nPrefer usage of String.fromCodePoint over String.fromCharCode.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-code-point.html",
                 "meta": {
                     "recommended": false,
@@ -6215,7 +6215,7 @@
             },
             "prefer-native-coercion-functions": {
                 "rule": "prefer-native-coercion-functions",
-                "description": "Prefers built in functions, over custom ones with the same functionality.",
+                "description": "Prefers built-in functions over custom ones with the same functionality.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-native-coercion-functions.html",
                 "meta": {
                     "recommended": false,
@@ -6235,7 +6235,7 @@
             },
             "prefer-node-protocol": {
                 "rule": "prefer-node-protocol",
-                "description": "Prefer using the node:protocol when importing Node.js builtin modules.",
+                "description": "Prefer using the node: protocol when importing Node.js built-in modules.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-node-protocol.html",
                 "meta": {
                     "recommended": false,
@@ -6245,7 +6245,7 @@
             },
             "prefer-number-properties": {
                 "rule": "prefer-number-properties",
-                "description": "Disallows use of parseInt(), parseFloat(), isNan(), isFinite(), Nan, Infinity and -Infinity as global variables.",
+                "description": "Disallows use of parseInt(), parseFloat(), isNaN(), isFinite(), NaN, Infinity and -Infinity as global variables.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-number-properties.html",
                 "meta": {
                     "recommended": false,
@@ -6445,7 +6445,7 @@
             },
             "require-module-attributes": {
                 "rule": "require-module-attributes",
-                "description": "This rule enforces non-empty attribute list in import/export statements and import() expressions.",
+                "description": "This rule enforces a non-empty attribute list in import/export statements and import() expressions.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/require-module-attributes.html",
                 "meta": {
                     "recommended": false,
@@ -6455,7 +6455,7 @@
             },
             "require-module-specifiers": {
                 "rule": "require-module-specifiers",
-                "description": "Enforce non-empty specifier list in import and export statements.",
+                "description": "Enforce a non-empty specifier list in import and export statements.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/require-module-specifiers.html",
                 "meta": {
                     "recommended": false,
@@ -6535,7 +6535,7 @@
             },
             "consistent-vitest-vi": {
                 "rule": "consistent-vitest-vi",
-                "description": "This rule triggers an error when an unexpected vitest accessor is used.",
+                "description": "This rule triggers an error when an unexpected Vitest accessor is used.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/consistent-vitest-vi.html",
                 "meta": {
                     "recommended": false,
@@ -6545,7 +6545,7 @@
             },
             "hoisted-apis-on-top": {
                 "rule": "hoisted-apis-on-top",
-                "description": "Requires hoisted Vitest APIs\n(vi.mock, vi.unmock, and vi.hoisted) to appear in the top-level of the file.",
+                "description": "Requires hoisted Vitest APIs\n(vi.mock, vi.unmock, and vi.hoisted) to appear at the top level of the file.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/hoisted-apis-on-top.html",
                 "meta": {
                     "recommended": false,
@@ -6575,7 +6575,7 @@
             },
             "no-importing-vitest-globals": {
                 "rule": "no-importing-vitest-globals",
-                "description": "The rule disallows importing any vitest global functions.",
+                "description": "The rule disallows importing any Vitest global functions.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/no-importing-vitest-globals.html",
                 "meta": {
                     "recommended": false,
@@ -6685,7 +6685,7 @@
             },
             "define-emits-declaration": {
                 "rule": "define-emits-declaration",
-                "description": "This rule enforces defineEmits typing style which you should use type-based, strict type-literal (introduced in Vue 3.3), or runtime declaration.\nThis rule only works in setup script and lang=\"ts\".",
+                "description": "Enforce consistent declaration style for defineEmits in Vue.\nThis rule only works in <script setup> with lang=\"ts\".",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vue/define-emits-declaration.html",
                 "meta": {
                     "recommended": false,
@@ -6695,7 +6695,7 @@
             },
             "define-props-declaration": {
                 "rule": "define-props-declaration",
-                "description": "This rule enforces defineProps typing style which you should use type-based or runtime declaration.\nThis rule only works in <script setup> with lang=\"ts\".",
+                "description": "Enforce consistent declaration style for defineProps in Vue.\nThis rule only works in <script setup> with lang=\"ts\".",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vue/define-props-declaration.html",
                 "meta": {
                     "recommended": false,
@@ -6805,7 +6805,7 @@
             },
             "prefer-import-from-vue": {
                 "rule": "prefer-import-from-vue",
-                "description": "Enforce import from 'vue' instead of import from '@vue/*'.",
+                "description": "Enforce imports from vue instead of @vue/*.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vue/prefer-import-from-vue.html",
                 "meta": {
                     "recommended": false,
@@ -6835,7 +6835,7 @@
             },
             "valid-define-emits": {
                 "rule": "valid-define-emits",
-                "description": "This rule checks whether defineEmits compiler macro is valid.",
+                "description": "Enforce valid usage of the defineEmits compiler macro in Vue.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vue/valid-define-emits.html",
                 "meta": {
                     "recommended": false,
@@ -6845,7 +6845,7 @@
             },
             "valid-define-props": {
                 "rule": "valid-define-props",
-                "description": "This rule checks whether defineProps compiler macro is valid.",
+                "description": "Enforce valid usage of the defineProps compiler macro in Vue.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vue/valid-define-props.html",
                 "meta": {
                     "recommended": false,
