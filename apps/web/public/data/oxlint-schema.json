@@ -1894,13 +1894,25 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "restrictedGlobals": {}
+                    "checkGlobalObject": {
+                        "type": "boolean"
+                    },
+                    "globalObjects": {
+                        "type": "string[]"
+                    },
+                    "globals": {}
                 },
                 "additionalProperties": false
             },
             "defaultOptions": [
                 {
-                    "restrictedGlobals": {}
+                    "checkGlobalObject": false,
+                    "globalObjects": [
+                        "globalThis",
+                        "self",
+                        "window"
+                    ],
+                    "globals": {}
                 }
             ]
         }
@@ -2709,9 +2721,9 @@
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-destructuring.html",
         "options": {
             "schema": {
-                "type": "object",
-                "properties": {
-                    "AssignmentExpression": {
+                "type": "array",
+                "items": [
+                    {
                         "type": "object",
                         "properties": {
                             "array": {
@@ -2723,34 +2735,19 @@
                         },
                         "additionalProperties": false
                     },
-                    "VariableDeclarator": {
+                    {
                         "type": "object",
                         "properties": {
-                            "array": {
-                                "type": "boolean"
-                            },
-                            "object": {
+                            "enforceForRenamedProperties": {
                                 "type": "boolean"
                             }
                         },
                         "additionalProperties": false
-                    },
-                    "enforceForRenamedProperties": {
-                        "type": "boolean"
                     }
-                },
-                "additionalProperties": false
+                ]
             },
             "defaultOptions": [
                 {
-                    "AssignmentExpression": {
-                        "array": true,
-                        "object": true
-                    },
-                    "VariableDeclarator": {
-                        "array": true,
-                        "object": true
-                    },
                     "enforceForRenamedProperties": false
                 }
             ]
@@ -3171,39 +3168,55 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "checkTypeImports": {
-                        "type": "boolean"
+                    "[0]": {
+                        "type": "string",
+                        "enum": [
+                            "always",
+                            "never",
+                            "ignorePackages"
+                        ]
                     },
-                    "ignorePackages": {
-                        "type": "boolean"
-                    },
-                    "pathGroupOverrides": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "action": {
-                                    "type": "string",
-                                    "enum": [
-                                        "enforce",
-                                        "ignore"
-                                    ]
-                                },
-                                "pattern": {
-                                    "type": "string"
+                    "[1]": {
+                        "type": "object",
+                        "properties": {
+                            "checkTypeImports": {
+                                "type": "boolean"
+                            },
+                            "ignorePackages": {
+                                "type": "boolean"
+                            },
+                            "pathGroupOverrides": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "action": {
+                                            "type": "string",
+                                            "enum": [
+                                                "enforce",
+                                                "ignore"
+                                            ]
+                                        },
+                                        "pattern": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
                                 }
                             },
-                            "additionalProperties": false
-                        }
+                            "pattern": {}
+                        },
+                        "additionalProperties": false
                     }
                 },
                 "additionalProperties": false
             },
             "defaultOptions": [
                 {
-                    "checkTypeImports": false,
-                    "ignorePackages": false,
-                    "pathGroupOverrides": []
+                    "[1]": {
+                        "checkTypeImports": false,
+                        "ignorePackages": false
+                    }
                 }
             ]
         }
@@ -4514,8 +4527,24 @@
         "description": "Requires that each @param tag has a description value.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/jsdoc/require-param-description.html",
         "options": {
-            "schema": {},
-            "defaultOptions": []
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "defaultDestructuredRootDescription": {
+                        "type": "string"
+                    },
+                    "setDefaultDestructuredRootDescription": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "defaultDestructuredRootDescription": "The root object",
+                    "setDefaultDestructuredRootDescription": false
+                }
+            ]
         }
     },
     {
@@ -4532,8 +4561,24 @@
         "description": "Requires that each @param tag has a type value (within curly brackets).",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/jsdoc/require-param-type.html",
         "options": {
-            "schema": {},
-            "defaultOptions": []
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "defaultDestructuredRootType": {
+                        "type": "string"
+                    },
+                    "setDefaultDestructuredRootType": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "defaultDestructuredRootType": "object",
+                    "setDefaultDestructuredRootType": false
+                }
+            ]
         }
     },
     {
@@ -4750,7 +4795,21 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "validHrefs": {
+                    "aspects": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "noHref",
+                                "invalidHref",
+                                "preferButton"
+                            ]
+                        }
+                    },
+                    "components": {
+                        "type": "string[]"
+                    },
+                    "specialLink": {
                         "type": "string[]"
                     }
                 },
@@ -4758,7 +4817,8 @@
             },
             "defaultOptions": [
                 {
-                    "validHrefs": []
+                    "components": [],
+                    "specialLink": []
                 }
             ]
         }
@@ -6468,17 +6528,38 @@
             "schema": {
                 "type": "object",
                 "properties": {
-                    "components": {},
-                    "includeFromSettings": {
-                        "type": "boolean"
+                    "[0]": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "props": {
+                                    "type": "string[]"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "[1]": {
+                        "type": "object",
+                        "properties": {
+                            "includeFromSettings": {
+                                "type": "boolean"
+                            }
+                        },
+                        "additionalProperties": false
                     }
                 },
                 "additionalProperties": false
             },
             "defaultOptions": [
                 {
-                    "components": {},
-                    "includeFromSettings": false
+                    "[1]": {
+                        "includeFromSettings": false
+                    }
                 }
             ]
         }
@@ -10197,6 +10278,9 @@
                             },
                             "minimumDigits": {
                                 "type": "integer"
+                            },
+                            "onlyIfContainsSeparator": {
+                                "type": "boolean"
                             }
                         },
                         "additionalProperties": false
@@ -10209,6 +10293,9 @@
                             },
                             "minimumDigits": {
                                 "type": "integer"
+                            },
+                            "onlyIfContainsSeparator": {
+                                "type": "boolean"
                             }
                         },
                         "additionalProperties": false
@@ -10216,11 +10303,17 @@
                     "number": {
                         "type": "object",
                         "properties": {
+                            "fractionGroupLength": {
+                                "type": "integer"
+                            },
                             "groupLength": {
                                 "type": "integer"
                             },
                             "minimumDigits": {
                                 "type": "integer"
+                            },
+                            "onlyIfContainsSeparator": {
+                                "type": "boolean"
                             }
                         },
                         "additionalProperties": false
@@ -10233,6 +10326,9 @@
                             },
                             "minimumDigits": {
                                 "type": "integer"
+                            },
+                            "onlyIfContainsSeparator": {
+                                "type": "boolean"
                             }
                         },
                         "additionalProperties": false
@@ -10245,6 +10341,23 @@
             },
             "defaultOptions": [
                 {
+                    "binary": {
+                        "groupLength": 0,
+                        "minimumDigits": 0
+                    },
+                    "hexadecimal": {
+                        "groupLength": 0,
+                        "minimumDigits": 0
+                    },
+                    "number": {
+                        "fractionGroupLength": null,
+                        "groupLength": 0,
+                        "minimumDigits": 0
+                    },
+                    "octal": {
+                        "groupLength": 0,
+                        "minimumDigits": 0
+                    },
                     "onlyIfContainsSeparator": false
                 }
             ]
