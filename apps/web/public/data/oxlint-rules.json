@@ -1045,7 +1045,7 @@
             },
             "no-restricted-imports": {
                 "rule": "no-restricted-imports",
-                "description": "This rule allows you to specify imports that you don’t want to use in your application.\nIt applies to static imports only, not dynamic ones.",
+                "description": "This rule allows you to specify imports that you don’t want to use in your application.\nIt applies to static imports and to dynamic import() with a string-literal source;\ncomputed sources like import(bar) are ignored.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-restricted-imports.html",
                 "meta": {
                     "recommended": false,
@@ -4425,7 +4425,7 @@
             },
             "consistent-type-imports": {
                 "rule": "consistent-type-imports",
-                "description": "Enforce consistent usage of type imports.",
+                "description": "Enforce consistent usage of type imports by adding or removing the\ntype keyword from imports.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-imports.html",
                 "meta": {
                     "recommended": false,
@@ -5955,7 +5955,7 @@
             },
             "prefer-array-find": {
                 "rule": "prefer-array-find",
-                "description": "Encourages using Array.prototype.find instead of filter(...)[0] or\nsimilar patterns when only the first matching element is needed.",
+                "description": "Encourages using Array.prototype.find and Array.prototype.findLast instead of\ntaking the first or last matching element from filter(...).",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-array-find.html",
                 "meta": {
                     "recommended": false,

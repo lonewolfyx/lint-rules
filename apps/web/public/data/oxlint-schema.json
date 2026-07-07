@@ -931,8 +931,20 @@
         "description": "Disallow expressions where the operation doesn't affect the value.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-constant-binary-expression.html",
         "options": {
-            "schema": {},
-            "defaultOptions": []
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "checkRelationalComparisons": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "checkRelationalComparisons": true
+                }
+            ]
         }
     },
     {
@@ -1919,7 +1931,7 @@
     },
     {
         "rule": "no-restricted-imports",
-        "description": "This rule allows you to specify imports that you don’t want to use in your application.\nIt applies to static imports only, not dynamic ones.",
+        "description": "This rule allows you to specify imports that you don’t want to use in your application.\nIt applies to static imports and to dynamic import() with a string-literal source;\ncomputed sources like import(bar) are ignored.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-restricted-imports.html",
         "options": {
             "schema": {},
@@ -4502,6 +4514,15 @@
                     },
                     "exemptedBy": {
                         "type": "string[]"
+                    },
+                    "ignoreWhenAllParamsMissing": {
+                        "type": "boolean"
+                    },
+                    "interfaceExemptsParamsCheck": {
+                        "type": "boolean"
+                    },
+                    "useDefaultObjectProperties": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
@@ -4517,7 +4538,10 @@
                     "checkTypesPattern": "^(?:[oO]bject|[aA]rray|PlainObject|Generic(?:Object|Array))$",
                     "exemptedBy": [
                         "inheritdoc"
-                    ]
+                    ],
+                    "ignoreWhenAllParamsMissing": false,
+                    "interfaceExemptsParamsCheck": false,
+                    "useDefaultObjectProperties": false
                 }
             ]
         }
@@ -6214,6 +6238,9 @@
                                 "disallowedFor": {
                                     "type": "string[]"
                                 },
+                                "disallowedValues": {
+                                    "type": "string[]"
+                                },
                                 "message": {
                                     "type": "string"
                                 },
@@ -7448,7 +7475,7 @@
     },
     {
         "rule": "consistent-type-imports",
-        "description": "Enforce consistent usage of type imports.",
+        "description": "Enforce consistent usage of type imports by adding or removing the\ntype keyword from imports.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-imports.html",
         "options": {
             "schema": {
@@ -9630,7 +9657,9 @@
                             "kebabCase",
                             "camelCase",
                             "snakeCase",
-                            "pascalCase"
+                            "pascalCase",
+                            "lowercase",
+                            "screamingSnakeCase"
                         ]
                     },
                     "cases": {
@@ -9642,7 +9671,13 @@
                             "kebabCase": {
                                 "type": "boolean"
                             },
+                            "lowercase": {
+                                "type": "boolean"
+                            },
                             "pascalCase": {
+                                "type": "boolean"
+                            },
+                            "screamingSnakeCase": {
                                 "type": "boolean"
                             },
                             "snakeCase": {
@@ -9666,7 +9701,9 @@
                     "cases": {
                         "camelCase": false,
                         "kebabCase": false,
+                        "lowercase": false,
                         "pascalCase": false,
+                        "screamingSnakeCase": false,
                         "snakeCase": false
                     },
                     "multipleFileExtensions": true
@@ -9787,6 +9824,9 @@
             "schema": {
                 "type": "object",
                 "properties": {
+                    "allowAfterSpread": {
+                        "type": "boolean"
+                    },
                     "allowExpressionStatement": {
                         "type": "boolean"
                     }
@@ -9795,6 +9835,7 @@
             },
             "defaultOptions": [
                 {
+                    "allowAfterSpread": false,
                     "allowExpressionStatement": true
                 }
             ]
@@ -10374,7 +10415,7 @@
     },
     {
         "rule": "prefer-array-find",
-        "description": "Encourages using Array.prototype.find instead of filter(...)[0] or\nsimilar patterns when only the first matching element is needed.",
+        "description": "Encourages using Array.prototype.find and Array.prototype.findLast instead of\ntaking the first or last matching element from filter(...).",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-array-find.html",
         "options": {
             "schema": {},
