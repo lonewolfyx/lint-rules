@@ -1444,6 +1444,13 @@
                                     "allow",
                                     "disallow"
                                 ]
+                            },
+                            "namespaces": {
+                                "type": "string",
+                                "enum": [
+                                    "allow",
+                                    "disallow"
+                                ]
                             }
                         },
                         "additionalProperties": false
@@ -8295,7 +8302,6 @@
             },
             "defaultOptions": [
                 {
-                    "allow": [],
                     "allowAsImport": false
                 }
             ]
