@@ -2757,6 +2757,9 @@
                     {
                         "type": "object",
                         "properties": {
+                            "enforceForDeclarationWithTypeAnnotation": {
+                                "type": "boolean"
+                            },
                             "enforceForRenamedProperties": {
                                 "type": "boolean"
                             }
@@ -2767,6 +2770,7 @@
             },
             "defaultOptions": [
                 {
+                    "enforceForDeclarationWithTypeAnnotation": false,
                     "enforceForRenamedProperties": false
                 }
             ]
