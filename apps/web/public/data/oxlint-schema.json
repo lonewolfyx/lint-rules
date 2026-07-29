@@ -1910,30 +1910,8 @@
         "description": "Specify global variable names that should not be used in your application.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-restricted-globals.html",
         "options": {
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "checkGlobalObject": {
-                        "type": "boolean"
-                    },
-                    "globalObjects": {
-                        "type": "string[]"
-                    },
-                    "globals": {}
-                },
-                "additionalProperties": false
-            },
-            "defaultOptions": [
-                {
-                    "checkGlobalObject": false,
-                    "globalObjects": [
-                        "globalThis",
-                        "self",
-                        "window"
-                    ],
-                    "globals": {}
-                }
-            ]
+            "schema": {},
+            "defaultOptions": []
         }
     },
     {
