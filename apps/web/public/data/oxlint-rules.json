@@ -3345,7 +3345,7 @@
             },
             "bad-char-at-comparison": {
                 "rule": "bad-char-at-comparison",
-                "description": "This rule warns when the return value of the charAt method is used to compare a string of length greater than 1.",
+                "description": "This rule warns when a character accessed with charAt, at, or bracket notation is\ncompared with a string of length greater than 1.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/oxc/bad-char-at-comparison.html",
                 "meta": {
                     "recommended": true,
