@@ -4806,8 +4806,20 @@
         "description": "Enforce that anchors have content and that the content is accessible to screen readers.\nAccessible means that it is not hidden using the aria-hidden prop.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/jsx_a11y/anchor-has-content.html",
         "options": {
-            "schema": {},
-            "defaultOptions": []
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "components": {
+                        "type": "string[]"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "components": []
+                }
+            ]
         }
     },
     {
@@ -9711,7 +9723,7 @@
     },
     {
         "rule": "new-for-builtins",
-        "description": "Enforces the use of new for the following builtins: Object, Array, ArrayBuffer, BigInt64Array,\nBigUint64Array, DataView, Date, Error, Float32Array, Float64Array, Function, Int8Array,\nInt16Array, Int32Array, Map, WeakMap, Set, WeakSet, Promise, RegExp, Uint8Array,\nUint16Array, Uint32Array, Uint8ClampedArray, SharedArrayBuffer, Proxy, WeakRef, FinalizationRegistry.",
+        "description": "Enforces the use of new for the following builtins: Object, Array, ArrayBuffer, BigInt64Array,\nBigUint64Array, DataView, Date, Error, Float16Array, Float32Array, Float64Array, Function, Int8Array,\nInt16Array, Int32Array, Map, WeakMap, Set, WeakSet, Promise, RegExp, Uint8Array,\nUint16Array, Uint32Array, Uint8ClampedArray, SharedArrayBuffer, Proxy, WeakRef, FinalizationRegistry.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/new-for-builtins.html",
         "options": {
             "schema": {},

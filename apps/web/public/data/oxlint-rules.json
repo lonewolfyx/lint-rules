@@ -5445,7 +5445,7 @@
             },
             "new-for-builtins": {
                 "rule": "new-for-builtins",
-                "description": "Enforces the use of new for the following builtins: Object, Array, ArrayBuffer, BigInt64Array,\nBigUint64Array, DataView, Date, Error, Float32Array, Float64Array, Function, Int8Array,\nInt16Array, Int32Array, Map, WeakMap, Set, WeakSet, Promise, RegExp, Uint8Array,\nUint16Array, Uint32Array, Uint8ClampedArray, SharedArrayBuffer, Proxy, WeakRef, FinalizationRegistry.",
+                "description": "Enforces the use of new for the following builtins: Object, Array, ArrayBuffer, BigInt64Array,\nBigUint64Array, DataView, Date, Error, Float16Array, Float32Array, Float64Array, Function, Int8Array,\nInt16Array, Int32Array, Map, WeakMap, Set, WeakSet, Promise, RegExp, Uint8Array,\nUint16Array, Uint32Array, Uint8ClampedArray, SharedArrayBuffer, Proxy, WeakRef, FinalizationRegistry.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/new-for-builtins.html",
                 "meta": {
                     "recommended": false,
