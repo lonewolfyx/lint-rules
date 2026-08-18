@@ -1226,7 +1226,7 @@
             },
             "defaultOptions": [
                 {
-                    "allowIndirect": true
+                    "allowIndirect": false
                 }
             ]
         }
@@ -1509,7 +1509,7 @@
             },
             "defaultOptions": [
                 {
-                    "skipComments": true,
+                    "skipComments": false,
                     "skipJSXText": true,
                     "skipRegExps": true,
                     "skipStrings": true,
@@ -3977,7 +3977,7 @@
             "defaultOptions": [
                 {
                     "allowedSnapshots": {},
-                    "inlineMaxSize": 50,
+                    "inlineMaxSize": null,
                     "maxSize": 50
                 }
             ]
