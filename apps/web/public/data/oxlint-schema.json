@@ -2172,8 +2172,20 @@
         "description": "Disallow references in loop conditions that are never modified within the loop.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unmodified-loop-condition.html",
         "options": {
-            "schema": {},
-            "defaultOptions": []
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "checkConditionalExpressions": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "checkConditionalExpressions": false
+                }
+            ]
         }
     },
     {
