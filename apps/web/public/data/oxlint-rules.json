@@ -5975,7 +5975,7 @@
             },
             "prefer-array-flat-map": {
                 "rule": "prefer-array-flat-map",
-                "description": "Prefers the use of .flatMap() when map().flat() are used together.",
+                "description": "Prefers a single .flatMap() over .map().flat() or .filter().flatMap().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-array-flat-map.html",
                 "meta": {
                     "recommended": false,

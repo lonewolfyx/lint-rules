@@ -10405,20 +10405,20 @@
             "defaultOptions": [
                 {
                     "binary": {
-                        "groupLength": 0,
+                        "groupLength": 4,
                         "minimumDigits": 0
                     },
                     "hexadecimal": {
-                        "groupLength": 0,
+                        "groupLength": 2,
                         "minimumDigits": 0
                     },
                     "number": {
                         "fractionGroupLength": null,
-                        "groupLength": 0,
-                        "minimumDigits": 0
+                        "groupLength": 3,
+                        "minimumDigits": 5
                     },
                     "octal": {
-                        "groupLength": 0,
+                        "groupLength": 4,
                         "minimumDigits": 0
                     },
                     "onlyIfContainsSeparator": false
@@ -10455,7 +10455,7 @@
     },
     {
         "rule": "prefer-array-flat-map",
-        "description": "Prefers the use of .flatMap() when map().flat() are used together.",
+        "description": "Prefers a single .flatMap() over .map().flat() or .filter().flatMap().",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-array-flat-map.html",
         "options": {
             "schema": {},
