@@ -6635,7 +6635,7 @@
             },
             "prefer-to-be-falsy": {
                 "rule": "prefer-to-be-falsy",
-                "description": "This rule warns when toBe(false) is used with expect or expectTypeOf.\nWith --fix, it will be replaced with toBeFalsy().",
+                "description": "This rule warns when toBe(false) is used with expect or expectTypeOf.\nWith --fix-suggestions, it will be replaced with toBeFalsy().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-to-be-falsy.html",
                 "meta": {
                     "recommended": false,
@@ -6655,7 +6655,7 @@
             },
             "prefer-to-be-truthy": {
                 "rule": "prefer-to-be-truthy",
-                "description": "This rule warns when toBe(true) is used with expect or expectTypeOf.\nWith --fix, it will be replaced with toBeTruthy().",
+                "description": "This rule warns when toBe(true) is used with expect or expectTypeOf.\nWith --fix-suggestions, it will be replaced with toBeTruthy().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-to-be-truthy.html",
                 "meta": {
                     "recommended": false,
