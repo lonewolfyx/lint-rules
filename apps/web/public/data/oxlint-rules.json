@@ -1865,7 +1865,7 @@
             },
             "no-duplicates": {
                 "rule": "no-duplicates",
-                "description": "Reports if a resolved path is imported more than once in the same module.\nThis helps avoid unnecessary duplicate imports and keeps the code clean.",
+                "description": "Reports if a resolved path is imported more than once in the same module.\nImports with different import attributes are treated as distinct modules.\nThis helps avoid unnecessary duplicate imports and keeps the code clean.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-duplicates.html",
                 "meta": {
                     "recommended": false,
