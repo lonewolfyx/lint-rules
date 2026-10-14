@@ -10797,8 +10797,20 @@
         "description": "Prefer .querySelector() over .getElementById(). And prefer .querySelectorAll()\nover .getElementsByClassName(), .getElementsByTagName(), and .getElementsByName().",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-query-selector.html",
         "options": {
-            "schema": {},
-            "defaultOptions": []
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allowWithVariables": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allowWithVariables": false
+                }
+            ]
         }
     },
     {
