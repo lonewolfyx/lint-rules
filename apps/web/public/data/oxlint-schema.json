@@ -7289,8 +7289,20 @@
         "description": "This rule disallows awaiting a value that is not a Thenable.",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
         "options": {
-            "schema": {},
-            "defaultOptions": []
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "allowMixedPromiseArrays": {
+                        "type": "boolean"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "defaultOptions": [
+                {
+                    "allowMixedPromiseArrays": false
+                }
+            ]
         }
     },
     {
