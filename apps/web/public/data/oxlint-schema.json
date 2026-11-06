@@ -1885,13 +1885,17 @@
                 "properties": {
                     "builtinGlobals": {
                         "type": "boolean"
+                    },
+                    "ignoreDeclarationMerge": {
+                        "type": "boolean"
                     }
                 },
                 "additionalProperties": false
             },
             "defaultOptions": [
                 {
-                    "builtinGlobals": true
+                    "builtinGlobals": true,
+                    "ignoreDeclarationMerge": true
                 }
             ]
         }
