@@ -2315,7 +2315,7 @@
             },
             "prefer-called-with": {
                 "rule": "prefer-called-with",
-                "description": "Suggest using toBeCalledWith() or toHaveBeenCalledWith()",
+                "description": "Suggest using toBeCalledWith() or toHaveBeenCalledWith().",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jest/prefer-called-with.html",
                 "meta": {
                     "recommended": false,

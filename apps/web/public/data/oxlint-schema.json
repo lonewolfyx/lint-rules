@@ -4102,7 +4102,7 @@
     },
     {
         "rule": "prefer-called-with",
-        "description": "Suggest using toBeCalledWith() or toHaveBeenCalledWith()",
+        "description": "Suggest using toBeCalledWith() or toHaveBeenCalledWith().",
         "url": "https://oxc.rs/docs/guide/usage/linter/rules/jest/prefer-called-with.html",
         "options": {
             "schema": {},
@@ -8161,7 +8161,18 @@
                 "type": "object",
                 "properties": {
                     "checksConditionals": {
-                        "type": "boolean"
+                        "type": "object",
+                        "properties": {
+                            "flagUnions": {
+                                "type": "string",
+                                "enum": [
+                                    "none",
+                                    "strict",
+                                    "all"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false
                     },
                     "checksSpreads": {
                         "type": "boolean"
@@ -8195,7 +8206,9 @@
             },
             "defaultOptions": [
                 {
-                    "checksConditionals": true,
+                    "checksConditionals": {
+                        "flagUnions": "none"
+                    },
                     "checksSpreads": true,
                     "checksVoidReturn": {
                         "arguments": true,
