@@ -2545,7 +2545,7 @@
             },
             "valid-expect": {
                 "rule": "valid-expect",
-                "description": "Checks that expect() is called correctly.",
+                "description": "Checks that expect() is called correctly.\nvitest/valid-expect also checks that expectTypeOf() calls use valid modifiers and invoke a matcher.",
                 "docsUrl": "https://oxc.rs/docs/guide/usage/linter/rules/jest/valid-expect.html",
                 "meta": {
                     "recommended": false,
